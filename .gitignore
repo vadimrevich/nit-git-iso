@@ -45,14 +45,18 @@ $RECYCLE.BIN/
 
 # Applications
 *.app
-*.exe
+# *.exe
 *.war
-*.dll
+# *.dll
 
 # Windows archieve files
 *.zip
 *.rar
 *.7z
+
+# Disk Images
+*.iso
+
 
 # Large media files
 *.mp4
