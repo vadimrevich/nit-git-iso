@@ -1,0 +1,410 @@
+﻿; PSPad clip definition file for Progress 4GL
+; author:  Christian Ertle
+; last revision 03. Aug 2007  11:36
+;
+[function |n function declaration]
+function %Name%(%Params%): %Result%;
+begin
+|
+end;
+;
+[dvch |n define variable as character no-undo. ]
+define variable | as character no-undo.
+
+
+[&ANS |p Preprocessor.Analyze Suspend]	
+&ANALYZE-SUSPEND 	
+[&ANR |p Preprocessor.Analyze Resume]
+&ANALYZE-RESUME
+[&EL |p Preprocessor.Else]	
+&ELSE
+	|
+[&ELI |p Preprocessor.Elseif ]	
+	&ELSEIF (|)
+&THEN
+[&GL |p Preprocessor.global-define]
+&GLOBAL-DEFINE |
+[&IF |p Preprocessor.If block]
+$s-&IF (|)
+&THEN
+	
+&ENDIF	
+[&IFD |p Preprocessor.If Defined block]
+&IF (DEFINED (|) <> 0)
+&THEN
+	
+&ENDIF
+[&IFND |p Preprocessor.If Not Defined block]
+&IF (DEFINED (|) = 0)
+&THEN
+	
+&ENDIF	
+[&S |p Preprocessor.{&SELF-NAME}]
+{&SELF-NAME}
+[&SC |p Preprocessor.Scoped]
+&SCOPED |
+[&SCD |p Preprocessor.Scoped Define]
+&SCOPED-DEFINE
+[&F |p Preprocessor.{&FRAME-NAME}]
+{&FRAME-NAME}
+[&B |p Preprocessor.{&BROWSE-NAME}]
+{&BROWSE-NAME}
+[&O |p Preprocessor.{&OPEN-QUERY}]
+{&OPEN-QUERY-{&BROWSE-NAME}}
+[&W |p Preprocessor.{&WINDOW-NAME}]
+{&WINDOW-NAME}
+[&FTIQ |p Preprocessor.{&FIRST-TABLE-IN-QUERY}]
+{&FIRST-TABLE-IN-QUERY-{&BROWSE-NAME}}
+[/* |n Comments./* */]
+/* | */
+[/+ |n Comments./* */ multiline]
+/*
+** |
+*/
+[/d |n Debug]
+/*debug*/|
+[/dm |n Debug.Message]
+/*debug*/message | view-as alert-box info buttons ok title 'debug'.
+[ass |n assign]
+assign
+	|
+no-error.
+[ava |m constructs.available]
+available (|)
+[bby |m constructs.break-by]
+break-by |
+[cas |m constructs.case]
+case |:
+	when then
+do:
+	/*  */
+end.
+otherwise
+do:
+	/*  */
+end.
+end case.	
+[cuw |b gui.current window]
+current-window:|
+[cwn |b gui.create window]
+create window |
+	assign
+	title        = 
+three-d      = yes
+message-area = no
+status-area  = no
+resize       = no
+menubar      = :handle
+keep-frame-z-order = yes.
+[dbt |b gui.def button]
+def button | label '?'  size by .
+[dbuff |g Definitions.buffer]
+def buffer | for for table .
+[dew |b gui.default window]
+default-window:|
+[dis |m constructs.display]
+display
+	|
+.
+[diwf |m constructs.display with frame]
+display
+	|
+with frame .
+[dmn |b gui.def menu]
+def menu | menubar
+	sub-menu label '?'
+rule
+.
+[dob |m constructs.do block]
+do:
+	|
+end.
+[doeul |m constructs.do on error]
+do on error undo, leave:
+	|
+end.
+[dofo |m constructs.do for]
+do for |:
+	
+end.	
+[doi |m constructs.do i = 1 to...]
+do i = 1 to |:
+	
+end.  /* 1..? */
+[dosb |m constructs.do-on-stop block]
+do on stop undo, leave:
+	|
+end.
+[dowf |m constructs.do with frame]
+do with frame {&FRAME-NAME}:
+	|
+end.
+[dowh |m constructs.do while]
+do while (|):
+	
+end.
+[dptp |m constructs.delete this proc]
+delete procedure this-procedure.|
+[drc |b gui.def rectangle]
+def rectangle | edge-pixels ? size by no-fill.	
+[dsm |b gui.def sub-menu]
+def sub-menu |
+	menu-item label '?'
+rule
+.	
+[dst |g Definitions.stream]
+def stream |.	
+[dvch |g Definitions.char variable]
+def var | as char no-undo.	
+[dvdc |g Definitions.dec variable]
+def var | as dec  no-undo.	
+[dvdt |g Definitions.date variable]
+def var da| as date no-undo.	
+[dvhn |g Definitions.handle variable]
+def var h| as handle no-undo.
+[dvin |g Definitions.int variable]
+def var i| as int no-undo.
+[dvlg |g Definitions.log variable]
+def var l| as log no-undo.	
+[dvlk |g Definitions.'like' variable]
+def var | like xxx no-undo.	
+[dvmp |g Definitions.memptr variable]
+def var m| as memptr no-undo.
+[dvri |g Definitions.rowid variable]
+def var r| as rowid no-undo.
+[dvwh |g Definitions.widget variable]
+def var | as widget no-undo.
+[dpb |g Definitions.buffer parameter]
+def param buffer | for .
+[dqu |g Definitions.query]
+def query q-| for .	
+[elb |m constructs.else do]
+else do:
+ | 
+end.  /* else */	
+[elib |m constructs.else if do]
+else if | do:
+end.
+[ena |n enable]
+enable | .
+[endb |n enblock]
+end.  /* | */
+[ers |n error-stat]
+error-status:|
+[exl |g io.exclusive lock]
+exclusive-lock|
+[feb |m constructs.for each]
+for each |:
+	
+end.  /* for each */
+[ffb |m constructs.for first]
+for first | fields ()
+    where 
+    no-lock:
+	
+end.  /* for first */
+[fgc |b gui.fgcolor]
+fgcolor |
+[fmt |n format]
+format '|'
+[frm |m constructs.form with frame]
+form
+	
+with frame |
+	
+.
+[func |n 	constructs.function]
+function | returns character
+	(   ):
+	
+return ?.
+
+end function. /* ? */
+[hec |b gui.height chars]
+height-chars |
+[hep |b gui.height pixels]
+height-pixels |
+[ifb |m constructs.if... block]
+if | then do:
+
+end.  /* if */
+[ifeb |m constructs.if...else block]
+if | then do:
+
+end.  /* if */
+else do:
+
+end.  /* else */
+[ifa |m constructs.if available()]
+if available(|) then do:
+end.  /* if available */
+[iopch |g Definitions.char i-o parameter]
+def input-output param c| as char  no-undo.	
+[iopdc |g Definitions.dec i-o parameter]
+def input-output param d| as dec no-undo.	
+[iopdt |g Definitions.date i-o parameter]
+def input-output param da| as date no-undo.	
+[iophn |g Definitions.handle i-o parameter]
+def input-output param h| as handle  no-undo.
+[iopin |g Definitions.int i-o parameter]
+def input-output param i| as int no-undo.
+[ioplg |g Definitions.log i-o parameter]
+def input-output param l| as log no-undo.
+[iopmp |g Definitions.memptr i-o parameter]
+def input-output param m| as memptr no-undo.
+[iopri |g Definitions.rowid i-o parameter]
+def input-output param r| as rowid no-undo.
+[iopwh |g Definitions.widget i-o parameter]
+def input-output param | as widget  no-undo.
+[ioptb |g Definitions.table i-o parameter]
+def input-output param table for |.
+[ipch |g Definitions.char inp parameter]
+def input        param c| as char no-undo.
+[ipdc |g Definitions.dec inp parameter]
+def input        param d| as dec no-undo.
+[ipdt |g Definitions.date inp parameter]
+def input        param da| as date no-undo.
+[iphn |g Definitions.handle inp parameter]
+def input        param h| as handle no-undo.
+[ipin |g Definitions.int inp parameter]
+def input        param i| as int no-undo.
+[iplg |g Definitions.log inp parameter]
+def input        param l| as log no-undo.
+[ipmp |g Definitions.memptr inp parameter]
+def input        param m| as memptr no-undo.
+[ipri |g Definitions.rowid inp parameter]
+def input        param r| as rowid no-undo.
+[iptb |g Definitions.table inp parameter]
+def input        param table for |.	
+[ipwh |g Definitions.widget inp parameter]]
+def input        param | as widget  no-undo.
+[kfz |b gui.keep frame]
+keep-frame-z-order |
+[kme |b gui.keep messages]
+keep-messages |
+[kto |b gui.keep tab order]
+keep-tab-order |
+[lab |b gui.label]
+label '|'
+[mes |n Debug.Message]
+message |
+	view-as alert-box info button ok.	
+[mi  |b gui.menu item]
+mi	menu-item | label '?'
+[nap |n no-apply]
+no-apply |
+[nbx |n no-box]
+no-box |
+[ner |n no-error]
+no-error |
+[nlb |n no-label]
+no-label |
+[nls |n no-labels]
+no-labels |
+[nol |g io.no-lock]
+no-lock |
+[nwe |g io.no-wait no-error]
+no-wait no-error |
+[onb |m constructs.on do]
+on '|' of 
+do:
+	return.
+end.	
+[opch |g Definitions.char out parameter]
+def       output param c| as char    no-undo.
+[opdc |g Definitions.dec out parameter]
+def       output param d| as dec     no-undo.
+[opdt |g Definitions.date out parameter]
+def       output param da| as date    no-undo.	
+[ophn |g Definitions.handle out parameter]
+def       output param h| as handle  no-undo.
+[opin |g Definitions.int out parameter]
+def       output param i| as int     no-undo.
+[oplg |g Definitions.log out parameter]
+def       output param l| as log     no-undo.
+[opmp |g Definitions.memptr out parameter]
+def       output param m| as memptr  no-undo.	
+[opri |g Definitions.rowid out parameter]
+def       output param r| as rowid   no-undo.
+[optb |g Definitions.table out parameter]
+def       output param table for |.
+[opwh |g Definitions.widget out parameter]
+def       output param | as widget  no-undo.
+[outto |m constructs.Output stream to...]
+output stream | to .
+output stream  close.
+[proc |m constructs.procedure]
+procedure |:
+  return.
+end procedure. /* ? */
+[psu |g io.put stream]
+put stream | unformatted
+skip.
+[reb |m constructs.repeat end]	
+repeat:
+	|
+end.
+[repo |m constructs.Reposition Browse]
+reposition {&BROWSE-NAME} to rowid | no-error.
+if not error-status:error then
+	{&BROWSE-NAME}:select-focused-row() no-error.
+[ret |m constructs.return]
+return |.
+[rev |m constructs.return value]
+return-value |
+[rpl |m constructs.replace]
+replace (|, , )
+[rptb |m constructs.repeat block]
+repeat |:
+
+end.  /* repeat */
+[rsp |b gui.radio-set]
+radio-set | vertical horizontal size by radio-buttons
+	label, value
+[ses |n session:]
+session:|
+[shl |g io.share lock]
+share-lock |
+[ski |n skip]
+skip (|)
+[spa |n space]
+space (|)
+[sst |n substring]
+substr (|, , )
+[str |n string]
+string (|, )
+[stt |n substitute]
+substitute (|, , )
+[tit |n title]
+title '|'
+[tpr |m constructs.this procedure]
+this-procedure:|	
+[tra |g io.transaction]
+transaction|
+[usi |g io.use index]
+use-index |	
+[whb |m constructs.when block]
+when | then
+do:
+	/*  */
+end.
+[whe |m constructs.where]
+where (|)
+[whi |m constructs.while]
+while (|)
+[wic |b gui.width chars]
+width-chars |
+[wif |m constructs.with frame]
+with frame |
+[wip |b gui.width pixels]
+width-pixels |
+[dispatch |n ADE.Run Dispatch]
+run dispatch in this-procedure ('|':u).	
+[setcurs |n ADE.Set Wait State]
+run set-cursor in adm-broker-hdl ('|':U).	
+[set-attrib |n ADE.Set-Attribute-List]
+run Set-Attribute-List in |<handle>
+	(input "<Attribute>=<Value>").
+[get-attrib |n ADE.Get-Attribute]
+run Get-Attribute in \f<handle>
+	(input "<Attribute>").

@@ -1,0 +1,48 @@
+﻿;; PSPad code template for INI
+;; Author: Karel Pavelka
+;; E-mail: webjob@seznam.cz
+;; Update: 02.10.2003
+;;
+;;   (black)
+;; B (blue)
+;; D (dark gray)
+;; F (fuchsia)
+;; G (green)
+;; M (maroon)
+;; N (navy)
+;; P (purple)
+;; R (red)
+;;
+;; Odsazeni: 0
+;
+[Macro definition]
+%asx%=@O open=,,,open file (*.asx)|*.asx,
+%asxf%=@K fullscreen,"mplayer2 /fullscreen",
+%colortemplate%=@C Barva šablony,,,B;D;F;G;M;N;P;R,
+%description%=@E description=,description=,,,
+%descriptiont%=@E Popis šablony,,,
+%icon%=@O icon=,icon=,,icon file (*.ico)|*.ico,
+%nametemplate%=@E Název šablony,,,
+%open%=@O open=,open=,,open file (*.exe)|*.exe,
+%version%=@E version=,version=,,,
+;
+[autorun | samospouštěcí soubor]
+|[autorun]
+%open%
+%icon%
+;
+[autorun | samospouštěcí soubor pro ASX s volbou fullscreen]
+|[autorun]
+open=%asxf% %asx%
+%icon%
+;
+[info | info]
+|[info]
+%title%
+%description%
+%version%
+;
+[!template | Šablona do PSPadu]
+|[%nametemplate% |%colortemplate% %descriptiont%]
+;
+

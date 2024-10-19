@@ -1,0 +1,213 @@
+﻿;; PSPad code template for Interval.cz
+;; Author: Karel Pavelka
+;; E-mail: webjob@seznam.cz
+;; Update: 10.4.2004
+;;
+;;   (black)     XHTML
+;; B (blue)
+;; D (dark gray)
+;; F (fuchsia)
+;; G (green)     Entity, zavorky, komentare
+;; M (maroon)
+;; N (navy)      Kusy kodu
+;; P (purple)
+;; R (red)
+;;
+;; Odsazeni: 2
+;
+[Macro definition]
+%alt%=@E alt=,alt=,,,'
+%border%=@E border=,border=,0,,'
+%class%=@C class=,class=,,annex;answer;author;board;comment;definition;extra;kniha-popis;list;mouse;note-author;prepend;question;refer;sample;table;text,'
+%height%=@E height=,height=,,,'
+%href%=@O HREF=,href=,,html file (*.html;*.htm;*.php;*.php4;*.asp)|*.html;*.htm;*.php;*.php4;*.asp,'
+%nazevclanku%=@E Název článku:
+%poutac%=@E Poutač:
+%src%=@P src=,src=,,,'
+%title%=@E title=,title=,,,'
+%width%=@E width=,width=,,,'
+;
+[&nbsp; |G nedělitelná mezera]*Shift+Ctrl+Space
+&nbsp;
+[&bdquo; |G uvozovka dole (99)]
+&bdquo;
+[&ldquo; |G uvozovka nahoře (66)]*Ctrl+U
+&ldquo;
+[9966 |G text do uvozovek (9966)]
+&bdquo;§|&ldquo;
+[&apos; |G apostrof]
+&apos;
+[&gt; |G znak ">"]
+&gt;
+[&lt; |G znak "<"]
+&lt;
+[&amp; |G ampersand]
+&amp;
+;
+[<...> |G začátek/konec tagu z označeného textu]*Ctrl+,
+<§>|</§>
+[<> |G začátek tagu <>]*Alt+,
+<|>
+[</> |G konec tagu </|>]*Alt+.
+</|>
+;
+[!-- |G řádkový komentář <!-- text -->]
+<!-- §| -->
+[!--- |G komentář bloku <!-- text -->]
+<!--
+ §|
+-->
+;
+
+[1 |N hlavička článku]
+<h2>%nazevclanku%</h2>
+<cite class='author'>%UserName%</cite>
+<p class='prepend'>%poutac%</p>
+;
+[a | Element tvořící hypertextový odkaz ]
+<a %href% %title%>§|</a>
+[acronym | Element vyznačující zkratku, důležitou pro smysl článku. Tento element musí nést atribut title s plným zněním zkratky.]
+<acronym %title%>§|</acronym>
+[blockquote | bloková citace]
+<blockquote>§|</blockquote>
+[br | zalomení řádku ]*CTRL+ENTER
+<br />
+[caption | definuje hlavičku tabulky]
+<caption>§|</caption>
+[cite | vymezení citace]
+<cite %class%>§|</cite>
+[dd | uvádí definici v seznamu definic]
+<dd>§|</dd>
+[div | Vyznačuje specifické oblasti v textu článku a umožňuje jejich odlišení]
+<div %class%>§|</div>
+[dl | definuje seznam definicí]
+<dl>§|</dl>
+[dt | dt]
+<dt>§|</dt>
+[em | Vyznačuje důležitý pojem, většinou při prvním výskytu v článku.]
+<em>§|</em>
+[h2 | Slouží pro logické vyznačení názvu článku]
+<h2>§|</h2>
+[h3 | nadpis ]
+<h3>§|</h3>
+[h4 | nadpis ]
+<h4>§|</h4>
+[hr | vodorovná čára ]*Shift+Ctrl+H
+<hr />
+[img |N vložení obrázku ]
+<div class='image'><img %src% %width% %height% %border% %title% /><br />
+Komentář_k_obrazku</div>
+;
+[KBD_board |N zápis klávesové zkratky]
+<kbd class='board'>§|</kbd>
+[KBD_mouse |N zápis postupu skrze menu. Např.: | Start | Programy |]
+<kbd class='mouse'>§|</kbd>
+[KBD_text |N zápis použité proměnné ]
+<kbd class='text'>§|</kbd>
+[li | položka seznamu <li></li>]*CTRL+Q
+<li>§|</li>
+[ol | uspořádaný (číslovaný) seznam]
+<ol>§|</ol>
+[p1 |N První odstavec článku ]
+<p class='prepend'>§|</p>
+[p | Vyznačuje část textu, logicky chápanou jako odstavec]
+<p %class%>§|</p>
+[samp | Pro logické vyznačení kratšího příkladu nebo ukázky zdrojového kódu v textu článku]
+<samp>§|</samp>
+[span | Používá se například pro vyznačení krátkého komentáře v bloku s ukázkou kódu ]
+<span>%class%§|</span>
+[strong | Element logicky vyznačující mimořádně důležité slovní spojení nebo klíčový termín. Správně strukturovaný článek by takových konstrukcí měl obsahovat minimum]
+<strong>§|</strong>
+[sub | Element logicky vyznačující index a exponent. Připojuje se k výrazu bez mezery]
+<sub>§|</sub>
+[sup | Element logicky vyznačující index a exponent. Připojuje se k výrazu bez mezery]
+<sup>§|</sup>
+[table |N definice tabulky]
+<div class='table'>
+  <table cellspacing='0'>
+  </table>
+</div>
+[tabulka |N vzor tabulky i s komentářem]
+<div class='table'>
+  <table cellspacing='0'>
+    <tr><td>§|</td><td> </td><td> </td></tr>
+  </table>
+  <span class='comment'>Vysvětlivky_pod_tabulkou</span>
+</div>
+[tbody | tělo tabulky]
+<tbody>§|</tbody>
+[td | buňka tabulky]
+<td>§|</td>
+[TD_extra |N zvláštní buňka v tabulce]
+<td class='extra'>§|</td>
+[tfoot | zápatí tabulky ]
+<tfoot>§|</tfoot>
+[th | hlavička tabulky ]
+<th>§|</th>
+[thead | záhlaví tabulky ]
+<thead>§|</thead>
+[tr | řádek tabulky]
+<tr>§|</tr>
+[ul |N neuspořádaný (nečíslovaný) seznam ]
+<div class='list'>
+<ul>§|</ul>
+</div>
+[otázka |N otázka v rozhovoru]
+<p class='question'>§|</p>
+[odpověď |N odpověď v rozhovoru]
+<p class='answer'>§|</p>
+[seznam |N seznam bodů]
+<div class='list'>
+<ul>
+   <li>bod_1</li>
+   <li>bod_2</li>
+   <li>bod_3</li>
+</ul>
+<span class='comment'>Komentář_k_seznamu.</span>
+</div>
+[příklad |N zdrojový kód pro PHP]
+<div class='sample'><br />
+  &lt;?php<br />
+  <br />
+  §|
+  <br />
+  ?&gt;<br />
+</div>
+[class | vložení třídy]
+%class%
+[annex |N doplňující text]
+<span class='annex'>§|</span>
+;
+[Keywords]
+acronym
+annex
+answer
+author
+blockquote
+board
+caption
+class=
+class='annex'
+class='answer'
+class='author'
+class='board'
+class='comment'
+class='extra'
+class='list'
+class='mouse'
+class='prepend'
+class='question'
+class='sample'
+class='table'
+comment
+list
+mouse
+prepend
+question
+samp
+sample
+span
+strong
+tbody
+tfoot
+thead

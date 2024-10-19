@@ -1,0 +1,559 @@
+﻿;; PSPad code template for MXI
+;; Author: Karel Pavelka
+;; E-mail: webjob@seznam.cz
+;; Update: 10.4.2004
+;;
+;;   (black)     MXI (XML)
+;; B (blue)
+;; D (dark gray)
+;; F (fuchsia)
+;; G (green)     Entity, zavorky, komentare
+;; M (maroon)
+;; N (navy)      Kusy kodu
+;; P (purple)
+;; R (red)
+;;
+;; Odsazeni: 2
+;
+[Macro definition]
+%appendTo%=@E appendTo=,appendTo=,,,"
+%arguments%=@E arguments=,arguments=,,,"
+%break%=@E break=,break=,,,"
+%category%=@E category=,category=,,,"
+%prompt%=@E prompt=,prompt=,,,"
+%default%=@C default=,default=,,$dreamweaver;$ultradev;$fireworks;$flash;$font;$system,"
+%definition%=@S definition=,definition=,,,"
+%command%=@E command=,command=,,,"
+%description%=@E description=,description=,,,"
+%destination%=@C destination=,destination=,,$flash/Libraries;$flash/ActionScript;$flash/Lessons;$flash/Samples;$flash/Libraries;$flash/HTML;$flash/FolderName;$flash/Keyboard Shortcuts;$flash/Importers;$flash/Components;$flash/ActionsPanel/;$flash/WindowSWF;$flash/Templates/Name;$dreamweaver/;$fireworks/;$flash/;$ultradev/;$generator/;$system/;$fonts/,"
+%dynamic%=@E dynamic=,dynamic=,,false;true,"
+%enabled%=@E enabled=,enabled=,,,"
+%encoding%=@C encoding=,encoding=,,windows-1250;iso-8859-2;utf-8,"
+%expression%=@E expression=,expression=,,,"
+%extension%=@C extension=,extension=,,gif;jpg;html;htm;php;asp,"
+%file%=@O file=,file=,http://, file (*.html;*.htm;*.js)|*.html;*.htm;*.js,"
+%checked%=@C checked=,checked=,,false;true,"
+%id%=@E id=,id=,,,"
+%indent%=@E indent=,indent=,,,"
+%indentGroup%=@E indentGroup=,indentGroup=,,,"
+%insertAfter%=@E insertAfter=,insertAfter=,,,"
+%insertBefore%=@E insertBefore=,insertBefore=,,,"
+%key%=@E key=,key=,,,
+%list_Id%=@E list_Id=,list_Id=,,,"
+%maccreator%=@E mac-creator=,mac-creator=,,,"
+%macfiletype%=@E mac-file-type=,mac-file-type=,,,"
+%name%=@E name=,name=,,,"
+%namea%=@E jméno autora=,name=,,,"
+%namecase%=@E namecase=,namecase=,,,"
+%namep%=@C name=,name=,,Dreamweaver;Flash;UltraDev;Fireworks,"
+%nLCID%=@E nLCID=,nLCID=,,,"
+%noformat%=@E noformat=,noformat=,,,"
+%platform%=@C platform=,platform=,win,win;mac,"
+%prependTo%=@E prependTo=,prependTo=,,,"
+%primary%=@C primary=,primary=,,true;false,"
+%required%=@C required=,required=,,true;false,"
+%requiresrestart%=@C requires-restart=,requires-restart=,,true;false,"
+%samecase%=@E samecase=,samecase=,,,"
+%servermodel%=@C servermodel=,servermodel=,,"ASP.NET_Csharp";"ASP.NET_VB";"ASP_Js";"ASP_Vbs";"ColdFusion";"UD4-ColdFusion";"PHP_MySQL";"JSP","
+%servermodelfolder%=@C servermodelfolder=,servermodelfolder=,,"ASP.NET_Csharp";"ASP.NET_VB";"ASP_Js";"ASP_Vbs";"ColdFusion";"UD4-ColdFusion";"PHP_MySQL";"JSP","
+%shared%=@C shared=,shared=,,true;false,"
+%skipSeparator%=@C skipSeparator=,skipSeparator=,,true;false,"
+%source%=@E source=,source=,,,"
+%standalone%=@C standalone=,standalone=,,no;yes,"
+%strNamedFormat%=@E strNamedFormat=,strNamedFormat=,,,"
+%systemfile%=@C systemfile=,systemfile=,,true;false,"
+%type%=@C type=,type=,,action;actionscript;behavior;browserProfile;codesnippet;command;dataSource;dictionary;documenttype;encoding;"flash component";"flash custom action";"flash importer";"flash panel";"flash template";flashbuttonstyle;floater;generatorobject;helpbook;insertbar;jsExtension;keyboardshortcut;lesson;library;object;plugin;propertyInspector;publishtemplate;query;report;sample;samplecontent;serverBehavior;serverFormat;serverModel;site;smartclip;suite;taglibrary;template;thirdPartyTags;toolbar;translator;utility,"
+%typeAB%=@C type=,type=,,ASCII;Binary,"
+%version%=@C version=,version=,,1.0.0;4;5;6;7,"
+%winextension%=@E winextension=,winextension=,,,"
+;
+;---------------------------------------------------------------------
+; XML (black)
+;---------------------------------------------------------------------
+[&nbsp; |G nedělitelná mezera]*Shift+Ctrl+Space
+&nbsp;
+[&bdquo; |G uvozovka dole (99)]
+&bdquo;
+[&ldquo; |G uvozovka nahoře (66)]*Ctrl+U
+&ldquo;
+[9966 |G text do uvozovek (9966)]
+&bdquo;§|&ldquo;
+[&apos; |G apostrof]
+&apos;
+[&gt; |G znak ">"]
+&gt;
+[&lt; |G znak "<"]
+&lt;
+[&amp; |G ampersand]
+&amp;
+;
+[<...> |G začátek/konec tagu z označeného textu]*Ctrl+,
+<§>|</§>
+[<> |G začátek tagu <>]*Alt+,
+<|>
+[</> |G konec tagu </|>]*Alt+.
+</|>
+;
+[!-- |G řádkový komentář <!-- text -->]
+<!-- §| -->
+[!--- |G komentář bloku <!-- text -->]
+<!--
+ §|
+-->
+;
+[attribute-insert | Describes attributes added to the SourceFormat.txt file]
+<attribute-insert %name% %namecase% %samecase% />
+|
+;
+[attribute-remove | Describes attributes removed from the SourceFormat.txt file]
+<attribute-remove %name% />
+|
+;
+[author | Jméno autora této extenze, max. 255 znaků]
+<author %namea% />
+|
+;
+[br | zalomení řádku]*CTRL+ENTER
+<br>
+;
+[CDATA | <![CDATA[ ]
+<![CDATA[
+  §|
+]]>
+;
+[comment | Provides a comment about an item being inserted into the menu structure]
+<comment>§|</comment>
+;
+[configuration-changes | Container tag for changes to menus, shortcuts, server behaviors, server formats, and data sources]
+<configuration-changes>
+  §|
+</configuration-changes>
+;
+[data-source-changes | Container tag for changes to menus in the DataSources.xml file in any of the Dreamweaver MX or UltraDev Configuration/DataSources/servermodel folders]
+<data-source-changes %servermodel% %servermodelfolder%>
+  §|
+</data-source-changes>
+;
+[description | popisuje co rozšíření dělá]
+<description>
+  <![CDATA[
+  §|
+  ]]>
+</description>
+;
+[documenttype-changes | Describes changes to be made to the MMDocumentTypes.xml file]
+<documenttype-changes>
+  §|
+</documenttype-changes>
+;
+[documenttype-insert | Insert the specified tag library at the end of file]
+<documenttype-insert>
+  §|
+</documenttype-insert>
+;
+[documenttype-remove | Removes the specified document type]
+<documenttype-remove %id% />
+;
+[element-insert | Describes elements added to the SourceFormat.txt file]
+<element-insert %name% %break% %indent% %indentGroup% %namecase% %noformat% />
+;
+[element-remove | Describes elements removed from the SourceFormat.txt file]
+<element-remove %name% />
+;
+[extensions-changes | Container tag that describes any changes to the Extensions.txt file, such as adding or removing extensions that you can open in Dreamweaver, UltraDev, Dreamweaver MX ]
+<extensions-changes>
+  §|
+</extensions-changes>
+;
+[extension-insert | Describes a new extension that Dreamweaver or UltraDev can open]
+<extension-insert %extension% %description% />
+;
+[extension-remove | Indicates an extension to remove from the Extensions.txt file]
+<extension-remove %extension% %description% />
+;
+[files | kontejner pro všechny souborové značky ]
+<files>
+  §|
+</files>
+;
+[file | Provides information about a specific file to be installed as part of the extension]
+<file %source% %systemfile% %shared% %platform% %destination% %winextension% />
+|
+;
+[file-tokens | Container tag that indicates any custom tokens]
+<file-tokens>
+  §|
+</file-tokens>
+;
+[format | Describes the data format to be inserted into the UltraDev Format menu during installation of this extension]
+<format %file% %title% %expression% %strNamedFormat% %nLCID% %id% />
+|
+;
+[ftp-extension-insert | Specifies a change to the FTPExtensionMap.txt file]
+<ftp-extension-insert %extension% %maccreator% %macfiletype% %typeAB% />
+|
+;
+[ftp-extension-remove | Indicates the extension that is removed from SourceFormat.txt in the Configuration folder]
+<ftp-extension-remove %extension% />
+|
+;
+[ftp-extension-map-changes | Specifies a change to the FTPExtensionMap.txt file located in the Configuration folder]
+<ftp-extension-map-changes>
+  §|
+</ftp-extension-map-changes>
+;
+[help-changes | Describes changes to be made to the help books part of the help system]
+<help-changes>
+  §|
+</help-changes>
+;
+[helpbook-changes | Describes changes to be made to the help books part of the help system]
+<helpbook-changes>
+  §|
+</helpbook-changes>
+;
+[helpbook-insert | Inserts the specified help book]
+<helpbook-insert>
+  §|
+</helpbook-insert>
+;
+[helpbook-remove | Removes the specified help book]
+<helpbook-remove %id% />
+|
+;
+[insertbar-changes | Marks the beginning of changes to Insertbar.xml]
+<insertbar-changes>
+  §|
+</insertbar-changes>
+;
+[insertbar-insert | Insert the specified category at the end of file]
+<insertbar-insert %insertBefore% %insertAfter%>
+  §|
+</insertbar-insert>
+;
+[insertbar-item-insert | Inserts the specified item at the specified location]
+<insertbar-item-insert %insertBefore% %insertAfter% %appendTo% %prependTo% %category%>
+  §|
+</insertbar-item-insert>
+;
+[insertbar-item-remove | Removes the specified insertbar item]
+<insertbar-item-remove %id% />
+|
+;
+[insertbar-remove | Removes the specified category]
+<insertbar-remove %id% />
+|
+;
+[macromedia-extension | hlavní značka pro rozšiřovací instalační soubor]
+<macromedia-extension %id% %name% %version% %type% %requiresrestart%>
+  §|
+</macromedia-extension>
+;
+[menu | Describes a menu or submenu to be inserted into the product’s menu structure during installation of an extension]
+<menu %name% %id% %platform%>
+  §|
+</menu>
+;
+[menuitem | Describes the menu item to be inserted into the product’s menu structure during installation of this extension]
+<menuitem %name% %id% %key% %platform% %file% %dynamic% %command% %enabled% %checked% %arguments% />
+
+|
+[menu-remove | Provides information about a menu bar, menu, menu item, or format to remove during installation of this extension]
+<menu-remove %id% />
+|
+;
+[menu-insert | Specifies where in the product’s menus to insert a menu bar, menu, menu item, or format during installation of this extension]
+<menu-insert %insertAfter% %insertBefore% %appendTo% %prependTo% %skipSeparator%>
+  §|
+</menu-insert>
+;
+[menubar | Provides information about a menu bar to be inserted into the product’s menu structure during installation of this extension]
+<menubar %name% %id% %platform%>§|</menubar>
+;
+[product | specifikuje slučitelnost s Macromedia produkty ]
+<product %namep% %version% %primary% %required% />
+|
+;
+[products | kontejner pro značky <product/>]
+<products>
+  §|
+</products>
+;
+[separator | Indicates that a separator should be inserted into a menu at the location specified by the containing menu-insert tag]
+<separator %id% %platform% />
+|
+;
+[server-behavior-changes | Container tag for changes to menus in the ServerBehaviors.xml file in any of the Dreamweaver MX or UltraDev Configuration/ServerBehaviors/servermodel folders]
+<server-behavior-changes %servermodelfolder%>
+  §|
+<server-behavior-changes>
+;
+[server-format-changes | Container tag for changes to menus in the Formats.xml file in any of the Dreamweaver MX or UltraDev Configuration/ServerFormats/servermodel folders]
+<server-format-changes %servermodelfolder%>
+  §|
+<server-format-changes>
+;
+[server-format-definition-changes | Container tag for changes to menus in the ServerFormats.xml file in any of the Dreamweaver MX or UltraDev Configuration/ServerFormats/servermodel folders]
+<server-format-definition-changes %servermodelfolder%>
+  §|
+<server-format-definition-changes>
+;
+[shortcut | Specifies a keyboard shortcut to be added to the menus.xml file]
+<shortcut %key% %command% %file% %id% %platform% />
+|
+;
+[shortcutlist | Specifies a shortcut list to be added to the menus.xml file]
+<shortcutlist %id% %platform% />
+|
+;
+[shortcut-insert | Indicates that a keyboard shortcut or shortcut list should be added to the menus.xml file]
+<shortcut-insert %list_Id%>
+  §|
+</shortcut-insert>
+;
+[shortcut-remove | Indicates that the specified keyboard shortcut be removed from the menus.xml file]
+<shortcut-remove %id% />
+|
+;
+[source-format-changes | Contains changes to the SourceFormat.txt file]
+<source-format-changes>
+  §|
+</source-format-changes>
+;
+[taglibrary-changes | Describes changes to be made to the TagLibraries.vtm file]
+<taglibrary-changes>
+  §|
+</taglibrary-changes>
+;
+[taglibrary-insert | Inserts the specified tag library at the end of file. Order is not important]
+<taglibrary-insert>
+  §|
+</taglibrary-insert>
+;
+[taglibrary-remove | Remove the specified tag library]
+<taglibrary-remove %id% />
+|
+;
+[token | Defines a custom token for an extension]
+<token %name% %prompt% %default% %definition% />
+|
+;
+[toolbar-changes | Marks the beginning of toolbar changes]
+<toolbar-changes>
+  §|
+</toolbar-changes>
+;
+[toolbar-item-insert | Inserts the specified toolbar item at the specified location]
+<toolbar-item-insert %insertBefore% %insertAfter% %appendTo% %prependTo% %toolbar%>
+  §|
+</toolbar-item-insert>
+;
+[toolbar-insert | Inserts the specified toolbar at the end of file]
+<toolbar-insert>
+  §|
+</toolbar-insert>
+;
+[toolbar-item-remove | Removes the specified toolbar item]
+<toolbar-item-remove %id% />
+;
+[toolbar-remove | Removes the specified toolbar]
+<toolbar-remove %id% />
+|
+;
+[ui-access |N Specifikuje text, který objeví se v rozšiřovacím manažerském okně]
+<ui-access>
+  <![CDATA[
+  §|
+  ]]>
+</ui-access>
+;
+[xml | deklarace <?xml ?>]
+<?xml %version% %encoding% %standalone%?>
+|
+;
+[example |N jednoduchá šablona pro Flash MX]
+<macromedia-extension name="My Cool Component" version="1.1" %type%>
+
+	<!-- List the required/compatible products -->
+
+	<products>
+		<product name="Flash" version="6" required="true" />
+	</products>
+
+	<!-- Describe the author -->
+
+	<author %namea% />
+
+	<!-- Describe the extension -->
+
+	<description>
+  	<![CDATA[
+  	---Description Here---
+  	]]>
+	</description>
+
+	<!-- Describe where the extension shows in the UI of the product -->
+
+	<ui-access>
+	  <![CDATA[
+	  This item is accessed via the Components Panel.
+	  ]]>
+	</ui-access>
+
+	<!-- Describe the files that comprise the extension -->
+
+	<files>
+		<file name="your_fla_file.fla" %destination% />
+	</files>
+
+</macromedia-extension>
+;
+[example2 |N JavaScript Back Button]
+<macromedia-extension id="99999" name="JavaScript Back Button" version="1.0.0" type="Object">
+
+<!-- List the required/compatible products -->
+
+ <products>
+   <product name="Dreamweaver" version="3" primary="true" />
+ </products>
+
+<!-- Describe the author -->
+
+ <author name="Danny Mather" />
+
+<!-- Describe the extension -->
+
+ <description>
+  <![CDATA[
+	Inserts a javascript 'back' link with text of your choice.
+	]]>
+ </description>
+
+<!-- Describe where the extension shows in the UI of the product -->
+
+ <ui-access>
+   <![CDATA[
+	 Access this object from invisibles in the object palette
+	 ]]>
+ </ui-access>
+
+<!-- Describe the files that comprise the extension -->
+ <files>
+   <file name="javaback.html" destination="$dreamweaver/configuration/objects/invisibles" />
+   <file name="javaback.gif" destination="$dreamweaver/configuration/objects/invisibles" />
+ </files>
+
+<!-- Describe the changes to the configuration -->
+
+ <configuration-changes>
+
+ </configuration-changes>
+
+</macromedia-extension>
+;
+[Keywords]
+appendTo=
+arguments=
+attribute-insert
+attribute-remove
+author
+break=
+category=
+CDATA[]]>
+command=
+comment>
+configuration-changes
+data-source-changes
+default=
+definition=
+description=
+description>
+destination=
+documenttype-changes>
+documenttype-insert>
+documenttype-remove
+dynamic=
+element-insert
+element-remove
+enabled=
+encoding=
+expression=
+extension=
+extension-insert
+extension-remove
+extensions-changes>
+file
+files>
+file-tokens>
+format
+ftp-extension-insert
+ftp-extension-map-changes>
+ftp-extension-remove
+helpbook-changes
+helpbook-insert>
+helpbook-remove
+help-changes>
+checked=
+id=
+indent=
+indentGroup=
+insertAfter=
+insertbar-changes>
+insertbar-insert
+insertbar-item-insert
+insertbar-item-remove
+insertbar-remove
+insertBefore=
+key=
+list_Id=
+mac-creator=
+mac-file-type=
+macromedia-extension
+menu
+menu-insert
+menuitem
+menu-remove
+name=
+namecase=
+nLCID=
+noformat=
+platform=
+prependTo=
+primary=
+product
+products>
+prompt=
+required=
+requires-restart=
+samecase=
+separator
+server-behavior-changes
+server-format-definition-changes
+server-format-changes
+servermodel=
+servermodelfolder=
+shared=
+shortcut
+shortcut-insert
+shortcutlist
+shortcut-remove
+skipSeparator=
+source=
+source-format-changes>
+standalone=
+strNamedFormat=
+systemfile=
+taglibrary-changes>
+taglibrary-insert>
+taglibrary-remove
+token
+toolbar-changes>
+toolbar-insert>
+toolbar-item-insert>
+toolbar-item-remove
+toolbar-remove
+type=
+ui-access>
+version=
+winextension=
+;

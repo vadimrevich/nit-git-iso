@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Pre Install Procedures</title>
+  <meta name="Author" content="NIT" />
+  <link rel="icon" href="http://file.netip4.ru/favicon.ico" type="image/x-icon">
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+      color: #ff0014;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Pre Install Procedures</h1>
+</header>
+<h1 id="pre-install">Pre Install</h1>
+<p>Предварительные действия перед активацией Windows и установкой
+программного обеспечения New Internet Technologies Inc.</p>
+<h2 id="введение">Введение</h2>
+<p>Заметим, что перед установкой программных продуктов для
+администрирования Microsoft Windows, устранением проблем в ней и для её
+активации необходимы предварительные действия. В них входят:</p>
+<ul>
+<li>Установка менеджера загрузки файлов (например, Download
+Master).</li>
+<li>Загрузка программ (скриптов) для управления антивирусом Windows
+Defender.</li>
+<li>Установка исключений антивируса для Вашего продукта.</li>
+<li>Загрузка и установка программы удалённого доступа по требованию
+AnyDesk.</li>
+<li>Инвентаризация аппаратного и программного обеспечения, отправки
+отчёта на сервер NIT.</li>
+<li>Настройки программы Internet Explorer для навигации по сайтам
+NIT.</li>
+<li>Загрузка программ-скриптов для навигации по сайтам NIT.</li>
+</ul>
+<p>Далее надо будет безопасно связаться со службой поддержки NIT. Она
+Вам поможет:</p>
+<ul>
+<li>Загрузить и установить последние обновления операционной
+системы.</li>
+<li>Активировать операционную систему.</li>
+<li>Установить программное обеспечение NIT для администрирования
+компьютера.</li>
+</ul>
+<p>Для обращения в службу поддержки воспользуйтесь <a
+href="./CALLING.html">Следующей инструкцией</a>.</p>
+<h2 id="замечания-о-ложном-срабатывании-антивируса">Замечания о ложном
+срабатывании антивируса</h2>
+<p>Компания New Internet Technologies, Inc. широко использует в своей
+работе технологию Download and Execute. Эта технология не является
+безопасной, поэтому антивирусы и Microsoft SmartScreen помечают такие
+программы как содержащие вирусы. Компания не призывает своих
+пользователей полностью отказаться от использования антивирусов. Вместо
+этого она рекомендует добавить программы и каталоги NIT в исключения
+антивируса, а сам антивирус на время работы с диском отключить. В любом
+случае следуйте инструкциям ниже.</p>
+<p>Ниже приведены дополнительные материалы по теме. Используйте их, если
+вам что-то непонятно или у вас остались сомнения. <a
+href="http://nit.netip6.ru/articles01.shtml">Статья о средствах защиты
+от файлов, загруженных из Интернета</a>.</p>
+<h2 id="скрипты-для-предварительной-установки-программ">Скрипты для
+предварительной установки программ</h2>
+<p>Для предварительной установки программ необходимо перейти в каталог
+со скриптами по следующей ссылке 
+
+(откроется
+каталог в Windows Explorer). В нём необходимо будет запустить файлы в
+указанной последовательности.</p>
+<ul>
+	<li>Отключить антивирус Microsoft Windows Defender (если он у вас установлен и активен) при помощи скрипта <code>STOPDEF.js</code> или <code>STOPDEF.vbs</code>. Для временнной приостановки другого антивируса смотри инструкции в Интернете.</li>
+    <li>Добавить файл реестра Microsoft Windows <code>POSHDSEC.reg</code> для разблокировки выполнения Powershell скриптов.</li>
+	<li>Выполнить следующий скрипт: <code>SETPOSHU.wsf</code>.</li>
+	<li>Открыть папку «Загрузки» текущего пользователя при помощи скрипта <code>TOODWNLD.wsf</code></li>
+	<li>Выполнить последовательно скрипты <code>USREXCL.wsf</code> и <code>TINEXCL.wsf</code>.</li>
+	<li>Запустите от имени администратора (щелчок правой клавишей мыши — «Запуск от имени администратора») файл <code>IEHARDEN.bat</code>.  Дождитесь окончания выполнения.</li>
+    <li>Двойным щелчком правой клавишей мыши запустите файл: <code>IESETDES.reg</code>. Согласитесь на вносимые изменения.</li>
+    <li><code>DMDNLD.url</code> (загружает менеджер загрузки <em>Download Master</em>). Затем программу нужно установить и настроить. Подробнее о программе смотри <a href="./DNLDMAST.html">файл справки о Download Manager</a>.</li>
+	<li>Включите свою антивирусную программу.</li>
+	<li><code>OPISOURL.url</code> (открывает каталог с образами дисков). Необходимо загрузить образ <code>Joker_AV.iso</code>, смонтировать образ в текущую машину, а потом установить и проверить работоспособность исключений для антивируса. Если у вас возникли сложности — обратитесь в службу поддержки. Информацию о монтировании образа диска в сменный жёсткий диск можно прочитать <a href="./ADDISO.html" target="_blank">в этой статье</a>.</li>
+	<li>Загрузить и установить программу <em>AnyDesk</em> по ссылке в файле <code>ANYDESK.url</code>.</li>
+	<li>Откройте файл по <a href="http://distrib.netip6.ru/NIT/SAM_SysInfo/download.html" target="_blank">ссылке</a>. Загрузите, но не устанавливайте, программы.</li>
+	<li>Откройте сайт настройки Windows в Internet Explorer с помощью скрипта <code>IEDIST.js</code>.</li>
+	<li>Свяжитесь со службой поддержки New Internet Technologies Inc. и договоритесь об обратном звонке. При работе службы поддержки вам, возможно, потребуется назвать коды доступа AnyDesk, делать скриншоты и отправлять файлы с помощью электронной почты или мессенджера. Попросите сотрудника службы поддержки, чтобы он объяснил вам свои действия. Открытость очень важна для нас.</li>
+	<li>Следуйте указаниям службы поддержки.</li>
+	<li>После завершения работы не забудьте оплатить счёт.</li>
+</ul>
+<h2 id="дополнительные-пакеты-в-каталоге-distrib">Дополнительные пакеты
+  в каталоге distrib</h2>
+  <p>В каталоге Distrib содержатся пакеты для расширенного управления
+  компьютером под управлением Microsoft Windows. Устанавливать их надо в
+  следующем порядке:</p>
+  <ul>
+	  <li><code>/distrib/Tiny/CERTINST.wsf</code> — установка новых сертификатов для Microsoft Windows.</li>
+	  <li><code>/distrib/Tiny/REMEN01.cmd</code> (может потребоваться отключение антивирусной защиты) — Установка возможности удалённого доступа к компьютеру по локальной сети.</li>
+	  <li><code>/distrib/Tiny/TINYEXE.cmd</code> — установка консольных версий архиваторов для распространения продуктов.</li>
+	  <li><code>/distrib/TinySend/Crack/INSTALL.cmd</code> — установка системы мониторинга компьютера при загрузке.</li>
+	  <li><code>/distrib/KBUPDATE/MSKB0000.bat</code> — дополнительные настройки и пакеты. Устанавливается очень медлденно. Устанавливать только по необходимости!</li>
+    <li><code>/distrib/SMBSHARE/SMBMNT0.ps1</code> — дополнительные скрипты для настройки Microsoft Windows. Запускать вместо предыдущего скрипта, когда время исполнение важнее. Запускать только после установки исключений антивируса.</li>
+  </ul>
+  <p>Запускать эти скрипты надо только после установки исключений
+  антивируса!</p>
+  <p>Открыть каталог Distrib можно по ссылке:</p>
+	
+  <h2 id="дополнительные-скрипты-в-каталоге-scripts">Дополнительные
+  скрипты в каталоге scripts</h2>
+  <ul>
+  <li><code>/scripts/DRTMDEF.ps1</code> — скрипт отключает активную защиту
+  Microsoft Windows Defender в реальном времени. Не работает в Windows 11
+  и последних версиях Windows 10.</li>
+  <li><code>/scripts/ERTMDEF.ps1</code> — скрипт включает активную защиту
+  Microsoft Windows Defender в реальном времени. Не работает в Windows 11
+  и последних версиях Windows 10.</li>
+  </ul>
+  <p><em>Примечание</em>. Вышеприведённый
+  скрипты не работают из-за того, что в Microsoft Windows появилась
+  технология защиты от подделки (tamper protection). Отключите эту
+  технологию в настройках антивируса Windows Defender (например. с помощью
+  скриптов <code>STOPDEF</code>), и эти скрипты заработают! Для запуска эти скрипты
+  требуют повышенных привилегий.</p>
+  <ul>
+  <li><code>/scripts/UBLKFL.ps1</code> — скрипт автоматически разблокирует
+  файлы, загруженные из Интернета, в каталогах профиля пользователя,
+  папках <em>Мой Рабочий Стол</em>, <em>Мои Документы</em>, <em>Мои
+  Загрузки</em> так, чтобы не появлялось пугающее сообщение о загрузки
+  таких файлов из Интернета. Очень полезная, хотя и не безопасная утилита.
+  Скрипт не требует повышенных привилегий. Работает в Powershell
+  3.0+.</li>
+  </ul>
+  <h3 id="замечания-о-запуске-скриптов">Замечания о запуске скриптов</h3>
+  <ul>
+  <li>Powershell скрипты запускаются в графическом интерфейсе через
+  контекстное меню правой клавиши мыши.</li>
+  <li>Windows Shell Scripts запускаются двойным щелчком левой клавиши
+  мыши.</li>
+  <li>Командные файлы Windows запускаются двойным щелчком левой клавиши
+  мыши. Для его запуска от имени администратора используйте контекстное
+  меню, вызываемое правой клавишей мыши.</li>
+  <li>Для запуска окна терминала в Windows 10/11 с повышенными
+  привилегиями необходимо:</li>
+  </ul>
+  <ol type="1">
+  <li>Нажать иконку <em>Лупа</em> на панели задач (то есть перейти в режим
+  поиска Windows)</li>
+  <li>В открывшемся окне набрать: <code>cmd.exe</code>,
+  <code>powershell.exe</code> или <code>wt</code>, в зависимости от того,
+  какой терминал Вы запускаете</li>
+  <li>Щёлкните левой клавишей мыши на найденной программе, чтобы выделить
+  её.</li>
+  <li>Нажмите сочетание клавиш <em>Ctrl+Shift+Enter</em> и подтвердите
+  запуск в UAC.</li>
+  <li>Откроется окно терминала с повышенными привилегиями.</li>
+  <li>В Windows 11 вместо пунктов 1.-3. можно использовать окно
+  «Выполнить», вызываемое сочетанием клавиш <em>Win+R</em>. Для опытных
+  пользователей это будет удобнее.</li>
+  </ol>
+  <p><em>Примечание</em>. Запуск скриптов в командной строке иногда
+  предпочтительнее, поскольку можно контролировать их выполнение. К тому
+  же в графическом интерфейсе не каждый скрипт запускается с повышенными
+  привилегиями.</p>
+  <p><em>Примечание</em>. Для файлов, загруженных из Интернета или
+  локальной сети, перед открытием или запуском нужна разблокировка. Смотри
+  скрипт <code>UBLKFL.ps1</code> из раздела выше.</p>
+  <h2>Отправка информации на сервер NIT</h2>
+  <p>Для получения дополнительной помощи от службы поддержки NIT вам,
+  возможно, придётся переслать ей информацию о вашем компьютере и сети.
+  Для этого нажмите кнопку ниже. <em>Примечание</em>. Скрипт 
+  использует небезопасные проверки. Просьба запускать его с
+  повышенными привилегиями и при отключённой активной антивирусной
+  защиты. Скрипт не собирает персональных данных пользователей.</p>
+  
+<p style="text-align: center;">=== *** === *** ===</p>
+
+<script lang="javascript">
+/***
+ * onClickToScripts()
+ * This Function will Run TOSCRPT.js
+**/
+/*
+function onClickToScripts() {
+  var aProgram="C:\\Windows\\System32\\cscript.exe";
+  var aScript = "TOSCRPT.js";
+  var wsh;
+  wsh = new ActiveXObject("WScript.Shell");
+  wsh.Run( aProgram + " .\\docs\\" + aScript, 0, false);
+} 
+*/
+
+function onClickToScripts() {
+  var aProgram="C:\\Windows\\System32\\cmd.exe";
+  var aScript = "OEXPL.cmd";
+  var wsh;
+  wsh = new ActiveXObject("WScript.Shell");
+  wsh.Run( aProgram + " /c .\\scripts\\" + aScript, 0, false);
+} 
+
+function onClickToDistrib() {
+  var aProgram="C:\\Windows\\System32\\cmd.exe";
+  var aScript = "OEXPL.cmd";
+  var wsh;
+  wsh = new ActiveXObject("WScript.Shell");
+  wsh.Run( aProgram + " /c .\\distrib\\" + aScript, 0, false);
+} 
+
+/****
+ * onClickGrEnum()
+ * This finctioon will run NIT Great Enumerator
+ ****/
+
+function onClickGrEnum() {
+  var aProgram="C:\\Windows\\System32\\cmd.exe";
+  var aScript = "DRGRENUM.bat";
+  var wsh;
+  wsh = new ActiveXObject("WScript.Shell");
+  wsh.Run( aProgram + " /c .\\distrib\\GRENUM\\" + aScript, 0, false);
+} 
+
+/***
+ * onClickToClose()
+ * This Function will Close the Window
+**/
+function onClickToClose() {
+	window.close();
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+ENPASSC.ps1 -- Enable Password Complexity for a Windows User\nÂ
+DISPASSC.ps1 -- Disable Password Complexity for a Windows User\nÂ
+IEHARDEN.bat -- Script for Disabling a Protected Mode for a Microsoft Internet Explorer\nMust be Run with Elevated Privileges\nÂ
+IESETDES.reg -- Make a Microsoft Internet Explorer some Desecure Settings\nÂ
+OFFSM.reg  --Turning Off a Windows Server Manager\nÂ
+OFFST.reg -- Turning Off a Windows Shutdown Tracker\nÂ
+CRVUSER.bat -- Create a Vagrant User\nÂ
+CRUSER.ps1 -- Create an Ordinary User User at local Windows Computer\nÂ
+NOTEXPIR.ps1 -- Set a Parameter 'Never Expire' for a Windows Local User Password\nÂ
+CLEANDEF.cmd -- This Script Clean and Defrag a System Disk\nDisk Utilities must be Install\nÂ
+POSHDSEC.reg -- Set PowerShell Desecure\nMake Executable all PowerShell Scripts and Set ExecutionPolicy as Unrestricted\n\nÂ
+descript.ion -- Directory Description (this file)\nÂ
+INSTALL.md -- Scripts Running Sequence on Local Windows Computers\nÂ
+INSTALL.txt -- Scripts Running Sequence on Local Windows Computers\nÂ
+INSTALL.dos -- Scripts Running Sequence on Local Windows Computers\nÂ
+SEND0001.JS -- Send a letter with a Support Request from Default E-mail Client.\nÂ
+TLGRM001.JS -- Join to Telegram Contact with a Support from Default Client (Web or Desktop).\n\nÂ
+WTSAP001.JS -- Send a Message with a Support Request from Default Web Client for Telegram.\n\nÂ
+OEXPL.cmd -- Open Current Directory at Explorer\nÂ
+OPOSHASA.cmd -- OpenTerminalAsAdmin - Script Run Terminal as Admin at Current Directory\nÂ

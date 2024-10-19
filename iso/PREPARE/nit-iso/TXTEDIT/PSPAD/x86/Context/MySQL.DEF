@@ -1,0 +1,989 @@
+﻿;; PSPad code template for MySQL
+;; Author: Karel Pavelka
+;; E-mail: webjob@seznam.cz
+;; Update: 02.10.2003
+;;
+;;   (black)
+;; B (blue)
+;; D (dark gray)
+;; F (fuchsia)
+;; G (green)
+;; M (maroon)
+;; N (navy)      Kusy kodu
+;; P (purple)
+;; R (red)
+;;
+;; Odsazeni: 4
+;; Puvodni autor: Ing. Jan Fiala  E-mail: pspad@wo.cz
+;
+[Macro definition]
+%autoincrement%=@K auto increment,,,,
+%count%=@E počet,,,,
+%datep%=@E datum,,,,'
+%default%=@E default,,,,
+%DELAYED%=@K DELAYED,DELAYED,,,
+%dformat%=@E formát,,%,,'
+%expr%=@E výraz,,,,
+%expr1%=@E výraz 1,,,,
+%expr2%=@E výraz 2,,,,
+%expr3%=@E výraz 3,,,,
+%file%=@O výraz,,,,
+%helpSF%=@C NÁPOVĚDA-nevyplňovat!,,,;"%M   Anglický název měsíce";"%m   Číslo měsíce";"%b   Zkratka anglického názvu měsíce";"%W   Anglický název dne";"%D   Den v měsíci";"%Y   Rok 4místný";"%y   Rok 2místný";"%j   Den v roce číselný (001)";"%a   Zkrácený anglický název dne v týdnu";"%d   Číselná podoba dne v měsíci";"%r   Čas 12hodinový";"%T   Čas 24hodinový";"%H   Hodina 00-23";"%h   Hodina 01-12";"%i   Minuty 00-59";"%S   Sekundy 00-59",
+%IFEXISTS%=@K IF EXISTS,IF EXISTS,,,
+%IFNOTEXISTS%=@K IF NOT EXISTS,IF NOT EXISTS,,,
+%IGNORE%=@K IGNORE,IGNORE,,,
+%interval%=@C výraz intervalu,,,YEAR;DAY;HOUR;MINUTE;SECOND,
+%INTO%=@K INTO,INTO,,,
+%lenght%=@E délka,,,,
+%LOWPRIORITY%=@K LOW_PRIORITY,LOW_PRIORITY,,,
+%namec%=@E název sloupce,,,,
+%namec1%=@E název sloupce1,,,,
+%namec2%=@E název sloupce2,,,,
+%named%=@E název databáze,,,,
+%namei%=@E název indexu,,,,
+%nament%=@E název nové tabulky,,,,
+%nament2%=@E název 2 nové tabulky,,,,
+%namep%=@E název pole,,,,
+%namet%=@E název tabulky,,,,
+%namet2%=@E název 2 tabulky,,,,
+%null%=@C null,,,"NOT NULL";NULL,
+%seconds%=@E sekundy,,,,
+%start%=@C start,,,", 1";", 0",
+%TEMPORARY%=@K TEMPORARY,TEMPORARY,,,
+%time%=@E čas,,,,'
+%type%=@C datový typ,,,,BIGINT;BLOB;DATE;DATETIME;DECIMAL;DOUBLE;ENUM();FLOAT();CHAR();INT();LONGBLOB;LONGTEXT;MEDIUMBLOB;MEDIUMINT;MEDIUMTEXT;SET();SMALLINT();TEXT;TIME;TIMESTAMP();TINYBLOB;TINYINT();TINYTEXT;VARCHAR();YEAR,
+%typee%=@C hodnota,,,SECOND;MINUTE;HOUR;DAY;MONTH;YEAR;MINUTE_SECOND;HOUR_MINUTE;DAY_HOUR;YEAR_MONTH;HOUR_SECOND;DAY_MINUTE;DAY_SECOND,
+%WHERE%=@K WHERE,WHERE,,,
+%whered%=@E WHERE definice,,,,'
+%x%=@E argument X,,,,
+%y%=@E argument Y,,,,
+%z%=@E argument Z,,,,
+;
+;
+[ABS | vrací absolutní hodnotu čísla; to znamená, že ze záporných čísel odstraňuje znaménko mínus]
+ABS(|§)
+;
+[ACOS | vrací kosinus zadané hodnoty. Není-li hodnota mezi -1 a 1, vrací prázdnou hodnotu (NULL)]
+ACOS(|§)
+;
+[ADDDATE | vrací součet data a výrazu intervalu]
+ADDDATE(date,INTERVAL expr type)
+;
+[ALTER TABLE | změnit tabulku...]
+ALTER %IGNORE% TABLE %namet% alter_spec [, alter_spec ...]
+;
+[ASCII | vrací kód ASCII prvního znaku v daném řetězci]
+ASCII("|§")
+;
+[ASIN | vrací sinus zadaného argumentu. Není-li hodnota mezi -1 a 1, vrací prázdnou hodnotu (NULL)]
+ASIN(|§)
+;
+[ATAN | vrací tangentu zadaného argumentu]
+ATAN(|§)
+;
+[ATAN2 | vrací tangentu založenou na znaménku předaném v argumentech, které označují kvadrant]
+ATAN2(%x%, %y%)§
+;
+[AVG | vrací průměr hodnot určených výrazem a předaných prostřednictvím argumentu]
+AVG(|§)
+;
+[BENCHMARK | vykoná výraz tolikrát, kolik udává argument počet. Vrací vždy hodnotu 0.]
+BENCHMARK(%count%, %expr%)§
+;
+[BIN | vrací binární hodnotu argumentu X, kde X je hodnota typu BIGINT. Funkce vrací textový řetězec]
+BIN(%x%)§
+;
+[BIT_AND | Returns the bitwise AND of all bits in expr. The calculation is performed with 64-bit (BIGINT) precision]
+BIT_AND(%expr%)§
+;
+[BIT_COUNT | returns the number of bits that are set in the argument N]
+BIT_COUNT(§|)
+;
+[BIT_OR | Returns the bitwise OR of all bits in expr. The calculation is performed with 64-bit (BIGINT) precision]
+BIT_OR(%expr%)§
+;
+[CASE value | returns the result where value=compare-value]
+CASE |value WHEN [compare-value] THEN result [WHEN [compare-value] THEN result ...] [ELSE result] END
+;
+[CASE when | returns the result for the first condition, which is true]
+CASE WHEN [|condition] THEN result [WHEN [condition] THEN result ...] [ELSE result] END
+;
+[CEILING | vrací nejmenší celočíselnou hodnotu větší nebo rovnou X. Návratová hodnota je převedena na hodnotu typu BIGINT]
+CEILING(%x%)
+;
+[COALESCE | vrací první hodnotu předanou v zadaných výrazech, která není prázdná]
+COALESCE(|NULL, X, Y)
+;
+[CONCAT | vrací výsledek sloučením argumentů do jednoho řetězce]
+CONCAT("|", "", "")
+;
+[CONCAT_WS | the first argument is the separator for the rest of the arguments]
+CONCAT_WS(|separator, str1, str2,...)
+;
+[CONNECTION_ID | returns the connection id (thread_id) for the connection]
+CONNECTION_ID()
+;
+[CONV | převádí číslo z jedné soustavy do druhé. Výslednou hodnotou je textový řetězec]
+CONV(|X, from_base, to_base)
+;
+[COS | vrací kosinus argumentu X, kde X je vyjádřeno v radiánech]
+COS(%x%)
+;
+[COT | vrací kotangens argumentu X]
+COT(%x%)
+;
+[COUNT | vrací počet neprázdných hodnot výsledné sady. Použijete-li hvězdičku, vrátí počet záznamů výsledné sady]
+COUNT(|§)
+;
+[CREATE DATABASE | vytvořit databázi]
+CREATE DATABASE %IFNOTEXISTS% %named%
+;
+[CREATE INDEX | CREATE INDEX index_name ON tbl_name]
+CREATE |[UNIQUE|FULLTEXT] INDEX %namei% ON %namet% (col_name[(length)],... )
+;
+[CREATE TABLE | vytvořit tabulku]
+CREATE |[TEMPORARY] TABLE [IF NOT EXISTS] tbl_name [(create_definition,...)]
+  [table_options] [select_statement]
+;
+[CURDATE | vrací aktuální systémové datum]
+CURDATE()
+;
+[CURRENT_DATE | vrátí dnešní datum jako 'YYYY-MM-DD' nebo YYYYMMDD]
+CURRENT_DATE()
+;
+[CURRENT_TIME | vrátí aktuální systémový čas jako 'HH:MM:SS' nebo HHMMSS]
+CURRENT_TIME()
+;
+[CURRENT_TIMESTAMP | vrací aktuální datum a čas]
+CURRENT_TIMESTAMP()
+;
+[CURTIME | vrátí aktuální systémový čas jako 'HH:MM:SS' nebo HHMMSS]
+CURTIME()
+;
+[DATABASE | vrací název pracovní (aktuální) databáze]
+DATABASE()
+;
+[DATE_ADD | function perform date arithmetic]
+DATE_ADD(%datep%, INTERVAL | %interval%)
+;
+[DATE_FORMAT | formátuje datum na základě uvedeného symbolu formátování]
+DATE_FORMAT(%datep%, %dformat%)
+%helpSF%
+;
+[DATE_SUB | odčítá hodnotu od zadaného data. Klíčové slovo je nezbytné a musíte je v této funkci použít]
+DATE_SUB(%datep%, INTERVAL | %interval%)
+;
+[DT | datový typ]
+%type%
+;
+[DAYNAME | vrací anglický název dne podle zadaného data]
+DAYNAME(%datep%)
+;
+[DAYOFMONTH | vrací den v měsíci]
+DAYOFMONTH(%datep%)
+;
+[DAYOFWEEK | vrací index dne v týdnu (1 - neděle až 7 - sobota)]
+DAYOFWEEK(%datep%)
+;
+[DAYOFYEAR | vrací den v roku podle juliánského kalendáře (1 až 366)]
+DAYOFYEAR(%datep%)
+;
+[DECODE | vrací dekódovanou verzi binárního řetězce. Musíte ovšem použít stejný šifrovací klíč jako při šifrování původního textu]
+DECODE(crypt_str, pass_str)
+;
+[DELETE | vymazat záznam z tabulky...]
+DELETE |[LOW_PRIORITY] FROM tbl_name
+    [WHERE where_definition]
+    [LIMIT rows]
+;
+[DEGREES | vrací zadanou hodnotu v radiánech jako stupně]
+DEGREES(|§)
+;
+[DESCRIBE | zobrazit seznam sloupců z tabulky...]
+DESCRIBE %namet%;
+;
+[DROP DATABASE | odstranit celou databázi]
+DROP DATABASE %IFEXISTS% %named%
+;
+[DROP INDEX | odstranit INDEX z tabulky...]
+DROP INDEX %namei% ON %namet%
+;
+[DROP TABLE | odstranit tabulku]
+DROP TABLE %IFEXISTS% %namet% [, tbl_name,...] [RESTRICT | CASCADE]
+;
+[ELT | vrací řetězec, jehož pozici v seznamu argumentů určuje argument X]
+ELT(|X, "str1", "str2", "str3",...)
+;
+[ENCODE | vrací zašifrovaný binární řetězec založený na šifrovacím řetězci]
+ENCODE('|str', 'pass_str')
+;
+[ENCRYPT | vrací šifrovaný řetězec. Používá unixovou funkci crypt(). Nepovinnou počáteční hodnotou může být dvouznakový textový řetězec.]
+ENCRYPT('|str'[ ,'salt'])
+;
+[EXP | vrací základ přirozeného logaritmu umocněný zadaným argumentem]
+EXP(|§)
+;
+[EXPORT_SET | returns a string frm set separated with 'separator']
+EXPORT_SET(|bits,on,off,[separator,[number_of_bits]])
+;
+[EXTRACT | vrací vybranou hodnotu na základě zadného data]
+EXTRACT(%typee% FROM %datep%)
+;
+[FIELD | vrátí pozici v seznamu argumentů, na níž se nachází argument, jehož hodnota se shoduje s hodnotou argumentu X]
+FIELD(|str,str1, str2, str3,...)
+;
+[FIND_IN_SET | returns a value 1 to N if the string str is in the list strlist consisting of N substrings]
+FIND_IN_SET(|str, strlist)
+;
+[FLOOR | vrací nejvyšší možnou celočíselnou hodnotu, která je menší než zadaná hodnota. Výsledná hodnota je převedena na datový typ BIGINT]
+FLOOR(|§)
+;
+[FORMAT | vrací číslo zadané argumentem X ve formátu ‡x, xxx, xxx.x‡ zaokrouhlené na počet desetiných míst určených v argumentu Y]
+FORMAT(%x%, %y%)
+;
+[FROM_DAYS | vrátí datum na základě zadaného počtu dní od počátku našeho letopočtu]
+FROM_DAYS(|§)
+;
+[FROM_UNIXTIME | vrací datum na základě systémového času v systému UNIX ]
+FROM_UNIXTIME(|unix_timestamp)
+;
+[FROM_UNIXTIMEf | vrací datum na základě systémového času v systému UNIX s možností formátování výsledku]
+FROM_UNIXTIME(|unix_timestamp, %dformat%)
+%helpSF%
+;
+[GET_LOCK | ]
+GET_LOCK(str,timeout)
+;
+[GREATEST | vrací argument s nejvyšší hodnotou]
+GREATEST(|X, Y,...)
+;
+[HOUR | vrací hodinu ze zadaného času]
+HOUR(%time%)
+;
+[IF | Je-li výraz1 pravda, vrátí funkce výraz2. Je-li ovšem výraz1 nepravda, bude vrácen výraz3]
+IF(%expr1%, %expr2%, %expr3%)
+;
+[IFNULL | obsahuje-li výraz1 prázdnou hodnotu, vrátí funkce výraz2. V opačném případě je vrácen výraz1]
+IFNULL(%expr1%, %expr2%)
+;
+[INET_NTOA | returns the network address (4 or 8 byte) for the numeric expression]
+INET_NTOA(%expr%)
+;
+[INET_ATON | returns integer that represents numeric value for network address]
+INET_ATON(%expr%)
+;
+[INSERT | vrací řetězec X, v němž hodnota argumentu J nahrazuje všechna Z znaků počínaje znakem na pozici Y]
+INSERT(|X, Y, Z, J)
+;
+[INSERT_select | příkazová syntaxe pro INSERT]
+INSERT |[LOW_PRIORITY | DELAYED] [IGNORE]
+       [INTO] tbl_name [(col_name,...)]
+       SELECT ...
+;
+[INSERT_set | příkazová syntaxe pro INSERT]
+INSERT |[LOW_PRIORITY | DELAYED] [IGNORE]
+       [INTO] tbl_name
+       SET col_name=expression, col_name=expression, ...
+;
+[INSERT_values | příkazová syntaxe pro INSERT]
+INSERT |[LOW_PRIORITY | DELAYED] [IGNORE]
+       [INTO] tbl_name [(col_name,...)]
+       VALUES (expression,...),(...),...
+;
+[INSTR | vrací pozici znaku Y v řetězci X]
+INSTR(|X, Y)
+;
+[ISNULL | vrací 1, je-li zadaný výraz vyhodnocen jako NULL. V opačném případě vrací nulu]
+ISNULL(%expr%)
+;
+[HEX | vrací hexadecimální hodnotu argumentu X, kde X je hodnotou typu BIGINT. Funkce vrací textovou hodnotu]
+HEX(%x%)
+;
+[CHAR | vrací řetězec hodnot založených na kódech ASCII. Prázdné hodnoty jsou ignorovány]
+CHAR(|X, Y, Z...)
+;
+[CHAR_LENGTH | vrací délku řetězce]
+CHAR_LENGTH("|§")
+;
+[CHARACTER_LENGTH | vrací délku řetězce]
+CHARACTER_LENGTH("|§")
+;
+[LAST_INSERT_ID | vrací nejvyšší vložené číslo do pole typu AUTO_INCREMENT. Výsledná hodnota je závislá na aktuálním připojení]
+LAST_INSERT_ID(%expr%)
+;
+[LCASE | převede řetězec na malá písmena]
+LCASE("|§")
+;
+[LEAST | vrací argument s nejnižší hodnotou (celá čísla jsou porovnávána jako celá čísla, řetězce s ohledem na velikost písmenek)]
+LEAST(|X, Y, Z...)
+;
+[LEFT | vrací index argumentu Y v řetězci X počítáno zleva]
+LEFT(|X, Y)
+;
+[LENGTH | vrací délku řetězce]
+LENGTH("|§")
+;
+[LOAD_DATA_INFILE | syntaxe]
+LOAD DATA [LOW_PRIORITY | CONCURRENT] [LOCAL] INFILE 'file_name.txt'
+   [REPLACE | IGNORE]
+   INTO TABLE tbl_name
+ 	 [FIELDS
+		   [TERMINATED BY '\t']
+			 [[OPTIONALLY] ENCLOSED BY '']
+			 [ESCAPED BY '\\' ]
+	 ]
+	 [LINES TERMINATED BY '\n']
+   [IGNORE number LINES]
+ 	 [(col_name,...)]
+;
+[LOAD_FILE | přečte soubor a vrátí obsah souboru jako řetězec. Soubor musí být uložen na serveru a uživatel musí mít přidělená privilegia FILE]
+LOAD_FILE(%file%)
+;
+[LOCATE | returns the position of the first occurrence of substring]
+LOCATE(|substr,str,pos)
+;
+[LOCATE2 | returns the position of the first occurrence of substring]
+LOCATE(|substr,str)
+;
+[LOCK TABLES | LOCK TABLES tbl_name]
+LOCK TABLES %namet% [AS alias] {READ | [READ LOCAL] | [LOW_PRIORITY] WRITE}
+            [, tbl_name {READ | [LOW_PRIORITY] WRITE} ...]
+;
+[LOG | vrátí přirozený logaritmus zadané hodnoty]
+LOG(|§)
+;
+[LOG10 | vrátí logaritmus od základu 10]
+LOG10(|§)
+;
+[LOWER | převede řetězec na malá písmena]
+LOWER("|§")
+;
+[LPAD | vrací řetězec X doplněný zleva řetězcem Z tak, aby se celková délka výsledného řetězce rovnala Y]
+LPAD(|X, Y, Z)
+;
+[LTRIM | vrací řetězec X bez vedoucích mezer]
+LTRIM("|§")
+;
+[MAKE_SET | returns a set consisting of the strings]
+MAKE_SET(|bits, str1, str2,...)
+;
+[MASTER_POS_WAIT | blocks until slave reaches specified position in master log]
+MASTER_POS_WAIT(|log_name, log_pos)
+;
+[MATCH  | is used for full-text search and returns relevance]
+MATCH (|col1,col2,...) AGAINST (%expr%)
+;
+[MD5 | Vypočítá MD5 128 bitový kontrolní součet pro řetězec]
+MD5(|string)
+;
+[MID | vrací řetězec Z znaků z řetězce X, počínaje znakem na pozici Y]
+MID(|X, Y, Z)
+;
+[MIN | vrací nejmenší hodnotu zadaného výrazu]
+MIN(%expr%)
+;
+[MINUTE | vrací minutu ze zadaného času]
+MINUTE(%time%)
+;
+[MOD | vrací zbytek po dělení dělence X dělitelem Y. Můžete použít i symbol %]
+MOD(%x%, %y%)
+;
+[MONTH | vrací index měsíce podle zadaného data]
+MONTH(%datep%)
+;
+[MONTHNAME | vrací anglický název měsíce podle zadaného data]
+MONTHNAME(%datep%)
+;
+[NOW | vrací aktuální datum a čas]
+NOW(|§)
+;
+[OCT | vrací osmičkovou hodnotu argumentu X, kde X je hodnota typu BIGINT. Funkce vrací textový řetězec]
+OCT(%x%)
+;
+[OCTET_LENGTH | vrací délku řetězce]
+OCTET_LENGTH("|§")
+;
+[ORD | vrací ASCII kódovou hodnotu znaku]
+ORD("|§")
+;
+[PASSWORD | vrací zašifrovaný řetězec zadaného textu]
+PASSWORD("|§")
+;
+[PERIOD_ADD | vrací hodnotu, jež je součtem Y měsíců přidaných k období X. Argument X není hodnotou typu datum]
+PERIOD_ADD(|X, Y)
+;
+[PERIOD_DIFF | vrací počet měsíců mezi X a Y. Argumenty X a Y by měli být ve formátu YYMM nebo CCYYMM]
+PERIOD_DIFF(%x%, %y%)
+;
+[PI | vrací hodnotu Ludolfova čísla]
+PI()§
+;
+[POSITION | vrací pozici prvního výskytu znaku X v řetězci Y. Není-li znak nalezen, vrací funkce nulu]
+POSITION(|X, Y)
+;
+[POW | vrací výsledek argumentu X umocněného argumentem Y]
+POW(|X, Y)
+;
+[POWER | vrací výsledek argumentu X umocněného argumentem Y]
+POWER(%x%, %y%)
+;
+[QUARTER | vrací čtvrtletí podle zadaného data (1-4)]
+QUARTER(%datep%)
+;
+[RADIANS | vrací hodnotu v radiánech podle vloženého argumentu zadaného ve stupních]
+RADIANS(|§)
+;
+[RAND | vrací pseudonáhodné číslo s plovoucí čárkou v intervalu 0-1. Je-li uveden argument, je použit jako počáteční (odrazová) hodnota]
+RAND(|§)
+;
+[RELEASE_LOCK | releases the lock named by the string str]
+RELEASE_LOCK("|§")
+;
+[RENAME TABLE | přejmenovat tabulku(ky) na...]
+RENAME TABLE %namet% TO %nament%[, %namet2% TO %nament2%,...]
+;
+[REPEAT | vrací řetězec X, opakovaný Y krát. Je-li Y menší než nula, vrací funkce prázdný řetězec ]
+REPEAT(|X, %y%)
+;
+[REPLACE | vrací řetězec X, v němž jsou všechny výskyty Y nahrazeny obsahem argumentu Z.]
+REPLACE(|X, Y, Z)
+;
+[REPLACE select | příkazová syntaxe pro nahrazení]
+REPLACE |[LOW_PRIORITY | DELAYED]
+    [INTO] tbl_name [(col_name,...)]
+    SELECT ...
+;
+[REPLACE set | příkazová syntaxe pro nahrazení ]
+REPLACE |[LOW_PRIORITY | DELAYED]
+    [INTO] tbl_name
+    SET col_name=expression, col_name=expression,...
+;
+[REPLACE values | příkazová syntaxe pro nahrazení]
+REPLACE |[LOW_PRIORITY | DELAYED]
+    [INTO] tbl_name [(col_name,...)]
+    VALUES (expression,...)
+;
+[REVERSE | vrací řetězec v obráceném pořadí]
+REVERSE("|§")
+;
+[RIGHT | vrací skupinu znaků zprava o délce X z řetězce Y. Obsahuje-li Y hodnotu NULL, vrátí funkce prázdnou hodnotu]
+RIGHT(|X, Y)
+;
+[ROUND | vrací zadaný argument zaokrouhlený na nejbližší celé číslo]
+ROUND(§|)
+;
+[ROUND | vrací argument X zaokrouhlený na určitý počet desetiných míst]
+ROUND(%x%, %count%)
+
+[RPAD | vrací řetězec X doplněný zprava řetězcem Z tak, aby se celková délka výsledného řetězce rovnala Y]
+RPAD(X, Y, Z)
+;
+[RTRIM | vrací řetězec bez koncových mezer]
+RTRIM("|§")
+;
+[SEC_TO_TIME | vrací čas ve formátu hh:mm:ss odvozený z počtu sekund zadaných prostřednictvím argumentu]
+SEC_TO_TIME(%seconds%)
+;
+[SECOND | vrací sekundy ze zadaného času]
+SECOND(%time%)
+;
+[SELECT | příkazová syntaxe pro SELECT ]
+SELECT |[STRAIGHT_JOIN] [SQL_SMALL_RESULT] [SQL_BIG_RESULT] [SQL_BUFFER_RESULT]
+       [HIGH_PRIORITY]
+       [DISTINCT | DISTINCTROW | ALL]
+    select_expression,...
+    [INTO {OUTFILE | DUMPFILE} '%file%' export_options]
+    [FROM table_references
+        [WHERE where_definition]
+        [GROUP BY {unsigned_integer | col_name | formula} [ASC | DESC], ...]
+        [HAVING where_definition]
+        [ORDER BY {unsigned_integer | col_name | formula} [ASC | DESC] ,...]
+        [LIMIT [offset,] rows]
+        [PROCEDURE procedure_name]
+        [FOR UPDATE | LOCK IN SHARE MODE]]
+;
+[SESSION_USER | vrací uživatele aktuálního připojení]
+SESSION_USER()
+;
+[SET TRANSACTION LEVEL | set transaction isolation level]
+SET |[GLOBAL | SESSION] TRANSACTION ISOLATION LEVEL
+    [READ UNCOMMITTED | READ COMMITTED | REPEATABLE READ | SERIALIZABLE]
+;
+[SIGN | vrátí znaménko argumentu jako -1, 0, nebo 1, v závislosti na tom zda zadaná hodnota je negativní, nulová, nebo pozitivní]
+SIGN(|§)
+;
+[SIN | vrací sinus argumentu X, kde X je hodnota uvedená v radiánech]
+SIN(%x%)
+;
+[SHOWc | zobrazit seznam sloupců z tabulky...]
+SHOW COLUMNS FROM %namet%;
+;
+[SHOWd | zobrazit seznam dostupných databází]
+SHOW DATABASES;
+;
+[SHOWt | zobrazit seznam tabulek v databázi]
+SHOW TABLES;
+;
+[SHOWtf | zobrazit seznam tabulek z databáze...]
+SHOW TABLES FROM %named%;
+;
+[SOUNDEX | vrací řetězec soundex na základě zadaného argumentu]
+SOUNDEX("|§")
+;
+[SPACE | vrací řetězec složený z X mezer]
+SPACE(%count%)
+;
+[SQRT | vrací druhou odmocninu zadaného parametru]
+SQRT(|§)
+;
+[STRCMP | returns 0 if strings are same, -1 if first is smaller, 1 otherwise]
+STRCMP(%expr1%, %expr2%)
+;
+[SUBDATE | odčítá hodnotu od zadaného data. Klíčové slovo je nezbytné a musíte je v této funkci použít]
+SUBDATE(%datep%, INTERVAL | %interval%)
+;
+[SUBSTRING | vrací podřetězec, nacházející se v řetězci X, za Z výskyty řetězce Y. Je-li Y kladná hodnota, vrátí funkce vše, co je vlevo od posledního vráceného oddělovače. V opačném případě je vrácen podřetězec od oddělovače napravo]
+SUBSTRING(|X, Y, Z)
+;
+[SUBSTRING | returns a substring from string str, starting at position pos]
+SUBSTRING(|str FROM pos FOR len)
+;
+[SUBSTRING | returns a substring from string str, starting at position pos]
+SUBSTRING(|str,pos)
+;
+[SUBSTRING | returns a substring from string str starting at position pos]
+SUBSTRING(|str FROM pos)
+;
+[SUBSTRING_INDEX | returns the substring from string str before count occurrences of the delimiter delim]
+SUBSTRING_INDEX(|str, delim, %count%)
+;
+[STD | vrací standardní odchylku zadaného výrazu. Tato funkce používá pouze neprázdné hodnoty]
+STD(%expr%)
+;
+[STDDEV | vrací standardní odchylku zadaného výrazu. Tato funkce používá pouze neprázdné hodnoty]
+STDDEF(%expr%)
+;
+[STRCMP | vrací hodnotu 1, pokud se řetězec1 shoduje se řetězcem řetězec2. Pokud se liší, vrací nulu.]
+STRCMP(str1, str2)
+;
+[SUM | vrací součet zadaného výrazu. Tato funkce používá pouze neprázdné hodnoty]
+SUM(%expr%)
+;
+[SYSDATE | vrací aktuální datum a čas]
+SYSDATE()
+;
+[SYSTEM_USER | vrací uživatele aktuálního připojení]
+SYSTEM_USER()
+;
+[TAN | vrací tangentu zadaného argumentu uvedeného v radiánech]
+TAN(|§)
+;
+[TIME_FORMAT | vrací čas v zadaném formátu]
+TIME_FORMAT(%time%, %dformat%)
+%helpSF%
+;
+[TIME_TO_SEC | vrací počet sekund od půlnoci podle zadaného času]
+TIME_TO_SEC(%time%)
+;
+[TO_DAYS | vrací počet dní od počátku letopočtu]
+TO_DAYS(%datep%)
+;
+[TRIM | returns the string str with all remstr prefixes and/or suffixes removed]
+TRIM(|[[BOTH | LEADING | TRAILING] [remstr] FROM] str)
+;
+[TRUNCATE TABLE | TRUNCATE TABLE command syntax]
+TRUNCATE TABLE %namet%
+;
+[TRUNCATE | vrací argument X bez Y odseknutých desetiných míst. Pokud se Y rovná nule, bude vrácena jen celočíselná část argumentu]
+TRUNCATE(%x%, %y%)
+;
+[UCASE | Převede řetězec na velká písmena]
+UCASE("|§")
+;
+[UNLOCK TABLES | UNLOCK TABLES locked previous LOCK TABLE command]
+UNLOCK TABLES
+;
+[UNIX_TIMESTAMP | vrací časovou značku systému unix]
+UNIX_TIMESTAMP()
+;
+[UNIX_TIMESTAMPd | vrací datum jako časovou značku systému unix]
+UNIX_TIMESTAMP(%datep%)
+;
+[UPDATE | příkazová syntaxe pro UPDATE]
+UPDATE |[LOW_PRIORITY] [IGNORE] tbl_name
+    SET col_name1=expr1, [col_name2=expr2, ...]
+    [WHERE where_definition]
+    [LIMIT #]
+;
+[UPPER | převede řetězec na velká písmena]
+UPPER("|§")
+;
+[USE | použít databázi...]
+USE %named%
+;
+[USER | vrací jméno uživatele aktuálního připojení]
+USER()
+;
+[VERSION | vrací verzi serveru jako textový řetězec]
+VERSION()
+;
+[WEEK | vrací číslo týdne podle zadaného data. Nepovinný argument start určuje počáteční index dne v týdnu (0 Neděle, 1 pondělí)]
+WEEK(%datep%%start%)
+;
+[WEEKDAY | vrací index dne v týdnu na základě zadaného data. (0 = pondělí)]
+WEEKDAY(%datep%)
+;
+[YEAR | ze zadaného data extrahuje rok]
+YEAR(%datep%)
+;
+[YEARWEEK | vrací rok a týden ze zadaného data]
+YEARWEEK(%datep%)
+;
+[YEARWEEKf | vrací rok a týden ze zadaného data]
+YEARWEEK(%datep%%start%)
+
+;
+;---------------------------------------------------------------------
+;  Možnosti jazyka
+;---------------------------------------------------------------------
+[Tree Content]
+Srovnání
+ GREATEST
+ IF
+ IFNULL
+ INTERVAL
+ ISNULL
+ LEAST
+ NULLIF
+ STRCMP
+Matematika
+ ABS
+ ACOS
+ ASIN
+ ATAN
+ ATAN2
+ CEILING
+ COS
+ COT
+ DEGREES
+ EXP
+ FLOOR
+ LOG
+ LOG10
+ MOD
+ PI
+ POW
+ POWER
+ RADIANS
+ RAND
+ ROUND
+ SIGN
+ SIN
+ SQRT
+ TAN
+ TRUNCATE
+Řetězce
+ ASCII
+ BIN
+ CHAR
+ CHARACTER_LENGTH
+ CHAR_LENGTH
+ COALESCE
+ CONCAT
+ CONCAT_WS
+ CONV
+ ELT
+ EXPORT_SET
+ FIELD
+ FIND_IN_SET
+ FORMAT
+ HEX
+ INSERT
+ INSERT_select
+ INSERT_set
+ INSERT_values
+ INSTR
+ LCASE
+ LEFT
+ LENGTH
+ LOCATE
+ LOWER
+ LPAD
+ LTRIM
+ MAKE_SET
+ MID
+ OCT
+ OCTET_LENGTH
+ ORD
+ POSITION
+ REPEAT
+ REPLACE
+ REVERSE
+ RIGHT
+ RPAD
+ RTRIM
+ SOUNDEX
+ SPACE
+ SUBSTRING
+ SUBSTRING_INDEX
+ TRIM
+ UCASE
+ UPPER
+Datum a čas
+ ADDDATE
+ CURDATE
+ CURTIME
+ DATE_ADD
+ DATE_FORMAT
+ DATE_SUB
+ DAYNAME
+ DAYOFMONTH
+ DAYOFWEEK
+ DAYOFYEAR
+ EXTRACT
+ FROM_DAYS
+ FROM_UNIXTIME
+ HOUR
+ MINUTE
+ MONTH
+ MONTHNAME
+ NOW
+ PERIOD_ADD
+ PERIOD_DIFF
+ QUARTER
+ SECOND
+ SEC_TO_TIME
+ SUBDATE
+ SYSDATE
+ TIME_FORMAT
+ TIME_TO_SEC
+ TO_DAYS
+ UNIX_TIMESTAMP
+ UNIX_TIMESTAMPd
+ WEEK
+ WEEKDAY
+ YEAR
+ YEARWEEK
+ YEARWEEKf
+Shrnování
+ AVG
+ BIT_AND
+ BIT_OR
+ COUNT
+ MAX
+ MIN
+ STD
+ STDDEV
+ SUM
+Rozmanité
+ BENCHMARK
+ BIT_COUNT
+ CONNECTION_ID
+ DECODE
+ ENCODE
+ GET_LOCK
+ INET_NTOA
+ INET_ATON
+ LOAD_DATA_INFILE
+ LOAD_FILE
+ RELEASE_LOCK
+Sytémové funkce
+ DATABASE
+ ENCRYPT
+ LAST_INSERT_ID
+ MD5
+ PASSWORD
+ SESSION_USER
+ SYSTEM_USER
+ USER
+ VERSION
+;
+[Keywords]
+ABS()
+ACOS()
+ADDDATE()
+ALL
+ALTER
+ASC
+ASCII()
+ASIN()
+ATAN()
+ATAN2()
+AVG()
+BENCHMARK()
+BIN()
+BIT_AND()
+BIT_COUNT()
+BIT_OR()
+CASE
+CEILING()
+COALESCE()
+CONCAT()
+CONCAT_WS()
+CONNECTION_ID()
+CONV()
+COS()
+COT()
+COUNT()
+CREATE
+CURDATE()
+CURTIME()
+DATABASE()
+DATE_ADD()
+DATE_FORMAT()
+DATE_SUB()
+DAYNAME()
+DAYOFMONTH()
+DAYOFWEEK()
+DAYOFYEAR()
+DECODE()
+DEGREES()
+DELAYED
+DELETE
+DESC
+DESCRIBE
+DISTINCT
+DISTINCTROW
+DROP
+DUMPFILE
+ELT()
+ENCODE()
+ENCRYPT()
+EXP()
+EXPORT_SET()
+EXTRACT()
+FIELD()
+FIND_IN_SET()
+FLOOR()
+FORMAT()
+FROM
+FROM_DAYS()
+FROM_UNIXTIME()
+GET_LOCK()
+GREATEST()
+HEX()
+HIGH_PRIORITY
+HOUR()
+CHAR()
+CHAR_LENGTH()
+CHARACTER_LENGTH()
+IF EXISTS
+IF NOT EXISTS
+IF()
+IFNULL()
+INET_ATON()
+INET_NTOA()
+INSERT
+INSTR()
+INTERVAL
+INTO
+ISNULL()
+LAST_INSERT_ID()
+LCASE()
+LEADING
+LEAST()
+LEFT()
+LENGTH()
+LIMIT
+LOAD_DATA_INFILE
+LOAD_FILE()
+LOCATE()
+LOCK
+LOG()
+LOG10()
+LOW_PRIORITY
+LOWER()
+LPAD()
+LTRIM()
+MAKE_SET()
+MAX()
+MD5()
+MID()
+MIN()
+MINUTE()
+MOD()
+MONTH()
+MONTHNAME()
+NOW()
+NULLIF
+OCT()
+OCTET_LENGTH()
+ORD()
+OUTFILE
+PASSWORD()
+PERIOD_ADD()
+PERIOD_DIFF()
+PI()
+POSITION()
+POW()
+POWER()
+PROCEDURE
+QUARTER()
+RADIANS()
+RAND()
+READ COMMITTED
+READ LOCAL
+READ UNCOMMITTED
+RELEASE_LOCK()
+REPEAT()
+REPEATABLE READ
+REPLACE
+REPLACE()
+REVERSE()
+RIGHT()
+ROUND()
+RPAD()
+RTRIM()
+SEC_TO_TIME()
+SECOND()
+SELECT
+SERIALIZABLE
+SESSION
+SESSION_USER()
+SET
+SHOW
+SIGN()
+SIN()
+SOUNDEX()
+SPACE()
+SQL_BIG_RESULT
+SQL_BUFFER_RESULT
+SQL_SMALL_RESULT
+SQRT()
+STD()
+STDDEV()
+STRAIGHT_JOIN
+STRCMP()
+SUBDATE()
+SUBSTRING()
+SUBSTRING_INDEX()
+SUM()
+SYSDATE()
+SYSTEM_USER()
+TABLE
+TAN()
+TEMPORARY
+TIME_FORMAT()
+TIME_TO_SEC()
+TO_DAYS()
+TRAILING
+TRANSACTION ISOLATION LEVEL
+TRIM()
+TRUNCATE
+TRUNCATE()
+UCASE()
+UNIX_TIMESTAMP()
+UNLOCK
+UPDATE
+UPPER()
+USE
+USER()
+VALUES
+VERSION()
+WEEK()
+WEEKDAY()
+WHERE
+WRITE
+YEAR()
+YEARWEEK()
+;

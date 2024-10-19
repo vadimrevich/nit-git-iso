@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ****************************************************** -->
+<!-- File wsf -->
+<!-- set.powershell.unrestricted.wsf -->
+<!--
+This Script will Set Execution Policy of the Powershell
+Scripts as Unrestricted (no limits to execution)
+-->
+<!-- ****************************************************** -->
+<job id="ID1">
+	<script language="JScript">
+	<![CDATA[
+/**********************************************************
+ * Function Description
+**********************************************************/
+	]]>
+	</script>
+	<script language="VBScript">
+	<![CDATA[
+' *********************************************************
+' SetPoshExecutionPolicy
+'
+' PARAMETERS:   ExecutionPolicy is a String Value of Execution Policy
+' RETURNS:      0 if Success
+'               1 if Error Occur
+' *********************************************************
+function SetPoshExecPolicy( ExecutionPolicy )
+    Dim reg_key_user, reg_key_system, strFormat, strExeutionPolicy
+    Dim KEY1, KEY2, wsh, iRes
+    reg_key_user = "HKEY_CURRENT_USER\"
+    reg_key_system = "HKEY_LOCAL_MACHINE\"
+    strFormat = "SOFTWARE\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell\"
+    strExeutionPolicy = "ExecutionPolicy"
+    
+    ' Define an Object
+    Set wsh = CreateObject("WScript.Shell")
+
+    KEY1 = reg_key_system & strFormat
+    KEY2 = reg_key_user & strFormat
+
+    ' Check a Node
+    on error resume next
+    iRes = wsh.RegRead(KEY2)
+    If err.number <> 0 Then
+        WScript.Echo "Registry Node: " & KEY2 & " does not Exist!"
+        SetPoshExecPolicy = 1
+    Else
+        KEY2 = KEY2 & strExeutionPolicy
+        on error resume next
+        iRes = wsh.RegRead(KEY2)
+        If err.number <> 0 Then 
+            WScript.Echo "Parameter: " & strExeutionPolicy & " does not Define at " & reg_key_user
+            SetPoshExecPolicy = 1
+        Else
+            wsh.RegWrite KEY2, ExecutionPolicy
+            SetPoshExecPolicy = 0
+        End If
+    End If
+
+        ' Check a Node
+    on error resume next
+    iRes = wsh.RegRead(KEY1)
+    If err.number <> 0 Then
+        WScript.Echo "Registry Node: " & KEY1 & " does not Exist!"
+        SetPoshExecPolicy = 1
+    Else
+        KEY1 = KEY1 & strExeutionPolicy
+        on error resume next
+        iRes = wsh.RegRead(KEY1)
+        If err.number <> 0 Then 
+            WScript.Echo "Parameter: " & strExeutionPolicy & " does not Define at " & reg_key_system
+            SetPoshExecPolicy = 1
+        Else
+            wsh.RegWrite KEY1, ExecutionPolicy
+            SetPoshExecPolicy = 0
+        End If
+    End If
+
+End function
+
+' *********************************************************
+' RunPayloadsUnrestricted
+' This Script will Set Execution Policy as Unrestricted
+' PARAMETERS:	NONE
+' RETURN:	NONE
+' *********************************************************
+
+Sub RunPayloadsUnrestricted
+    Dim ExecutionPolicy
+
+    'ExecutionPolicy = "Undefined"
+    ExecutionPolicy = "Unrestricted"
+    'ExecutionPolicy = "RemoteSigned"
+    'ExecutionPolicy = "Restricted"
+    'ExecutionPolicy = "AllSigned"
+
+    Dim iRes
+
+    iRes = SetPoshExecPolicy(ExecutionPolicy)
+    If iRes = 0 Then
+        WScript.Echo "Success Script Run"
+        WScript.Quit 0
+    Else
+        WScript.Echo "Error Occur!" & vbNewLine & "May PowerShell is not Installed?"
+        WScript.Quit 1
+    End If
+End Sub
+
+' *********************************************************
+' RunPayloadsUndefined
+' This Script will Set Execution Policy as Undefined
+' PARAMETERS:	NONE
+' RETURN:	NONE
+' *********************************************************
+
+Sub RunPayloadsUndefined
+
+    Dim ExecutionPolicy
+
+    ExecutionPolicy = "Undefined"
+    ' ExecutionPolicy = "Unrestricted"
+    'ExecutionPolicy = "RemoteSigned"
+    'ExecutionPolicy = "Restricted"
+    'ExecutionPolicy = "AllSigned"
+
+    Dim iRes
+
+    iRes = SetPoshExecPolicy(ExecutionPolicy)
+    If iRes = 0 Then
+        WScript.Echo "Success Script Run"
+        WScript.Quit 0
+    Else
+        WScript.Echo "Error Occur!" & vbNewLine & "May PowerShell is not Installed?"
+        WScript.Quit 1
+    End If
+End Sub
+
+' *********************************************************
+' RunPayloadsRemoteSigned
+' This Script will Set Execution Policy as Undefined
+' PARAMETERS:	NONE
+' RETURN:	NONE
+' *********************************************************
+
+Sub RunPayloadsRemoteSigned
+    Dim ExecutionPolicy
+
+    ' ExecutionPolicy = "Undefined"
+    ' ExecutionPolicy = "Unrestricted"
+    ExecutionPolicy = "RemoteSigned"
+    'ExecutionPolicy = "Restricted"
+    'ExecutionPolicy = "AllSigned"
+
+    Dim iRes
+
+    iRes = SetPoshExecPolicy(ExecutionPolicy)
+    If iRes = 0 Then
+        WScript.Echo "Success Script Run"
+        WScript.Quit 0
+    Else
+        WScript.Echo "Error Occur!" & vbNewLine & "May PowerShell is not Installed?"
+        WScript.Quit 1
+    End If
+End Sub
+	]]>
+	</script>
+	<script language="VBScript">
+	<![CDATA[
+' *********************************************************
+' Run Payload
+' *********************************************************
+RunPayloadsUnrestricted
+	]]>
+	</script>
+</job>

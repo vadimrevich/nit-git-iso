@@ -1,0 +1,758 @@
+﻿; PSPad clip definition file for VRML
+; author:  Stephen H. France
+; first revision 18. Aug 2010  01:06
+;
+
+[Shape | ]
+Shape {
+  appearance Appearance {
+  |}
+  geometry 
+}
+[Material | ]
+  material Material {
+    ambientIntensity 0.2
+    diffuseColor 0.8 0.8 0.8
+    emissiveColor 0 0 0
+    shininess 0.2
+    specularColor 0 0 0
+    transparency 0
+  }
+[Transform | ]
+Transform {
+  center 0 0 0
+  rotation 0 0 1 0
+  scale 1 1 1
+  scaleOrientation 0 0 1 0
+  translation 0 0 0
+}
+[Background | ]
+Background {
+  skyColor [ 0 0 1 , 0 0 .25 ]
+  skyAngle 1.57
+  groundColor [ 0 1 0 , 0 .25 0 ]
+  groundAngle 1.57
+#  transparency 
+#  backUrl "" 
+#  bottomUrl "" 
+#  frontUrl ""
+#  leftUrl ""
+#  rightUrl ""
+#  topUrl ""
+}
+[CoordinateInterpolator2D | ]
+CoordinateInterpolator2D {
+  key [ ]
+  keyValue [ ]
+}
+[OrientationInterpolator | ]
+OrientationInterpolator {
+  key [ ]
+  keyValue [ ]
+}
+[PositionInterpolator | ]
+PositionInterpolator {
+  key [ ]
+  keyValue [ ]
+}
+[ComposedCubeMapTexture | ]
+ComposedCubeMapTexture {
+|#  back 
+#  bottom 
+#  front 
+#  left 
+#  right 
+#  top 
+}
+[Extrusion | ]
+Extrusion {
+  crossSection [ ]
+  scale 1 1
+}
+[Fog | ]
+Fog {
+  color 1 1 1
+  visibilityRange 0
+  fogType "LINEAR"
+}
+[LineSet | ]
+LineSet {
+  coord 
+  vertexCount [ ]
+  color 
+}
+[DirectionalLight | ]
+DirectionalLight {
+  ambientIntensity 0
+  color 1 1 1
+  direction 0 0 -1
+  intensity 1
+}
+[PointLight | ]
+PointLight {
+  ambientIntensity 0
+  color 1 1 1
+  intensity 1 
+  attenuation 1 0 0
+  location 0 0 0
+  radius 100
+}
+[Text | ]
+Text {
+  fontStyle FontStyle {
+          style "ITALIC"
+          family "SANS"}
+        string "|"
+}
+[NavigationInfo | ]
+NavigationInfo {
+  avatarSize [0.25 1.6 0.75]
+  headlight TRUE
+  speed 1.0
+  type ["FLY"]
+}
+[TimeSensor | ]
+TimeSensor {
+  loop TRUE
+  cycleInterval 1
+}
+[OrthoViewpoint | ]
+OrthoViewpoint {
+  position 0 0 10
+  orientation 0 0 1 0
+  fieldOfView [ ] # -x -y x y  from screen center
+}
+[Viewpoint | ]
+Viewpoint {
+  position 0 0.5 7
+  direction 0 0 -1
+  up 0 1 0
+}
+[Script | ]
+DEF yourName Script {
+
+#url "kambiscript:
+
+#"
+
+### or ###
+
+#url [ "yourFile.kscript"  ]
+
+}
+[Keywords]
+Anchor {}
+Appearance {}
+Arc2D {}
+ArcClose2D {}
+AudioClip {}
+Background {}
+BallJoint {}
+Billboard {}
+BooleanToggle {}
+BooleanFilter {}
+BooleanSequencer {}
+BooleanTrigger {}
+BoundedPhysicsModel {}
+Box {}
+CADAssembly {}
+CADFace {}
+CADLayer {}
+CADPart {}
+Circle2D {}
+ClipPlane {}
+CollidableOffset {}
+CollidableShape {}
+Collision {}
+CollisionCollection {}
+CollisionSensor {}
+CollisionSpace {}
+Color {}
+ColorDamper {}
+ColorInterpolator {} 
+ColorRGBA {}
+ComposedCubeMapTexture {}
+ComposedShader {}
+ComposedTexture3D {}
+Cone {}
+ConeEmitter {}
+Contact {}
+Contour2D {}
+ContourPolyline2D {}
+Coordinate {}
+CoordinateDamper {}
+CoordinateDouble {}
+CoordinateInterpolator {}
+CoordinateInterpolator2D {}
+Cube {}
+Cylinder {}
+CylinderSensor{}
+DirectionalLight {}
+DISEntityManager {}
+DISEntityTypeMapping {}
+Disk2D {}
+DoubleAxisHingeJoint {}
+EaseInEaseOut {}
+ElevationGrid {}
+EspduTransform {}
+Extrusion {}
+FillProperties {}
+FloatVertexAttribute {}
+Fog {}
+FogCoordinate {}
+FontStyle {}
+GeneratedCubeMapTexture {}
+GeoElevationGrid {} 
+GeoLocation {}
+GeoLOD {}
+GeoMetadata {}
+GeoOrigin {}
+GeoPositionInterpolator {}
+GeoProximitySensor {}
+GeoTouchSensor {}
+GeoTransform {}
+GeoViewpoint {}
+GravityPhysicsModel {}
+Group {}
+HAnimDisplacer {}
+HAnimHumanoid {}
+HAnimJoint {}
+HAnimSite {}
+ImageCubeMapTexture {}
+ImageTexture {}
+ImageTexture3D {}
+IndexedFaceSet {}
+IndexedLineSet {}
+IndexedQuadSet {}
+IndexedTriangleFanSet {}
+IndexedTriangleSet {}
+IndexedTriangleStripSet {}
+Inline {}
+InlineLoadControl {}
+IntegerSequencer {}
+IntegerTrigger {}
+Interpolator {}
+KeySensor {}
+Layer {}
+LayerSet {}
+Layout {}
+LayoutGroup {}
+LayoutLayer {}
+LinePickSensor {}
+LineProperties {}
+Light {}
+LineSet {}
+LoadSensor {}
+LocalFog {}
+LOD {}
+Logger {}
+Material {}
+Matrix3VertexAttribute {}
+Matrix4VertexAttribute {}
+MotorJoint {}
+MovieTexture {}
+MultiTexture {}
+MultiTextureCoordinate {}
+MultiTextureTransform {}
+NavigationInfo {}
+Normal {}
+NormalInterpolator {}
+NurbsCurve {}
+NurbsCurve2D {}
+NurbsOrientationInterpolator {}
+NurbsPatchSurface {}
+NurbsPositionInterpolator {}
+NurbsSet {}
+NurbsSurfaceInterpolator {}
+NurbsSweptSurface {}
+NurbsSwungSurface {}
+NurbsTextureCoordinate {}
+NurbsTrimmedSurface {}
+OrientationChaser {}
+OrientationDamper {}
+OrientationInterpolator {}
+OrthoViewpoint {}
+PackagedShader {}
+ParticleSystem {}
+PickableGroup {}
+PixelTexture {}
+PixelTexture3D {}
+PlaneSensor {}
+PointEmitter {}
+PointLight {}
+PointPickSensor {}
+PointSet {}
+Polyline2D {}
+PolylineEmitter {}
+Polypoint2D {}
+PositionChaser {}
+PositionChaser2D {}
+PositionDamper {}
+PositionDamper2D {}
+PositionInterpolator {}
+PositionInterpolator2D {}
+PrimitivePickSensor {}
+ProgramShader {}
+ProximitySensor {}
+QuadSet {}
+ReceiverPdu {}
+Rectangle2D {}
+RigidBody {}
+RigidBodyCollection {}
+ScalarChaser {}
+ScalarInterpolator {}
+ScreenFontStyle {}
+ScreenGroup {}
+Script {}
+ShaderPart {}
+ShaderProgram {}
+Shape {}
+SignalPdu {}
+SingleAxisHingeJoint {}
+SliderJoint {}
+Sound {}
+Sphere {}
+SphereSensor {}
+SplinePositionInterpolator {}
+SplinePositionInterpolator2D {}
+SplineScalarInterpolator {}
+SpotLight {}
+SquadOrientationInterpolator {}
+StaticGroup {}
+StringSensor {}
+SurfaceEmitter {}
+Switch {}
+Test {}
+TesselatedPlane {}
+Text {}
+TextureBackground {}
+TextureCoordinate {}
+TextureCoordinate3D {}
+TextureCoordinate4D {}
+TextureCoordinateGenerator {}
+TextureProperties {}
+TextureTransform {}
+TextureTransform3D {}
+TextureTransformMatrix3D {}
+TimeSensor {}
+TimeTrigger {}
+TouchSensor {}
+Transform {}
+TransformSensor {}
+TransmitterPdu {}
+TriangleSet2D
+TriangleFanSet {}
+TriangleSet {}
+TriangleStripSet {}
+TwoSidedMaterial {}
+UniversalJoint {}
+Viewpoint {}
+ViewpointGroup {}
+Viewport {}
+VisibilitySensor {}
+VolumeEmitter {}
+VolumePickSensor {}
+WindPhysicsModel {}
+Worldinfo {}
+
+
+
+actionKeyPress 
+actionKeyRelease 
+alpha []
+altKey 
+ambientIntensity 
+anisotropicDegree 
+appearance 
+attenuation 
+avatarSize []
+back 
+backUrl
+bindTime []
+blendMode 
+bool 
+borderColor 
+borderWidth 
+bottom 
+bottomUrl 
+boundaryModeS 
+boundaryModeT 
+boundaryModeR 
+ccw 
+center 
+centerOfRotation_changed 
+children []
+choice []
+color 
+colorIndex []
+colorPerVertex 
+controlKey 
+coord []
+coordIndex []
+creaseAngle []
+crossSection []
+controlPoint 
+cycleInterval []
+description []
+destFactor 
+diffuseColor 
+direction []
+elapsedTime 
+emmisiveColor 
+enabled 
+enterTime 
+exitTime 
+exposedField 
+family 
+fanCount []
+field []
+fieldOfView []
+fillProperties 
+fogType []
+fontStyle 
+front 
+frontUrl
+function [""]
+geometry []
+generateMipMaps 
+global 
+groundColor []
+groundAngle []
+height 
+headlight 
+heightMap 
+heightMapScale 
+image []
+index []
+info 
+initializeOnly []
+inputFalse 
+inputNegate 
+inputTrue 
+inputOnly []
+inputOutput []
+int 
+integerKey []
+intensity 
+isActive 
+isBound 
+isOver 
+justify 
+key []
+keyPress 
+keyRelease 
+keyValue []
+language 
+left 
+leftChoice 
+leftUrl 
+level []
+lineProperties 
+load 
+location 
+loop []
+magnificationFilter 
+manifold 
+mat 
+material 
+matrix 
+metadata 
+minificationFilter 
+mode [""]
+name 
+node []
+normal 
+normalMap 
+octreeCollidableTriangles []
+octreeDynamicCollisions []
+octreeRendering []
+octreeVisibleTriangles []
+on 
+orbitOrientation 
+orientation 
+orientation_changed 
+outputOnly []
+parts 
+point []
+position 
+position_changed 
+projectedLight 
+projectionLocation []
+projectionRectangle []
+radius 
+range []
+repeatR 
+repeatS []
+repeatT []
+right 
+rightChoice 
+rightUrl
+rotation 
+scale 
+scaleOrientation 
+separateBackColor 
+shaders 
+shadowCaster []
+shiftKey 
+side 
+size 
+shininess 
+skyColor []
+skyAngle []
+solid []
+source [""]
+specularColor []
+speed []
+spine []
+spot 
+spotDropOffRate 
+spotCutOffAngle 
+startTime 
+stopTime 
+string []
+stripCount []
+style 
+targetObject 
+texCoord []
+texCoordIndex []
+texture []
+textureCompression 
+texturePriority 
+textureProperties []
+textureTransform 
+time 
+timeOriginAtLoad []
+timestamp 
+title 
+toggle 
+top 
+topUrl 
+touch 
+touchTime 
+transitionComplete []
+transitionTime []
+transitionType []
+translation 
+transparency 
+triggerValue 
+type []
+uClosed 
+uDimension 
+uKnot []
+uOrder 
+up []
+update 
+url
+uTessellation 
+value 
+vClosed 
+vDimension 
+vector []
+vertexCount []
+viewpointName 
+visibilityLimit []
+visibilityRange []
+vKnot []
+vOrder 
+vTessellation 
+weight []
+whichChoice 
+write 
+
+
+
+COMPONENT
+DEF
+EXPORT 
+FALSE
+Interp {}
+IS
+NULL
+PROFILE
+ROUTE
+Script {}
+Timer {}
+TRUE
+USE 
+TO
+META 
+IMPORT 
+AS
+PROTO
+EXTERNPROTO
+MODULATE
+REPLACE
+MODULATE2X
+MODULATE4X
+ADD
+ADDSIGNED
+ADDSIGNED2X
+SUBTRACT
+ADDSMOOTH
+BLENDDIFFUSEALPHA
+BLENDTEXTUREALPHA
+BLENDFACTORALPHA
+BLENDCURRENTALPHA
+MODULATEALPHA_ADDCOLOR
+MODULATEINVALPHA_ADDCOLOR
+MODULATEINVCOLOR_ADDALPHA
+OFF
+SELECTARG1
+SELECTARG2
+DOTPRODUCT3
+
+DIFFUSE
+SPECULAR
+FACTOR
+
+COMPLEMENT
+ALPHAREPLICATE
+
+SPHERE
+CAMERASPACENORMAL
+CAMERASPACEPOSITION
+CAMERASPACEREFLECTIONVECTOR
+SPHERE-LOCAL
+COORD
+COORD-EYE
+NOISE
+NOISE-EYE
+SPHERE-REFLECT
+SPHERE-REFLECT-LOCAL
+
+CLAMP
+CLAMP_TO_EDGE
+CLAMP_TO_BOUNDARY
+MIRRORED_REPEAT
+REPEAT
+
+AVG_PIXEL
+DEFAULT
+FASTEST
+NEAREST_PIXEL
+NICEST
+
+AVG_PIXEL_AVG_MIPMAP
+AVG_PIXEL_NEAREST_MIPMAP
+
+NEAREST_PIXEL_AVG_MIPMAP
+NEAREST_PIXEL_NEAREST_MIPMAP
+
+HIGH
+LOW
+MEDIUM
+
+LINEAR
+EXPONENTIAL
+
+SANS
+TYPEWRITER
+
+BOLD
+ITALIC
+
+array ()
+array_get ()
+array_get_count ()
+array_set_count ()
+array_set ()
+crosshair_x 
+crosshair_y 
+fraction_changed 
+function []
+gradient_x 
+gradient_y 
+gradient_len 
+image_set_color ()
+image_get_color ()
+image_set_alpha ()
+image_get_alpha ()
+image_width ()
+image_height ()
+inline_load 
+inline_url 
+key_press
+last_coord_change []
+level_changed 
+line_coordIndex []
+line_coords []
+line_colors []
+new_image 
+random ()
+sqr 
+set_bind
+set_boolean 
+set_fraction 
+set_rotation 
+set_scale 
+set_startTime 
+set_translation 
+smooth_size 
+speed_horiz_const 
+speed_horiz_rand 
+speed_vert_const 
+speed_vert_rand 
+tex_matrix
+update_lines 
+value_changed 
+vector ()
+vector_d ()
+vector_get ()
+vector_get_count ()
+vector_set ()
+vector_sqr_length ()
+vector_length ()
+when ()
+ 
+int ()
+float ()
+floor 
+ceil 
+round 
+bool ()
+string ()
+if ()
+while ()
+for()
+sin 
+cos 
+tan 
+coTan 
+arcSin 
+arcCos 
+arcTan 
+arcCoTan 
+sinH 
+cosH 
+tanH 
+coTanH 
+log2 
+ln 
+log 
+power2 
+exp 
+power 
+sqrt
+sgn 
+abs 
+max 
+max ()
+min 
+min ()
+or ()
+and ()
+not ()
+writeln ()
+character_from_code ()
+array_d 
+vector_dot ()
+vector_cross ()
+grayscale ()
+matrix ()
+matrix_get ()
+matrix_set ()
+matrix_get_count ()
+image_load ()
+image_components ()
+image_get ()
+image_set ()

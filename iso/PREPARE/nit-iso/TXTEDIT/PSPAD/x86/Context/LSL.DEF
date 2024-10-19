@@ -1,0 +1,5 @@
+; PSPad clip definition file for LSL
+; author:  PaderDesign
+; last revision 24. Okt 2020  21:35
+;
+[llOwnerSay |m Says msg to the object's owner only, if the owner is currently in the same region.]

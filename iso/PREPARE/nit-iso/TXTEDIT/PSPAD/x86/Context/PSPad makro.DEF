@@ -1,0 +1,255 @@
+﻿; PSPad code template for PSPad makro
+; Created by PSPad   18.12.2001  16:56
+; Author:  Fiala  pspad@wo.cz
+;
+[Left | přesune kurzor o znak vlevo]
+ecLeft
+;
+[Right | přesune kurzor o znak vpravo]
+ecRight
+;
+[Up | přesune kurzor o řádek nahoru]
+ecUp
+;
+[Down | přesune kurzor o řádek dolů]
+ecDown
+;
+[WordLeft | přesune kurzor o slovo doleva]
+ecWordLeft
+;
+[WordRight | přesune kurzor o slovo doprava]
+ecWordRight
+;
+[LineStart | přesune kurzor na začátek řádku]
+ecLineStart
+;
+[LineEnd | přesune kurzor na konec řádku]
+ecLineEnd
+;
+[PageUp | přesune kurzor o stránku nahoru]
+ecPageUp
+;
+[PageDown | přesune kurzor o stránku dolů]
+ecPageDown
+;
+[PageLeft | přesune kurzor na pravou stranu stránky]
+ecPageLeft
+;
+[PageRight | přesune kurzor na levou stranu stránky]
+ecPageRight
+;
+[PageTop | přesune kurzor na vršek stránky]
+ecPageTop
+;
+[PageBottom | přesune kurzor na konec stránky]
+ecPageBottom
+;
+[EditorTop | přesune kurzor na začátek textu]
+ecEditorTop
+;
+[EditorBottom | přesune kurzor na konec textu]
+ecEditorBottom
+;
+[SelLeft | označí znak vlevo ]
+ecSelLeft
+;
+[SelRight | označí znak vpravo ]
+ecSelRight
+;
+[SelUp | označí řádek nahoru ]
+ecSelUp
+;
+[SelDown | označí řádek dolů ]
+ecSelDown
+;
+[SelWordLeft | označí slovo vlevo]
+ecSelWordLeft
+;
+[SelWordRight | označí slovo vpravo ]
+ecSelWordRight
+;
+[SelLineStart | označí začátek řádku ke kurzoru]
+ecSelLineStart
+;
+[SelLineEnd | označí od kurzoru do konce řádku ]
+ecSelLineEnd
+;
+[SelPageUp | označí stránku nahoru ]
+ecSelPageUp
+;
+[SelPageDown | označí stránku dolů ]
+ecSelPageDown
+;
+[SelPageLeft | označí do pravé strany stránky ]
+ecSelPageLeft
+;
+[SelPageRight | označí do levé strany stránky ]
+ecSelPageRight
+;
+[SelPageTop | označí do vršku stránky ]
+ecSelPageTop
+;
+[SelPageBottom | označí do konce stránky ]
+ecSelPageBottom
+;
+[SelEditorTop | označí od kurzoru do začátku textu ]
+ecSelEditorTop
+;
+[SelEditorBottom | označí od kurzoru do konce textu]
+ecSelEditorBottom
+;
+[SelectAll | označí celý text]
+ecSelectAll
+;
+[Copy | kopírovat do schránky]
+ecCopy
+;
+[Cut | vystřihnout do schránky]
+ecCut
+;
+[Paste | vložit ze schránky na pozici kurzoru]
+ecPaste
+;
+[ScrollUp | o stránku nahoru bez změny pozice kurzoru]
+ecScrollUp
+;
+[ScrollDown | o stránku dolů bez změny pozice kurzoru]
+ecScrollDown
+;
+[ScrollLeft | skrolování vlevo bez změny pozice kurzoru]
+ecScrollLeft
+;
+[ScrollRight | skrolování vpravo bez změny pozice kurzoru]
+ecScrollRight
+;
+[InsertMode | režim vkládání]
+ecInsertMode
+;
+[OverwriteMode | režim přepisování]
+ecOverwriteMode
+;
+[ToggleMode | přepnutí režimu vkládání/přepisování]
+ecToggleMode
+;
+[NormalSelect | normální bloky]
+ecNormalSelect
+;
+[ColumnSelect | sloupcové bloky]
+ecColumnSelect
+;
+[LineSelect | řádkové bloky]
+ecLineSelect
+;
+[MatchBracket | najdi odpovídající závorku]
+ecMatchBracket
+;
+[GotoMarker0 | jdi na záložku 0]
+ecGotoMarker0
+;
+[GotoMarker1 | jdi na záložku 1]
+ecGotoMarker1
+;
+[GotoMarker2 | jdi na záložku 2]
+ecGotoMarker2
+;
+[GotoMarker3 | jdi na záložku 3]
+ecGotoMarker3
+;
+[GotoMarker4 | jdi na záložku 4]
+ecGotoMarker4
+;
+[GotoMarker5 | jdi na záložku 5]
+ecGotoMarker5
+;
+[GotoMarker6 | jdi na záložku 6]
+ecGotoMarker6
+;
+[GotoMarker7 | jdi na záložku 7]
+ecGotoMarker7
+;
+[GotoMarker8 | jdi na záložku 8]
+ecGotoMarker8
+;
+[GotoMarker9 | jdi na záložku 9]
+ecGotoMarker9
+;
+[SetMarker0 | nastav záložku 0]
+ecSetMarker0
+;
+[SetMarker1 | nastav záložku 1]
+ecSetMarker1
+;
+[SetMarker2 | nastav záložku 2]
+ecSetMarker2
+;
+[SetMarker3 | nastav záložku 3]
+ecSetMarker3
+;
+[SetMarker4 | nastav záložku 4]
+ecSetMarker4
+;
+[SetMarker5 | nastav záložku 5]
+ecSetMarker5
+;
+[SetMarker6 | nastav záložku 6]
+ecSetMarker6
+;
+[SetMarker7 | nastav záložku 7]
+ecSetMarker7
+;
+[SetMarker8 | nastav záložku 8]
+ecSetMarker8
+;
+[SetMarker9 | nastav záložku 9]
+ecSetMarker9
+;
+[DeleteLastChar | smazat znak před kurzorem (Backspace)]
+ecDeleteLastChar
+;
+[DeleteChar | smazat znak pod kurzorem (Delete)]
+ecDeleteChar
+;
+[DeleteWord | smazat do konce slova]
+ecDeleteWord
+;
+[DeleteLastWord | smazat do začátku slova]
+ecDeleteLastWord
+;
+[DeleteBOL | smazat do začátku řádku]
+ecDeleteBOL
+;
+[DeleteEOL | smazat do konce řádku]
+ecDeleteEOL
+;
+[DeleteLine | smazat řádek]
+ecDeleteLine
+;
+[ClearAll | smazat vše]
+ecClearAll
+;
+[LineBreak | nový řádek s přechodem kurzoru (Enter)]
+ecLineBreak
+;
+[InsertLine | vložit řádek, pozice kurzoru se nemění]
+ecInsertLine
+;
+[Char{znak} | vložit znak(y) na pozici kurzoru]*Ctrl+Enter
+ecChar{|}
+[Undo | zrušení změny]
+ecUndo
+;
+[Redo | vrácení změny]
+ecRedo
+;
+[BlockIndent | zvětšení odsazení bloku]
+ecBlockIndent
+;
+[BlockUnindent | zmenšení odsazení bloku]
+ecBlockUnindent
+;
+[Tab | Tabulátor]
+ecTab
+;
+[ShiftTab | Shift+Tabulátor]
+ecShiftTab
+;

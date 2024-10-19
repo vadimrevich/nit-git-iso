@@ -1,0 +1,416 @@
+﻿;; PSPad code template for WMLScript (Wireless Markup Language Script)
+;; Author: Karel Pavelka
+;; E-mail: webjob@seznam.cz
+;; Update: 28.4.2004
+;;
+;;   (black)     funkce jazyka
+;; B (blue)
+;; D (dark gray)
+;; F (fuchsia)
+;; G (green)     komentar
+;; M (maroon)
+;; N (navy)      Kusy kodu
+;; P (purple)    smycky a prikazy
+;; R (red)       WTAI (Wireless Telephony Application Interface) funkce
+;
+[Macro definition]
+;
+%phonenumber%=@C Phone Number:,,,"
+%name%=@C Name:,,,"
+;
+[&nbsp; |G nedělitelná mezera]*Shift+Ctrl+Space
+&#160;
+[&apos; |G apostrof]
+&#39;
+[&gt; |G znak ">"]
+&#62;
+[&lt; |G znak "<"]
+&#60;
+[&amp; |G ampersand]
+&#38;
+;
+[<> |G začátek tagu <>]*Alt+,
+<|>
+[</> |G konec tagu </|>]*Alt+.
+</|>
+;
+[/*...*/ |G komentář bloku /* ... */ ]
+/*
+  §|
+*/
+[if|P statement if]
+if (|) {
+  §
+}
+[else|P else statement]
+else {
+  §|
+}
+[while|P cyklus while]
+while (|)
+{
+  §
+}
+[for|P cyklus for]
+for (|; ;) {
+  §
+}
+[function |P function declaration]*Ctrl+Alt+Shift+F
+function |(;;) {
+	§|
+}
+[extern function|P extern function declaration]
+extern function |(;;) {
+	§|
+}
+;
+;
+[Dialogs.alert | create an alert message]
+Dialogs.alert(message)
+[Dialogs.confirm | create a confirmation dialog]
+Dialogs.confirm(message, ok, cancel)
+[Dialogs.prompt | create a prompt dialog]
+Dialogs.prompt(message, defaultInput)
+[Float.ceil | return equal or nearest bigger integer]
+Float.ceil()
+[Float.floor | return equal or nearest smaller integer]
+Float.floor()
+[Float.int | return the integer part of the value]
+Float.int()
+[Float.maxFloat | display the biggest possible value]
+Float.maxFloat()
+[Float.minFloat | display the smallest possible value]
+Float.minFloat()
+[Float.round | return the nearest value as integer]
+Float.round()
+[Float.pow | the first value into the potency of the second]
+Float.pow()
+[Float.sqrt | count the square root]
+Float.sqrt()
+[Lang.Abort | end function (used in error handling)]
+Lang.Abort(errorDescription)
+[Lang.Abs | return the absolute value of the parameter]
+Lang.Abs(number)
+[Lang.CharacterSet | return the characterset]
+Lang.CharacterSet()
+[Lang.Exit | exit function]
+Lang.Exit(value)
+[Lang.float | test if the device support floating numbers]
+Lang.float()
+[Lang.isFloat | test if the parameter can be parsed into floating numbers]
+Lang.isFloat(value)
+[Lang.isInt | test if the parameter can be parsed into integers]
+Lang.isInt(value)
+[Lang.max | return the maximum value]
+Lang.max(value1, value2)
+[Lang.maxInt | return the maximum integer value]
+Lang.maxInt()
+[Lang.min | return the minimum value]
+Lang.min(value1, value2)
+[Lang.minInt | return the minimum integer value]
+Lang.minInt()
+[Lang.parseFloat | return floating number]
+Lang.parseFloat(value)
+[Lang.parseInt | return integers]
+Lang.parseInt(value)
+[Lang.random | return random values]
+Lang.random(value)
+[Lang.seed | initialize and return random values]
+Lang.seed(value)
+[String.charAt | return the value of transmitted string + integer]
+String.charAt(string, index)
+[String.compare | compare two strings (first smaller | -1)]
+String.compare(string1, string2)
+[String.elementAt | return the value of transmitted element + integer]
+String.elementAt(string, index, separator)
+[String.elements | return the number of elements]
+String.elements(string, separator)
+[String.find | find a string]
+String.find(string, subString)
+[String.format | format strings according a string (d | integer, f | floating-point, s | string)]
+String.format(format, value)
+[String.insertAt | return a new string to a defined place (four variables)]
+String.insertAt(string, element, index, separator)
+[String.isEmpty | test if the string is empty]
+String.isEmpty(string)
+[String.Lenght | display the length of the string]
+String.Lenght(string)
+[String.removeAt | remove a string from a defined place (four variables)]
+String.removeAt(string, index, separator)
+[String.replace | replace a substring with another substring (three variables)]
+String.replace(string, oldSubString, newSubString)
+[String.replacetAt | replace a string with another string with an index (four variables)]
+String.replacetAt(string, element, index, separator)
+[String.squeeze | remove repeated strings]
+String.squeeze(string)
+[String.substring | return a new string, which starts a defined place]
+String.substring(string, startIndex, length)
+[String.toString | ensure that parameters are handled as string]
+String.toString(value)
+[String.trim | remove extra spaces before and after a string]
+String.trim(string)
+[URL.escapeString | encode string as URL]
+URL.escapeString(string)
+[URL.getBase | return the absolute URL]
+URL.getBase()
+[URL.getFragment | get the part after #]
+URL.getFragment(url)
+[URL.getHost | get the host name]
+URL.getHost(url)
+[URL.getParameter | get transmitted parameters]
+URL.getParameter(url)
+[URL.getPath | get the URL path]
+URL.getPath(url)
+[URL.getPort | get the the number of the connection port]
+URL.getPort(url)
+[URL.getQuery | get the used query string]
+URL.getQuery(url)
+[URL.getReferer | get back the shortest relative path]
+URL.getReferer()
+[URL.getSheme | return the used protocol]
+URL.getSheme(url)
+[URL.isValid | test if the URL format is valid]
+URL.isValid(url)
+[URL.LoadString | return the contents of URL]
+URL.LoadString(url, contentType)
+[URL.resolve | return address, which join the base and relative address]
+URL.resolve(baseUrl , embeddedUrl)
+[URL.unescape | return a string with unescaped characters]
+URL.unescape(string)
+[WMLBrowser.getCurretCard | return the address of the current card]
+WMLBrowser.getCurretCard()
+[WMLBrowser.getVar | locate the setting of variables]
+WMLBrowser.getVar(name)
+[WMLBrowser.go | move to another address]
+WMLBrowser.go(url)
+[WMLBrowser.newContext | delete history]
+WMLBrowser.newContext()
+[WMLBrowser.prev | go to the previous card]
+WMLBrowser.prev()
+[WMLBrowser.refresh | update the document]
+WMLBrowser.refresh()
+[WMLBrowser.setVar | set new values to variables]
+WMLBrowser.setVar(name, value)
+;
+[WTAPublic.makeCall |R ]
+WTAPublic.makeCall("%phonenumber%");
+[WTAPhoneBook.write |R ]
+WTAPhoneBook.write("", "%phonenumber%", "%name%");
+;
+[Tree Content]
+The dialogs library
+ Dialogs.alert()
+ Dialogs.confirm()
+ Dialogs.prompt()
+The float library
+ Float.ceil()
+ Float.floor()
+ Float.int()
+ Float.maxFloat()
+ Float.minFloat()
+ Float.round()
+ Float.pow()
+ Float.sqrt()
+The lang library
+ Lang.Abort()
+ Lang.Abs()
+ Lang.CharacterSet()
+ Lang.Exit()
+ Lang.float()
+ Lang.isFloat()
+ Lang.isInt()
+ Lang.max()
+ Lang.maxInt()
+ Lang.min()
+ Lang.minInt()
+ Lang.parseFloat()
+ Lang.parseInt()
+ Lang.parseRandom()
+ Lang.seed()
+The String library
+ String.charAt()
+ String.compare()
+ String.elementAt()
+ String.elements()
+ String.find()
+ String.format()
+ String.insertAt()
+ String.isEmpty()
+ String.Lenght()
+ String.removeAt()
+ String.replace()
+ String.replacetAt()
+ String.squeeze()
+ String.substring()
+ String.toString()
+ String.trim()
+The URL library
+ URL.escapeString()
+ URL.getBase()
+ URL.getFragment()
+ URL.getHost()
+ URL.getParameter()
+ URL.getPath()
+ URL.getPort()
+ URL.getQuery()
+ URL.getReferer()
+ URL.getSheme()
+ URL.isValid()
+ URL.LoadString()
+ URL.resolve()
+ URL.unescape()
+The Wmlbrowser library
+ WMLBrowser.getCurretCard()
+ WMLBrowser.getVar()
+ WMLBrowser.go()
+ WMLBrowser.newContext()
+ WMLBrowser.prev()
+ WMLBrowser.refresh()
+ WMLBrowser.setVar()
+KeyWords
+ access
+ agent
+ break
+ continue
+ div
+ div=
+ domain
+ else
+ equiv
+ extern
+ for
+ function
+ header
+ http
+ if
+ isvalid
+ meta
+ name
+ path
+ return
+ typeof
+ url
+ use
+ user
+ var
+ while
+;
+[KeyWords]
+access
+agent
+application/vnd.wap.wmlc
+application/vnd.wap.wmlscriptc
+break
+case
+catch
+class
+const
+continue
+debugger
+default
+Dialogs.alert()
+Dialogs.confirm(,,)
+Dialogs.prompt(,)
+div
+div=
+do
+domain
+else
+enum
+equiv
+export
+extends
+extern
+finally
+Float.ceil()
+Float.floor()
+Float.int()
+Float.maxFloat()
+Float.minFloat()
+Float.pow()
+Float.round()
+Float.sqrt()
+for
+function
+header
+http
+if
+image/vnd.wap.wbmp
+import
+isvalid
+Lang.Abort()
+Lang.Abs()
+Lang.Exit()
+Lang.float()
+Lang.CharacterSet()
+Lang.isFloat()
+Lang.isInt()
+Lang.max()
+Lang.maxInt()
+Lang.min()
+Lang.minInt()
+Lang.parseFloat()
+Lang.parseInt()
+Lang.parseRandom()
+Lang.seed()
+meta
+name
+path
+private
+public
+return
+sizeof
+String.compare(,)
+String.elementAt(,,)
+String.elements(,)
+String.find(,)
+String.format(,)
+String.charAt(,)
+String.insertAt(,,,)
+String.isEmpty()
+String.Lenght()
+String.removeAt(,,)
+String.replace(,,)
+String.replacetAt(,,,)
+String.squeeze()
+String.substring(,,)
+String.toString()
+String.trim()
+struct
+super
+switch
+text/vnd.wap.wml
+text/vnd.wap.wmlscript
+throw
+try
+typeof
+url
+URL.escapeString()
+URL.getBase()
+URL.getFragment()
+URL.getHost()
+URL.getParameter()
+URL.getPath()
+URL.getPort()
+URL.getQuery()
+URL.getReferer()
+URL.getSheme()
+URL.isValid()
+URL.LoadString(,)
+URL.resolve(,)
+URL.unescape()
+use
+use meta http
+use meta name
+use meta user
+user
+var
+var
+while
+WMLBrowser.getCurretCard()
+WMLBrowser.getVar()
+WMLBrowser.go()
+WMLBrowser.newContext()
+WMLBrowser.prev()
+WMLBrowser.refresh()
+WMLBrowser.setVar(,)

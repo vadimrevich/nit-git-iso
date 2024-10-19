@@ -1,0 +1,1075 @@
+﻿;; PSPad code template for C
+;; Author: Karel Pavelka
+;; E-mail: webjob@seznam.cz
+;; Update: 16.12.2003
+;;
+;;   (black)      funkce jazyka
+;; B (blue)
+;; D (dark gray)
+;; F (fuchsia)
+;; G (green)
+;; M (maroon)
+;; N (navy)
+;; P (purple)
+;; R (red)
+;;
+;;
+[Macro definition]
+%include%=@C include,,,<assert.h>;<ctype.h>;<errno.h>;<float.h>;<limits.h>;<locale.h>;<math.c>;<setjmp.h>;<signal.h>;<stdarg.h>;<stddef.h>;<stdio.h>;<stdlib.h>;<string.h>;<time.h>;<vcl.h>;<windows.h>,
+[/*...*/ |G komentář /* ... */ ]
+/*
+    §|
+*/
+[#define|G ]
+|#define
+§
+[#include|G ]
+|#include %include%
+§
+[class|G deklarace třídy]
+class |{
+§
+protected:
+
+public:
+
+}
+[for|P cyklus for]
+for(  |; ; )
+{
+  §
+}
+[if|P if statement]
+if( |)
+{
+  §
+}
+[switch|P přepínač switch]
+switch( §|)
+{
+	case :
+		break;
+
+	case :
+		break;
+
+	default:
+
+}
+[FORi|P cyklus for s proměnnou i]
+for(int i=0;i  |;i++)
+{
+  §
+}
+[do|P cyklus do]
+do
+{
+  §
+} while();
+[break |P break statement]
+break;
+[continue |P continue statement]
+continue;
+[case |P switch case statement]
+case |:
+    break;
+;
+[main |G hlavní program]
+main ()
+{
+  |§
+}
+[try |P try statement]
+try
+{
+  |§
+}
+;
+[abort | ]
+void abort (void);
+[abs | ]
+int abs (int j);
+[access | ]
+int access (const char *path, int amode);
+[acos | arkuskosinus x]
+double acos (double x);
+[alarm | ]
+unsigned int alarm (unsigned int seconds);
+[asctime | převod údaje ze struktury tm na řetězec]
+char* asctime (const struct tm *timeptr);
+[asin | arkussinus x]
+double asin (double x);
+[assert | ]
+void assert (int expression);
+[atan | arkustangens x]
+double atan (double x);
+[atan2 | arkustangens x,y]
+double atan2 (double y, double x);
+[atexit | ]
+int atexit (void (*func)(void));
+[atof | ]
+double atof (const char *nptr);
+[atoi | ]
+int atoi (const char *nptr);
+[atol | ]
+long int atol (const char *nptr);
+[bsearch | ]
+void *bsearch (const void *key, const void *base, size_t nmemb, size_t size, int (*compar)(const void *, const void *));
+[calloc | ]
+void *calloc (size_t nmemb, size_t size);
+[ceil | nejmenší celé číslo větší než x (zaokrouhlení na horu); jeli x celé číslo, vrátí funkce x]
+double ceil (double x);
+[cfgetispeed | ]
+speed_t cfgetispeed (const struct termios *p);
+[cfgetospeed | ]
+speed_t cfgetospeed (const struct termios *p);
+[cfsetispeed | ]
+int cfsetispeed (const struct termios *p, speed_t speed);
+[cfsetospeed | ]
+int cfsetospeed (const struct termios *p, speed_t speed);
+[chdir | změna adresáře]
+int chdir (const char *path);
+[chmod | ]
+int chmod (const char *path, mode_t mode);
+[chown | ]
+int chown (const char *path, uid_t owner, gid_t group);
+[clearerr | ]
+void clearerr (FILE *stream);
+[clock | počet tiků procesoru od okažiku spuštění programu]
+clock_t clock (void);
+[close | ]
+int close (int fildes);
+[closedir | ]
+int closedir (DIR *dirp);
+[cos | kosinus x]
+double cos (double x);
+[cosh | hyperbolický kosinus x]
+double cosh (double x);
+[creat | ]
+int creat (const char *path, mode_t mode);
+[ctermid | ]
+char *ctermid (char *s);
+[ctime | převod času (údaje ze struktury time_t)na řetězec]
+char *ctime (const time_t *timer);
+[cuserid | ]
+char *cuserid (char *s);
+[difftime | rozdíl dvou časů (dvou údajů time_t, výsledek je v sekundách)]
+double difftime (time_t time1, time_t time0);
+[div | ]
+div_t div (int numer, int denom);
+[dup | ]
+int dup (int fildes);
+[dup2 | ]
+int dup2 (int fildes, int fildes2);
+[execl | ]
+int execl (const char *path, const char *args, ...);
+[execle | ]
+int execle (const char *path, const char *args, ...);
+[execlp | ]
+int execlp (const char *file, const char *args, ...);
+[execv | ]
+int execv (const char *path, char *const argv[]);
+[execve | ]
+int execve (const char *path, char *const argv[], char *const *envp);
+[execvp | ]
+int execvp (const char *file, char *const argv[]);
+[exit | ]
+void exit (int status);
+[_exit | ]
+void _exit (int status);
+[exp | ]
+double exp (double x);
+[fabs | absolutní hodnota x]
+double fabs (double x);
+[fclose | ]
+int fclose (File *stream);
+[fcntl | ]
+int fcntl (int fildes, int cmd, ...);
+[fdopen | ]
+File *fdopen (int filedes, const char *type);
+[feof | ]
+int feof (FILE *stream);
+[ferror | ]
+int ferror (FILE *stream);
+[fflush | ]
+int fflush (FILE *stream);
+[fgetc | ]
+int fgetc (FILE *stream);
+[fgetpos | ]
+int fgetpos (FILE *stream, fpos_t *pos);
+[fgets | ]
+char *fgets (char *s, int n, FILE *stream);
+[fileno | ]
+int fileno (FILE *stream);
+[floor | opak ceil(), největší celé číslo menší než x (zaokrouhlení dolů); jeli x celé číslo, vrátí funkce x]
+double floor (double x);
+[fmod | reálný zbytek po dělení x/y]
+double fmod (double x, double y);
+[fopen | ]
+FILE *fopen (const char *filename, const char *mode);
+[fork | ]
+pid_t fork (void);
+[fpathconf | ]
+long fpathconf (int fildes, int name);
+[fprintf | ]
+inf fprintf (FILE *stream, const char *format, ...);
+[fputc | ]
+int fputc (int c, FILE *stream);
+[fputs | ]
+int fputs (const char *s, FILE *stream);
+[fread | ]
+size_t fread (void *ptr, size_t size, size_t nmemb, FILE *stream);
+[free | ]
+void free (void *ptr);
+[freopen | ]
+FILE *freopen (const char *filename, const char *mode, FILE *stream);
+[frexp | rozdělí x na mantisu a exponent (mocninu dvou)]
+double frexp (double value, int *exp);
+[fscanf | ]
+int fscanf (FILE *stream, const char *format, ...);
+[fseek | ]
+int fseek (FILE *stream, long int offset, int whence);
+[fsetpos | ]
+int fsetpos (FILE *stream, const fpos_t * pos);
+[fstat | ]
+int fstat (int fildes, struct stat *buf);
+[ftell | ]
+long int ftell (FILE *stream);
+[fwrite | ]
+size_t fwrite (const void *ptr, size_t size, size_t nmemb, FILE *stream);
+[getc | ]
+int getc (FILE *stream);
+[getchar | ]
+int getchar (void);
+[getcwd | ]
+char *getcwd (char *buf, size_t size);
+[getegid | ]
+gid_t getegid (void);
+[getenv | ]
+char *getenv (const char *name);
+[geteuid | ]
+uid_t geteuid (void);
+[getgid | ]
+gid_t getgid (void);
+[getgrgid | ]
+struct group *getgrgid (gid_t gid);
+[getgrnam | ]
+struct group *getgrnam (const char *name);
+[getgroups | ]
+int getgroups (int gidsetsize, gid_t grouplist[]);
+[getlogin | ]
+char *getlogin (void);
+[getpgrp | ]
+pid_t getpgrp (void);
+[getpid | ]
+pid_t getpid (void);
+[getppid | ]
+pid_t getppid (void);
+[getpwnam | ]
+struct passwd *getpwnam (const char *name);
+[getpwuid | ]
+struct passwd *getpwuid (uid_t uid);
+[gets | ]
+char *gets (char *s);
+[getuid | ]
+uid_t getuid (void);
+[gmtime | převod času (údaje struktury time_t) do GMT, vrací ukazatel na tm]
+struct tm *gmtime (const time_t *timer);
+[isalnum | ]
+int isalnum (int c);
+[isalpha | ]
+int isalpha (int c);
+[isatty | ]
+int isatty (int fildes);
+[iscntrl | ]
+int iscntrl (int c);
+[isdigit | ]
+int isdigit (int c);
+[isgraph | ]
+int isgraph (int c);
+[islower | ]
+int islower (int c);
+[isprint | ]
+int isprint (int c);
+[ispunct | ]
+int ispunct (int c);
+[isspace | ]
+int isspace (int c);
+[isupper | ]
+int isupper (int c);
+[isxdigit | ]
+int isxdigit (int c);
+[kill | ]
+int kill (pid_t pid, int sig);
+[labs | ]
+long int labs (long int j);
+[ldexp | x krát dva na n-tou]
+double ldexp (double x, int exp);
+[ldiv | ]
+ldiv_t ldiv (long int numer, long int denom);
+[link | ]
+int link (const char *existing, const char *new);
+[localeconv | ]
+struct lconv *localeconv (void);
+[localtime | konvertuje čas do struktury (tm)]
+struct tm *localtime (const time_t *timer);
+[log | přirozený logaritmus x]
+double log (double x);
+[log10 | desítkový logaritmus x]
+double log10 (double x);
+[longjmp | ]
+void longjmp (jmp_buf env, int val);
+[lseek | ]
+off_t lseek (int fildes, off_t offset, int whence);
+[malloc | ]
+void malloc (size_t size);
+[mblen | ]
+int mblen (const char *s, size_t n);
+[mbstowcs | ]
+size_t mbstowcs (wchar_t *pwcs, const char *s, size_t n);
+[mbtowc | ]
+int mbtowc (wchar_t *pwc, const char *s, size_t n);
+[memchr | hledání znaků v poli znaků]
+void *memchr (const void *s, int c, size_t n);
+[memcmp | prohledávání polí znaků]
+int memcmp (const void *s1, const void *s2, size_t n);
+[memcpy | kopírování polí znaků]
+void *memcpy (void *s1, const void *s2, size_t n);
+[memmove | ]
+void *memmove (void * s1, const void *s2, size_t n);
+[memset | vyplnění pole znaků konstantou]
+void *memset (void *s, int c, size_t n);
+[mkdir | ]
+int mkdir (const char *path, mode_t mode);
+[mkfifo | ]
+int mkfifo (const char *path, mode_t mode);
+[mktime | převede čas (tm) do kalendářního formátu (time_t)]
+time_t mktime (struct tm *timer);
+[modf | rozdělí x na celou část (n) a desetinou část]
+double modf (double value, double *iptr);
+[open | ]
+int open (const char *path, int oflag, ...);
+[opendir | ]
+DIR *opendir (const char *dirname);
+[pathconf | ]
+long pathconf (const char *path, int name);
+[pause | ]
+int pause (void);
+[perror | ]
+void perror (const char *s);
+[pipe | ]
+int pipe (int fildes[2]);
+[pow | ]
+double pow (double x, double y);
+[printf | ]
+int printf (const char *format, ...);
+[putc | ]
+int putc (int c, FILE *stream);
+[putchar | ]
+int putchar (int c);
+[puts | ]
+int puts (const char *s);
+[qsort | ]
+void qsort (void *base, size_t nmemb, size_t size);
+[raise | ]
+int raise (int sig);
+[rand | ]
+int rand (void);
+[read | ]
+int read (int fildes, void *buf, unsigned int nbyte);
+[readdir | ]
+struct dirent *readdir (DIR *dirp);
+[realloc | ]
+void realloc (void *ptr, size_t size);
+[remove | ]
+int remove (const char *filename);
+[rename | ]
+int rename (const char * old, const char *new);
+[rewind | ]
+void rewind (FILE *stream);
+[rewinddir | ]
+void rewinddir (DIR *dirp);
+[rmdir | ]
+int rmdir (const char *path);
+[scanf | načte z klávesnice jeden nebo více údajů a uloží jej (je) do zadané proměnné (proměnných)]
+int scanf (const char *format, ...);
+[setbuf | ]
+void setbuf (FILE *stream, char *buf);
+[setgid | ]
+int setgid (gid_t gid);
+[setjmp | ]
+int setjmp (jmp_buf env);
+[setlocale | ]
+char *setlocale (int category, const char *locale);
+[setpgid | ]
+int setpgid (pid_t pid, pid_t pgid);
+[setsid | ]
+pid_t setsid (void);
+[setuid | ]
+int setuid (uid_t uid);
+[setvbuf | ]
+int setvbuf (FILE *stream, char *buf, int mode, size_t size);
+[sigaction | ]
+int sigaction (int sig, const struct sigaction * act, struct sigaction *oact);
+[sigaddset | ]
+int sigaddset (sigset_t *set, int signo);
+[sigdelset | ]
+int sigdelset (sigset_t *set, int signo);
+[sigemptyset | ]
+int sigemptyset (sigset_t *set);
+[sigfillset | ]
+int sigfillset (sigset_t *set);
+[sigismember | ]
+int sigismember (const sigset_t *set, int signo);
+[siglongjmp | ]
+void siglongjmp (sigjmp_buf env, int val);
+[signal | ]
+void signal (int sig, void *func(int sig));
+[sigpending | ]
+int sigpending (sigset_t *set);
+[sigprocmask | ]
+int sigprocmask (int how, const sigset_t *set, sigset_t *oset);
+[sigsetjmp | ]
+int sigsetjmp (sigjmp_buf env, int savemask);
+[sigsuspend | ]
+int sigsuspend (const sigset_t *sigmask);
+[sin | sinus x]
+double sin (double x);
+[sinh | hyperbolický sinus x]
+double sinh (double x);
+[sleep | ]
+unsigned int sleep (unsigned int seconds);
+[sprintf | ]
+int sprintf (char *s, const char *format, ...);
+[sqrt | odmocnina z x]
+double sqrt (double x);
+[srand | ]
+void srand (unsigned int seed);
+[sscanf | ]
+int sscanf (const char *s, const char *format, ...);
+[stat | ]
+int stat (const char *path, struct stat *buf);
+[strcat | ]
+char *strcat (char *s1, const char *s2);
+[strchr | hledání prvního výskytu znaku v řetězci]
+char *strchr (const char *s, int c);
+[strcmp | ]
+int strcmp (const char *s1, const char *s2);
+[strcoll | ]
+int strcoll (const char *s1, const char *s2);
+[strcpy | ]
+char *strcpy (char *s1, const char *s2);
+[strcspn | hledání shody prvního znaku]
+size_t strcspn (const char *s1, const char *s2);
+[strerror | ]
+char *strerror (int errnum);
+[strftime | převede složky data a času na řetězec, je možné definovat formát převodu]
+size_t *strftime (char *s, size_t maxsize, const char *format, const struct tm *timeptr);
+[strlen | ]
+size_t strlen (const char *s);
+[strncat | ]
+char *strncat (char *s1, const char *s2, size_t n);
+[strncmp | ]
+char *strncmp (char *s1, const char *s2, size_t n);
+[strncpy | ]
+char *strncpy (char *s1, const char *s2, size_t n);
+[strpbrk | hledání shody jakéhokoliv znaku]
+char *strpbrk (const char *s1, const char *s2);
+[strrchr | hledání prvního výskytu znaku v řetězci, hledání probíhá zprava doleva]
+char *strrchr (const char *s, int c);
+[strspn | hledání prvního rozdílného znaku]
+size_t strspn (const char *s1, const char *s2);
+[strstr | ]
+char *strstr (const char *s1, const char *s2);
+[strtod | ]
+double strtod (const char *nptr, char **endptr);
+[strtok | rozčlenění řetězce na základě zadaných oddělovačů]
+char *strtok (char *s1, const char *s2);
+[strtol | ]
+long int strtol (const char *nptr, char **endptr, int base);
+[strtoul | ]
+unsigned long int strtoul (const char *nptr, char **endptr, int base);
+[strxfrm | ]
+size_t strxfrm (char *s1, const char *s2, size_t n);
+[sysconf | ]
+long sysconf (int name);
+[system | ]
+int system (const char *string);
+[tan | tangens x]
+double tan (double x);
+[tanh | hyperbolický tangens x]
+double tanh (double x);
+[tcdrain | ]
+int tcdrain (int fildes);
+[tcflow | ]
+int tcflow (int fildes, int action);
+[tcflush | ]
+int tcflush (int fildes, int queue_selector);
+[tcgetattr | ]
+int tcgetattr (int fiildes, struct termos *tp);
+[tcgetpgrp | ]
+pid_t tcgetpgrp (int fildes);
+[tcsendbreak | ]
+int tcsendbreak (int fildes, int duration);
+[tcsetattr | ]
+int tcsetattr (int fildes, int options, const struct termios *tp);
+[tcsetpgrp | ]
+int tcsetpgrp (int fildes, pid_t pgrpid);
+[time | vrátí aktuální čas (jako počet sekund od 1.1. 1970)]
+time_t time (time_t *timer);
+[times | ]
+clock_t times (struct tms *buffer);
+[tmpfile | ]
+FILE *tmpfile (void);
+[tmpnam | ]
+char *tmpnam (char *s);
+[tolower | ]
+int tolower (int c);
+[toupper | ]
+int toupper (int c);
+[ttyname | ]
+cahr *ttyname (int fildes);
+[tzset | ]
+void tzset (void);
+[umask | ]
+mode_t umask (mode_t cmask);
+[uname | ]
+int uname (struct utsname *name);
+[ungetc | ]
+int ungetc (int c, FILE *stream);
+[unlink | ]
+int unlink (const char *path);
+[utime | ]
+int utime (const char *path, const struct utimbuf *times);
+[va_arg | ]
+type va_arg (va_list ap, type);
+[va_end | ]
+void va_end (va_list ap);
+[va_start | ]
+void va_start (va_list ap, parmN);
+[vfprintf | ]
+int vfprintf (FILE *stream, const char *format, va_list arg);
+[vprintf | ]
+int vprintf (const char *format, va_list arg);
+[vsprintf | ]
+int vsprintf (char *s, const char *format, va_list arg);
+[wait | ]
+pid_t wait (int *statloc);
+[waitpid | ]
+pid_t waitpid (pid_t pid, int *stat_loc, int options);
+[wcstombs | ]
+size_t wcstombs (char *s, const wchar_t *pwcs, size_t n);
+[wctomb | ]
+int wctomb (char *s, wchar_t wchar);
+[write | ]
+int write (int fildes, const void *buf, unsigned int nbyte);
+;
+;
+; -----------------------------------------------------------------------------
+; Tree content
+; -----------------------------------------------------------------------------
+[Tree Content]
+Statements
+ break
+ continue
+ do
+ for
+ goto
+ if
+ switch
+ while
+assert.h
+ assert
+ctype.h
+ isalnum
+ isalpha
+ iscntrl
+ isdigit
+ isgraph
+ islower
+ isprint
+ ispunct
+ isspace
+ isupper
+ isxdigit
+ tolower
+ toupper
+errno.h
+ errno
+locale.h
+ localeconv
+ setlocale
+math.c
+ acos
+ asin
+ atan
+ atan2
+ ceil
+ cos
+ cosh
+ exp
+ fabs
+ floor
+ fmod
+ frexp
+ ldexp
+ log
+ log10
+ modf
+ pow
+ sin
+ sinh
+ sqrt
+ tan
+ tanh
+signal.h
+ raise
+ sig_atomic_t
+stdio.h
+ clearerr
+ fclose
+ feof
+ ferror
+ fflush
+ fgetc
+ fgetpos
+ fgets
+ fopen
+ fprintf
+ fputc
+ fputs
+ fread
+ freopen
+ fscanf
+ fseek
+ fsetpos
+ ftell
+ fwrite
+ getc
+ getchar
+ gets
+ perror
+ printf
+ putc
+ putchar
+ puts
+ remove
+ rename
+ rewind
+ scanf
+ setbuf
+ setvbuf
+ sprintf
+ sscanf
+ tmpfile
+ tmpnam
+ ungetc
+ vfprintf
+ vprintf
+ vsprintf
+setjmp.h
+ jmp_buf
+ longjmp
+ setjmp
+stdarg.h
+ va_arg
+ va_end
+ va_list
+ va_start
+stdlib.h
+ abort
+ abs
+ atexit
+ atof
+ atoi
+ atol
+ bsearch
+ calloc
+ div
+ exit
+ free
+ getenv
+ labs
+ ldiv
+ malloc
+ mblen
+ mbstowcs
+ mbtowc
+ qsort
+ rand
+ realloc
+ srand
+ strtod
+ strtol
+ strtoul
+ system
+ wcstombs
+ wctomb
+string.h
+ memcmp
+ memcpy
+ memchr
+ memset
+ size_t
+ strcspn
+ strchr
+ strpbrk
+ strrchr
+ strtok
+time.h
+ asctime
+ clock
+ clock_t
+ ctime
+ difftime
+ gmtime
+ localtime
+ mktime
+ strftime
+ strxfrm
+ time
+ time_t
+ tm
+;
+;
+; -----------------------------------------------------------------------------
+; KeyWords
+; -----------------------------------------------------------------------------
+[Keywords]
+__asm
+__automated
+__cdecl
+__classid
+__closure
+__declspec
+__dispid
+__except
+__export
+__fastcall
+__finally
+__import
+__int16
+__int32
+__int64
+__int8
+__pascal
+__property
+__published
+__rtti
+__stdcall
+__thread
+__try
+_asm
+_cdecl
+_exit ();
+_export
+_fastcall
+_import
+_pascal
+_stdcall
+abort ();
+abs ();
+access (, );
+acos ();
+alarm ();
+asctime ();
+asin ();
+asm
+assert ();
+atan ();
+atan2 (, );
+atexit ();
+atof ();
+atoi ();
+atol ();
+auto
+bool
+break
+bsearch (, , , , );
+calloc (, );
+case
+catch
+cdecl
+ceil ();
+cfgetispeed ();
+cfgetospeed ();
+cfsetispeed (, );
+cfsetospeed (, );
+class
+clearerr ();
+clock ();
+close ();
+closedir ();
+const
+const_cast
+continue
+cos ();
+cosh ();
+creat (, );
+ctermid ();
+ctime ();
+cuserid ();
+default
+delete
+difftime (, );
+div (, );
+do
+double
+dup ();
+dup2 (, );
+dynamic_cast
+else
+enum
+execl (, , );
+execle (, , );
+execlp
+execlp (, , );
+execv (, );
+execve (, , );
+execvp (, );
+exit ();
+exp ();
+explicit
+extern
+fabs ();
+false
+fclose ();
+fcntl (, , );
+fdopen (, );
+feof ();
+ferror ();
+fflush ();
+fgetc ();
+fgetpos (, );
+fgets (, , );
+fileno ();
+float
+floor ();
+fmod (, );
+fopen (, );
+for
+fork ();
+fpathconf (, );
+fprintf ("", , );
+fputc (, );
+fputs (, );
+fread (, , , );
+free ();
+freopen (, , );
+frexp (, );
+friend
+fscanf (, , );
+fseek (, , );
+fsetpos (, );
+fstat (, );
+ftell ();
+fwrite (, , , );
+getc ();
+getcwd (, );
+getegid ();
+getenv ();
+geteuid ();
+getgid ();
+getgrgid ();
+getgrnam ();
+getgroups (, );
+getchar ();
+getlogin ();
+getpgrp ();
+getpid ();
+getppid ();
+getpwnam ();
+getpwuid ();
+gets ();
+getuid ();
+gmtime ();
+goto
+char
+chdir ();
+chmod (, );
+chown (, , );
+if
+inline
+int
+isalnum ();
+isalpha ();
+isatty ();
+iscntrl ();
+isdigit ();
+isgraph ();
+islower ();
+isprint ();
+ispunct ();
+isspace ();
+isupper ();
+isxdigit ();
+kill (, );
+labs ();
+ldexp (, );
+ldiv (, );
+link (, );
+localeconv ();
+localtime ();
+log ();
+log10 ();
+long
+longjmp (, );
+lseek (, , );
+malloc ();
+mblen (, );
+mbstowcs (, , );
+mbtowc (, , );
+memcmp (, , );
+memcpy (, , );
+memchr (, , );
+memmove (, , );
+memset (, , );
+mkdir (, );
+mkfifo (, );
+mktime ();
+modf (, );
+mutable
+namespace
+new
+open (, , );
+opendir ();
+operator
+pascal
+pathconf (, );
+pause ();
+perror ();
+pipe ();
+pow (, );
+printf ("", );
+private
+protected
+publicregister
+putc (, );
+putchar ();
+puts ();
+qsort (, , );
+raise ();
+rand ();
+read (, , );
+readdir ();
+realloc (, );
+reinterpret_cast
+remove ();
+rename (, );
+return
+rewind ();
+rewinddir ();
+rmdir ();
+scanf (, );
+setbuf (, );
+setgid ();
+setjmp ();
+setlocale (, );
+setpgid (, );
+setsid ();
+setuid ();
+setvbuf (, , , );
+short
+sigaction (, , );
+sigaddset (, );
+sigdelset (, );
+sigemptyset ();
+sigfillset ();
+sigismember (, );
+siglongjmp (, );
+signal (, );
+signed
+sigpending ();
+sigprocmask (, , );
+sigsetjmp (, );
+sigsuspend ();
+sin ();
+sinh ();
+sizeof
+sleep ();
+sprintf ("", , );
+sqrt ();
+srand ();
+sscanf (, , );
+stat (, );
+static
+static_cast
+strcat (, );
+strcmp (, );
+strcoll (, );
+strcpy (, );
+strcspn (, );
+strerror ();
+strftime (, , , );
+strchr (, );
+strlen ();
+strncat (, , );
+strncmp (, , );
+strncpy (, , );
+strpbrk (, );
+strrchr (, );
+strspn (, );
+strstr (, );
+strtod (, );
+strtok (, );
+strtol (, , );
+strtoul (, , );
+struct
+strxfrm (, , );
+switch
+sysconf ();
+system ();
+tan ();
+tanh ();
+tcdrain ();
+tcflow (, );
+tcflush (, );
+tcgetattr (, );
+tcgetpgrp ();
+tcsendbreak (, );
+tcsetattr (, , );
+tcsetpgrp (, );
+template
+this
+throw
+time ();
+times ();
+tmpfile ();
+tmpnam ();
+tolower ();
+toupper ();
+true
+try
+ttyname ();
+typedef
+typeid
+typename
+tzset ();
+umask ();
+uname ();
+ungetc (, );
+union
+unlink ();
+unsigned
+using
+utime (, );
+va_arg (, );
+va_end ();
+va_start (, );
+vfprintf ("", , );
+virtual
+void
+volatile
+vprintf ("", );
+vsprintf ("", , );
+wait ();
+waitpid (, , );
+wcstombs (, , );
+wctomb (, );
+while
+wchar_t
+write (, , );
+;
+; -----------------------------------------------------------------------------
+;  user-defined templates
+; -----------------------------------------------------------------------------

@@ -1,0 +1,10 @@
+Liberation Mono
+
+Font by STEVEN MATTESON 
+https://blogfonts.com/liberation-mono-4.font
+Font distribution with PSPad approved by Steven Matteson Jan. 4th 2021
+
+Fira Code
+Font by Nikita Prokopov
+https://github.com/tonsky/FiraCode
+ 

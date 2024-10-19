@@ -1,0 +1,145 @@
+﻿[Macro definition]
+%Tbfile1%=@E Čě˙ áŕçű:,,,,"
+%Tbfile2%=@C Ńňđîęŕ ŕňđčáóňŕ îňęđűňč˙:,,R,R;W;E;A;C;C+;B,"
+%Tbfile3%=@C Ęëţ÷:,,0,0;1;2;3;4;5;6;7;8;9;10;11,
+%Tbfile4%=@E Čě˙ ôŕéëŕ:,,,,"
+%Tbfile5%=@E Ďóňü ę ńëîâŕđţ:,,,,"
+%menu1%=@E Čě˙ ěŕńńčâŕ ńňđîę:
+%menu2%=@E Ńîîáůĺíčĺ âíčçó ýęđŕíŕ:,,,,"
+%menu3%=@E Çŕăîëîâîę îęíŕ:,,,,"
+%menu4%=@E Ęîîđäčíŕňŕ "ő" îęíŕ:
+%menu5%=@E Ęîîđäčíŕňŕ "ó" îęíŕ:
+%menu6%=@E ą ŕęňčâíîăî ďóíęňŕ:,,0,,
+%namemacro%=@E Čě˙ MACRO:
+%macroparametr%=@E Ďĺđĺäŕâŕĺěűĺ ďŕđŕěĺňđű (÷/ç çŕď˙ňóţ):
+%absnumber%=@E Čě˙ ďĺđĺěĺííîé(÷čńëî) (Abs):
+%axobject%=@E Čě˙ îáúĺęňŕ äë˙ ActiveX:,,,,"
+%cpfile%=@E Čě˙/ďóňü ęîďč ôŕéëŕ: ,,,,"
+%dstfile%=@E Čě˙/ďóňü äčńňđ ôŕéëŕ: ,,,,"
+%copyprogress%=@C Ďîęŕçűâŕňü ďđîăđĺńń:,,True,True;False,
+%crrslfile%=@E Čě˙ ěŕęđîôŕéëŕ:,,,,"
+%crrslproc%=@E Čě˙ ďđîöĺäóđű (íĺ îá˙çŕňĺëüíî):,,,,"
+%clerid%=@E Čě˙ ôŕéëŕ:,,,,
+%code%=@E Ââĺäčňĺ ńňđîęó/čě˙ ńňđîęč: ,,,,"
+%crid%=@E Čě˙/ďńĺâäîíčě ôŕéëŕ čç ńëîâŕđ˙: ,,,,"
+%geteq%=@E Ââĺäčňĺ čäĺíňčôčęŕňîđ: ,,,,
+%getge%=@E Ââĺäčňĺ čäĺíňčôčęŕňîđ: ,,,,
+%getle%=@E Ââĺäčňĺ čäĺíňčôčęŕňîđ: ,,,,
+%nrecords%=@E Ââĺäčňĺ čäĺíňčôčęŕňîđ: ,,,,
+%initprogress1%=@C ĚŔŐ ęîë-âî çŕďčńĺé: ,,,NRecords();.NRecords,
+%initprogress2%=@E Ńîîáůĺíčĺ âíčçó: ,,,,"
+%initprogress3%=@E Çŕăîëîâîę: ,,,,"
+%initprogress4%=@E Čäĺíň. (UseProgress): ,,,,
+%useprogress%=@E Čäĺíňčôčęŕňîđ ń÷ĺň÷čęŕ: ,,,,
+%msgbox%=@E Ńîîáůĺíčĺ: ,,,,
+%wile%=@E Ďŕđŕěĺňđű â öčęëĺ: ,,,,
+%substr1%=@E Îňęóäŕ âűđĺçŕĺě: ,,,,
+%substr2%=@E Ń ęŕęîăî ńčěâîëŕ: ,,,,
+%substr3%=@E Ęîëč÷ĺńňâî ńčěâîëîâ: ,,,,
+;-----------------------------------------------------------------------
+[TBFile |M ( TableName, AttrStr, KeyNum, FileName, DicName)]
+TBFile ( %Tbfile1%,%Tbfile2%,%Tbfile3%,%Tbfile4%,%Tbfile5%);
+[AbortTrn |P]
+AbortTrn ();
+[Abs |F Abs(number)]
+Abs (%absnumber%);
+[ActiveX |B ActiveX("...")]
+ActiveX (%axobject%);
+[AND |G]
+AND
+[append |F]
+append;
+[ARRAY |G]
+ARRAY
+[Asize |G Asize (val, newsize)]
+Asize ();
+[DebugBreak |M Ňî÷ęŕ ďđĺđűâŕíč˙]
+DebugBreak();
+[CallR2M |B CallR2M ( oPtr:MethodRef, par1, par2,...) : variant]
+CallR2M ()
+[CallRemoteRsl |B CallRemoteRsl (fileName, procName, parm1, parm2, ...)]
+CallRemoteRsl (%crrslfile%,%crrslproc%, parm1, parm2)
+[Class |B]
+Class
+[ClearColumn |B]
+ClearColumn;
+[ClearRecord |F ClearRecord ( id )]
+ClearRecord ( %clerid% );
+[ClearStructs |B]
+ClearStructs;
+[Clone |F]
+Clone();
+[CmdArgs |B]
+CmdArgs
+[CM_CANCEL |B]
+CM_CANCEL;
+[CM_DEFAULT |B]
+CM_DEFAULT;
+[CM_IGNORE |B]
+CM_IGNORE;
+[CM_SAVE |B]
+CM_SAVE;
+[CONST |B]
+CONST;
+[CodeFor |B CodeFor ( string )]
+CodeFor (%code%);
+[Copy |F Copy ( id1, id2 )]
+Copy ()
+[CopyFile |F CopyFile(src:string, dst:string, ind:bool ): bool]
+CopyFile (%cpfile%,%dstfile%,%copyprogress%);
+[Count |B]
+Count
+[Create |F Create (id, filename, bool)]
+Create (%crid%);
+[Delete |F]
+Delete
+[ELSE |G]
+ELSE
+[END |G]
+END;
+[FALSE |G]
+FALSE
+[FILE |G]
+FILE
+[GetEQ(čäĺíňčôčęŕňîđ) |G]
+GetEQ(%geteq%)
+[GetGE(čäĺíňčôčęŕňîđ) |G]
+GetGE(%getge%)
+[GetLE(čäĺíňčôčęŕňîđ) |G]
+GetLE(%getle%)
+[IF |G IF ... END ]
+IF (...)
+
+END;
+[IF |G IF ... ELSE ... END ]
+IF (...)
+
+ ELSE
+
+END;
+[IMPORT |G]
+IMPORT
+[INSERT |G]
+INSERT
+[InitProgress(maxRecord,msg,head) |M]
+InitProgress(%initprogress1%,%initprogress2%,%initprogress3%);
+
+UseProgress(%initprogress4%);
+
+Remprogress();
+[MACRO |G MACRO ... END;]
+MACRO %namemacro%(%macroparametr%)
+
+END;
+[Menu |D Menu(array, prompt, head, x, y, n)]
+Menu (%menu1%,%menu2%,%menu3%,%menu4%,%menu5%,%menu6%);
+[MsgBox |D MsgBox(ďŕđŕěĺňđ)]
+MsgBox(%msgbox%);
+[Nrecords(čäĺíňčôčęŕňîđ) |M]
+Nrecords(%nrecords%)
+[SubStr |F Âűđĺçŕĺě ńňđîęó]
+SubStr(%substr1%,%substr2%,%substr3%)
+[WHILE |G Öčęë]
+WHILE (%wile%)
+
+END;

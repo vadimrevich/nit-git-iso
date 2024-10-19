@@ -1,0 +1,693 @@
+﻿; PSPad code template for LaTeX
+; Created by PSPad  30.1.2003
+; Author:  Tomáš Vacek
+;
+; Příkazy jsou obarveny podle umístění v dokumentu:
+;   červeně - pro preambuli
+;   modře   - pro tělo
+[Macro definition]
+%PismoVelikost%=@C velikost písma:,,normalsize,tiny;scriptsize;footnotesize;small;normalsize;large;Large;LARGE;huge;Huge,
+%PismoStyl%=@C styl písma:,,rm,rm;it;bf;sl;sf;sc;tt;em,
+%StylDoc%=@C styl: ,,article,article;report;book;letter;slides;twoside
+%FormatStranky%=@C styl: ,,empty,plain;headings;empty
+%Zarovnani%=@C styl: ,,center,flushleft;flushright;center
+%Block%=@C Prostředí: ,,,document;figure;quote;quotation;verse;itemize;enumerate;description;tabular;tabbing;thebibliography;verbatim;equation;eqnarray,
+%VolbyDoc%=@C volby: ,,a4paper,a4paper;a5paper;"a4paper,landscape";"a4paper,landscape,twocolumn";letterpaper
+%Package%=@C balíček: ,,czech,czech;graphicx;makeidx;amstex;color;graphpap;pict2e
+%Nadpis%=@C typ oddilu: ,,section,section;subsection;subsubsection;part;chapter;paragraph;subparagraph;appendi
+%ReckaAbecedaMala%=@C format stranky: ,,alpha,alpha;beta;gamma;delta;epsilon;vareepsilon;zeta;eta;theta;vartheta;iota;kappa;lambda;mu;nu;xi;o;pi;varpi;rho;varrho;sigma;varsigma;tau;upsilon;phi;varphi;chi;psi;omega
+%MatFun%=@C matematická funkce: ,,sin,sin;cos;tan;cot;arcsin;arccos;arctan;ln;log;lim;max;min;det;dim
+%Integral%=@C Integrál: ,,\int,\int;\int\limits,
+%Suma%=@C Suma: ,,\sum,\sum\nolimits;\sum,
+%edit1%=@E Měřítko:,,,,
+%edit2%=@E Obrázek:,,,,
+%edit3%=@E Popisek:,,,,
+%edit4%=@O Soubor:,,,(*.tex)|*.tex,,R/
+%obr1%=@O Obrázek:,,,(*.ps;*.eps)|*.ps;*eps,,R/
+%edit5%=@E Jméno:,,,,
+%edit6%=@E Dolní mez:,,,,
+%edit7%=@E Horní mez:,,,,
+%edit8%=@E Hodnota+jednotka:,,,,
+%edit9%=@E Výška+jednotka:,,,,
+%edit10%=@E Šířka+jednotka:,,,,
+%edit11%=@E Popisek:,,,,
+%edit12%=@E Natočení:,,,,
+%edit13%=@E Nadpis:,,,,
+;%znak1%=@K Zavináč: @,\@
+%znak2%=@K Dvojitý křížek: #,\#
+%znak3%=@K Dollar: $,\$
+%znak4%=@K Procento: %,\%
+%znak5%=@K Áčko: &,\&
+%znak6%=@K Podtržítko: _,\_
+%znak7%=@K Levá závorka: {,\{
+%znak8%=@K Pravá závorka: },\}
+%znak9%=@K Úmrtí:,\dag
+%znak10%=@K Tři tečky: ...,\dots
+%znak11%=@K čárka k oddělení:,","
+%mat1%=@K Horní index,^{|}
+%mat2%=@K Dolní index,_{|}
+%mat3%=@K Druhá odmocnina,\sqrt{|}
+%mat4%=@K N-tá odmocnina,\sqrt[|]{}
+%mat5%=@K Závorka levá,\left
+%mat6%=@K Závorka pravá,\right
+%mat7%=@K nenší nebo rovno,\leq
+%mat8%=@K větší nebo rovno,\geq
+%mat9%=@K přibližně,\doteq
+%mat10%=@K nerovno,\neq
+%mat11%=@K plus-minus,\pm
+%mat12%=@K implikace,\Rightarrow
+%mat13%=@K ekvivalence,\Leftrightarrow
+%pStyl1%=@K "antikva (roman, norm.)",\rm
+%pStyl2%=@K bezpatkové,\sf
+%pStyl3%=@K strojopisné,\tt
+%pStyl4%=@K kurzíva,\it
+%pStyl5%=@K kapitálky,\sc
+%pStyl6%=@K polotučné,\bf
+; LOMÍTKO
+[  \ |b Komentář]
+\§|
+; KOMENTÁŘ
+[ % |b Komentář]
+% §|
+; ZÁVORKY
+[ {} |b Závorky ]
+{§|}
+; SPECIÁLNÍ ZNAKY A SYMBOLY
+[ SpecZnak |b Speciální znaky a symboly ]
+%znak2%%znak3%%znak4%%znak5%%znak6%%znak7%%znak8%%znak9%%znak10% |
+; TŘÍDY DOKUMENTU
+; \documentclass[volby]{styl}
+; styl:
+;   article  - pro články v odborných časopisech, přednášky, seminární práce,
+;              kratší zprávy, návrhy, posudky, manuály k programům atd.
+;   report   - pro delší zprávy, které obsahují více kapitol, diplomové
+;              a disertační práce, skripta aj.
+;   book     - pro knihy
+;   letter   - pro dopisy
+;   slides   - pro průsvitné fólie
+;   twoside  - rozlišování levých a pravých stránek pro dvoustranné dokumenty
+;
+; volby:
+;   11pt      - pro písmo vysoké 11 bodů  (Pokud není zadáno, používá se 10pt)
+;   fleqn     - matematické rovnice zarovná nalevo místo centrování
+;   leqno     - číslování rovnic vlevo místo vpravo od rovnice
+;   titlepage - pro samostatnou titulní stranu (pouze pro typ article)
+;   twocolumn - pro tisk do dvou sloupců
+;   twoside   - pro oboustranný tisk (rozdílné okraje pravé a levé strany
+;               pro vazbu
+;   czech     - pro dokumenty v češtině
+;   german    - pro dokumenty v němčině
+;   landscape - stránka orientovaná na šířku
+;   a4paper, a5paper, b5paper - nastavení velikosti stránky
+;   executivepaper, legalpaper -
+;   draft     - místo obrázků budou obdélníky s cestou obrázku
+[docsclass |r Třídy dokumentu ]
+\documentclass[%VolbyDoc%]{%StylDoc%}
+|
+; STYL STRÁNKY
+; \pagestyle{styl}
+; styl:
+;   plain - čísla stran budou tištěna na spodním okraji (i když \pagesyle není uvenedo)
+;   headings - tištění názvu kapitoly a čísla strany na horním okraji
+;   empty - potlačje číslování stran
+[pagestyle1 |r Styl stránky ]
+\pagestyle{%FormatStranky%}
+|
+; ZMĚNA STYLU STRÁNKY
+; \thispagestyle{styl}
+[pagestyle2 |r Změny stylu stránky ]
+\thispagestyle{%formatStranky%}
+|
+; TEXT V HLAVIČCE
+; \markright{}
+;   Styl stránky musí být: \pagestyle{headings}
+[hlavička1 |r Text v hlavičce ]
+\markright{§|}
+; VLOŽENÍ BALÍČKU
+; \usepackage{balíček}
+; příklady balíčků:
+;   czech     - čeština
+;   amstex    - definuje rozšířené příkazy pro matematická prostředí
+;   graphpap  - umožňuje práci s grafy v prostředí "picture"
+;   pict2e    - definuje lepší prostředí "picture"
+[usepackage |r Použití balíčku ]
+\usepackage{%Package%}
+|
+; VLOŽENÍ BALÍČKU S VOLBAMI
+; \usepackage[volby]{balíček}
+; balíčky:
+;   czech     - čeština
+;   amstex    - definuje rozšířené příkazy pro matematická prostředí
+;   graphpap  - umožňuje práci s grafy v prostředí "picture"
+;   pict2e    - definuje lepší prostředí "picture"
+[usepackage2 |r Použití balíčku s volbami]
+\usepackage[|]{}
+|
+; VLOŽENÍ HLAVIČKY PRO ČESKÝ DOKUMENT
+[ CzDoc |r Český dokument ]
+\documentclass[a4paper]{article}
+\usepackage{czech}
+\usepackage[cp1250]{inputenc}
+\usepackage{graphicx}
+\begin{document}
+§|
+\end{document}
+; SPECIFIKACE SOUBORŮ PRO VLOŽENÍ
+; \includeonly{soub1,soub2,...}
+; tyto soubory jsou oddělené pouze čárkou (bez mezery!)
+; pouze tyto soubory lze později vkládat do dokumentu
+[includeonly |r Označení souborů pro vkládání ]
+\includeonly{§|}
+|
+; VLOŽENÍ SOUBORU DO DOKUMENTU
+; \include{soubor bez koncovky "tex"}
+; pokud se v preambuli uvede příkaz \includeonly{soub1,soub2}
+; bude možno vkládat příkazem \include{} pouze soubory soub1 a soub2
+; v názvu souboru nesmí být koncovka "tex"
+[include |b Vloží soubor do dokumentu ]
+\include{%edit4%}
+|
+; VELIKOST PÍSMA
+; \tiny          - 5pt
+; \scriptsize    - 7pt
+; \footnotesize  - 8pt
+; \small         - 9pt
+; \normalsize    - 10pt
+; \large         - 12pt
+; \Large         - 14,4pt
+; \LARGE         - 17,28pt
+; \huge          - 20,74pt
+; \Huge          - 24,9pt
+[pVel |b Velikost písma ]
+\%PismoVelikost% |
+; STYL PÍSMA
+; \rm Antikva (Roman) - normální písmo
+; \it Kurzíva (Italika)
+; \bf Polotučné (Boldface)
+; \sl Skloněné (Slanted)
+; \sc Kapitálky
+; \tt Strojopis
+; \em Vyznačovací
+[pStyl |b Styl písma ]
+%pStyl1%%pStyl2%%pStyl3%%pStyl4%%pStyl5%%pStyl6% §|
+; DEFINICE PROSTŘEDÍ
+; \begin{prostředí}
+; ...
+; \end{prostředí}
+[begin-end |b Prostředí ]
+\begin{%Block%}
+§|
+\end{%Block%}
+; DATUM
+[datum |b Vloží datum  ]
+\today{} |
+; ZALOMENÍ ŘÁDKU
+; \newline
+[newline |b Zalomení řádku ]
+\newline
+|
+; ZALOMENÍ STRÁNKY
+; \newpage
+[newpage |b Zalomení stránky ]
+\newpage
+|
+; OZNAČENÍ NEDĚLITELNÉHO SLOVA
+; \mbox{text}
+; po tomto označení text nebude dělen
+[mbox |b Označení nedělitelného slova ]
+\mbox{§|}
+; ČESKÉ UVOZOVKY
+; \uv{text}
+[uv1 |b České uvozovky]
+\uv{§|}
+; KULATÉ HORNÍ UVOZOVKY
+; ``text''
+[uv2 |b Uvozovky kulaté, pouze horní]
+``§|''
+; NADPISY OČÍSLOVANÉ
+; \section[text do seznamu]{text}
+; ve třídě article: section, subsection, seubsubsubsection,
+;                   paragraph, subparagraph, appendix
+; ve třídě book:    -//-
+;                   part, chapter
+; part - nemá vliv na číslování kapitol
+; appendix - nemá žádný argument, změní označení kapitol s čísel na písmena
+[nadpisy1 |b Očíslované nadpisy, kapitoly,...]
+\%Nadpis%{%edit13%§}
+|
+; NADPISY NEOČÍSLOVANÉ
+; \section*{text}
+; Nejsou zahrnuty do obsahu
+[nadpisy2 |b Neočíslované nadpisy, kapitoly,...]
+\%Nadpis%*{%edit13%§}
+|
+; AUTOR
+; \author{text}
+[author |r Autor]
+\author{§|}
+; NÁZEV DOKUMENTU
+; \title{text}
+[title |r Název dokumentu]
+\title{§|}
+; VYSÁZENÍ TITULNÍ STRANY
+; \maketitle
+[maketitle |b Vysázení titulní strany]
+\maketitle
+|
+; OBSAH
+; \tableofcontents
+[obsah1 |b Vytištění obsahu ]
+\tableofcontents
+|
+; SEZNAM OBRÁZKŮ
+; \listoffigures
+; Seznam z titulků u obrázků
+[obsah2 |b Vytištění seznamu obrázků ]
+\listoffigures
+|
+; SEZNAM TABULEK
+; \listoftables
+; Seznam z titulků u tabulek
+[obsah3 |b Vytištění seznamu tabulek ]
+\listoftables
+|
+; NÁVĚŠTÍ PRO ODKAZ
+; \label{návěští}
+[label |b Návěští pro odkaz]
+\label{§|}
+; ODKAZ NA NÁVĚŠTÍ
+; \ref{návěští}
+[ref |b Odkaz na návěští]
+\ref{§|}
+; ODKAZ NA STRÁNKU S NÁVĚŠTÍM
+; \pageref{návěští}
+[refpage |b Odkaz na stránku s návěštím]
+\pageref{§|}
+; POZNÁMKA POD ČAROU
+; \footnote{text poznámky}
+[pozn1 |b Poznámka pod čarou]
+\footnote{§|}
+; POZNÁMKA NA OKRAJI
+; \marginpar{text poznámky}
+[pozn2 |b Poznámka na okraji]
+\marginpar{\em §|}
+; KRATŠÍ CITACE
+; \begin{quote}
+; ...
+; \end{quote}
+; Zmenšena šířka odstavce z obou stran. Odstavce jsou bez zarážek a je mezi nimi větší odsazení.
+[citace1 |b Kratší citace]
+\begin{quote}
+§|
+\end{quote}
+; DELŠÍ CITACE
+; \begin{quotation}
+; ...
+; \end{quotation}
+; Zmenšena šířka odstavce z obou stran. Odstavce jsou se zarážkami, odsazení mezi odstavci není žádné.
+[citace2 |b Delší citace z více odstavců]
+\begin{quotation}
+§|
+\end{quotation}
+; BÁSEŇ
+; \begin{verse}
+; ...
+; \end{verse}
+; řádky se oddělují \\
+; sloky se oddělují prázdným řádkem bez \\
+[citace3 |b Básně a příklady ]
+\begin{verse}
+§|\\
+\\
+\\
+\end{verse}
+; JEDNODUCHÝ VÝČET
+; \begin{itemize}
+;   \item První položka
+;     \subitem První podpoložka (bez odrážky, jen odsazeno)
+;   \item Druhá položka
+; \end{itemize}
+[výčet1 |b Jednoduchý výčet ]
+\begin{itemize}
+\item §|
+\item
+\item
+\end{itemize}
+; ČÍSLOVANÝ VÝČET
+; \begin{enumerate}
+;   \item První položka
+;   \subitem První podpoložka  (nečíslováno, jen odsazeno
+;   \item Druhá položka
+; \end{enumerate}
+[výčet2 |b Číslovaný výčet ]
+\begin{enumerate}
+\item §|
+\item
+\item
+\end{enumerate}
+; VÝČET S POPISKY
+; \begin{description}
+;   \item[popisek1] První položka
+;   \subitem První podpoložka  (nelze dát popisek, jen odsazeno
+;   \item[popisek2] Druhá položka
+; \end{description}
+[výčet3 |b Výčet s popisky]
+\begin{description}
+\item [§|]
+\item []
+\item []
+\end{description}
+;
+; ZAROVNÁNÍ BLOKU
+; \begin{typ zarovnání}
+; ...
+; \end{typ zarovnání}
+;   typ zarovnání:
+;     flushleft - zarovnání vlevo
+;     flushright - zarovnání vpravo
+;     center - zarovnání na střed
+; Zalomení řádku v tomto bloku se provede znaky: \\
+[zarovnání |b Zarovnání bloku]
+\begin{%Zarovnani%}
+§|
+\end{%Zarovnani%}
+; NENAFORMÁTOVANÝ TEXT ODSTAVCE
+; \begin{verbatim}
+; ...
+; \end{verbatim}
+; hodí se pro výpis programů
+[verbatim |b Nenaformátovaný text]
+\begin{verbatim}
+§|
+\end{verbatim}
+; NENAFORMÁTOVANÝ TEXT KRÁTKÝ
+; \verb| |
+; vše co je mezi + a + se nenaformátuje
+[verb |b Nenaformátovaný krátký úsek]
+\verb+| +
+;-----Matematická sazba--------
+; SAZBA V BĚŽNÉM TEXTU - prostředí MATH
+; $ vzorec $
+[math1 |b Vzorec v textu]
+$§|$
+; SAZBA VYSAZENÝCH VZTAHŮ - prostředí DISPLAYMATH
+; $$ vzorce $$
+;   Vzorec je na novém řádku a je zarovnán na střed.
+[math2 |b Vysazený vzorec]
+$$§|$$
+; SAZBA VYSAZENÝCH VZTAHŮ S ČÍSLOVÁNÍM- prostředí EQUATION
+; \begin{equation}
+; vzorce
+; \end{equation}
+; Vzorce jsou na novém řádku, zarovnány na střed a číslovány vpravo na stránce.
+[math3 |b Vysazený vzorec s číslováním]
+\begin{equation}
+§|
+\end{equation}
+; SAZBA VYSAZENÝCH VZTAHŮ S ČÍSLOVÁNÍM A ZAROVNÁNÍM- prostředí EQUATION
+; \begin{eqnarray}
+; vzorec1 & znak & vzorec\\
+; ...
+; \end{eqnarray}
+;   Vzorce jsou na novém řádku, zarovnány na střed a číslován vpravo na stránce.
+;   Zarovnání vzorců je na "znak"
+;   Odřádkování znaky \\
+[math4 |b Vysazený vzorec s číslováním a zarovnáním]
+\begin{eqnarray}
+§|&=& \\
+&=&  \\
+&=&  \\
+\end{eqnarray}
+; ZLOMEK S VODOROVNOU ZLOMKOVOU ČÁROU
+; \frac{čitatel}{jmenovatel}
+[zlomek |b Zlomek s vodorovnou zlomkovou čárou]
+\frac{§|}{}
+; ŘECKÁ ABECEDA MALÁ
+[abcŘecká |b Řecká abeceda - malá]
+\%ReckaAbecedaMala%|
+; ZÁKLADNÍ MATEMATICKÉ FUNKCE
+[fce2 |b Matematické funkce]
+\%MatFun%(|§)
+; ZÁKLADNÍ MATEMATICKÉ FUNKCE A SYMBOLY
+[fce1 |b Matematické funkce a symboly]
+%mat1%%mat2%%mat3%%mat4%%mat5%%mat6%
+; INTEGRÁL
+[integrál |b Integrál]
+%Integral%_{%edit6%}^{%edit7%}
+|
+; SUMA
+[suma |b Suma]
+%Suma%_{%edit6%}^{%edit7%}
+|
+; MATEMATICK0 SYMBOLY
+[matSymb |b Matematické symboly]
+%mat7%%mat8%%mat9%%mat10%%mat11%%mat12%%mat13%|
+; ---------TABULKY A POŘADOVÁ SAZBA--------------
+; PROSTŘEDÍ TABULAR
+; \begin{tabular}{specifikace}
+; ...
+; \end{tabular}
+;   specifikace:
+;     l - centrování sloupce doleva
+;     r - centrování sloupce doprava
+;     c - centrování sloupce nastřed
+;     | - svislá linka jednoduchá
+;     || - svislá linka dvojitá
+;     p{2cm} - šířka sloupce s víceřádkovým textem
+;     @{} - potlačení mezisloupcových mezer
+;     @{znak} - znak nahradí mezisloupcovou výplň
+;   uvnitř prostředí:
+;     & - oddělení buněk v řádku
+;     % - oddělení řádků
+;     \hline - vodorovná linka
+;     \bfseries - hlavička sloupce
+[tab1 |b Tablular]
+\begin{tabular}{||c||r|l|}
+\hline
+\bfseries § & \bfseries & \bfseries \\
+\hline
+\hline
+ &  &  \\
+ &  &  \\
+\hline
+\end{tabular}
+; PROSTŘEDÍ TABBING
+; \begin{tabbing}
+; ...
+; \end{tabbing}
+;   uvnitř prostředí:
+;     \=  Nastavení zarážky
+;     \>  Přechod k další zaražce
+;     \\  Nový řádek sazby
+;     \kill  Zruší platnost řádku, na kterém je příkaz uveden
+;     \+  Posune levý okraj o jeden tabeláto doprava
+;     \-  Posune levý okraj o jeden tabelátor doleva
+;     \<  Přechod k původnímu levému okraji. Má význam pouze na začátku řádku.
+[tab2 |b Tabbing]
+\begin{tabbing}
+§|\=  \=  \kill
+ \>  \>  \\
+ \>  \>  \\
+\end{tabbing}
+; PLOVOUCÍ OBJEKT - TABLE
+; \begin{tabbing}[umístění]
+; ...
+; \end{tabbing}
+;   umístění
+;     h - here - umístění zde v tomto místě
+;     t - top - umístění v horní části stránky
+;     b - bottom - umístění v dolní části stránky
+;     p - page - umístění na zvláštní stránce na níž budou pouze plovoucí objekty
+;     ! - umístění, když by normálně nešlo
+[tab |b Table + titulek]
+\begin{table}[htbp]
+  §|
+  \caption{%edit11%} \label{}
+\end{table}
+; TITULEK K PLOVOUCÍMU OBJEKTU
+; \caption[Krátký popisek do seznamu]{Popisek obrázku}
+;   Nepoviný parametr je název pro vytvoření seznamu,
+;   když se neuvede bere se normální titulek
+[titulek |b Titulek]
+\caption[]{§|}
+; ----------------OBRÁZEK---------------------
+; DEFINICE OBRÁZKU PRO pdfcsLaTEX
+[obrDef | Definice pro vkládání obrázku]
+;\usepackage{graphics}
+;
+; Obrazek v JPEG, PDF, PGN
+;   Odkaz na obrazek je podle jmena souboru
+;   Parametry: 1. meritko (<1 -- zmensení, >1 zvetseni)
+;              2. jmeno souboru s obrazkem
+;              3. popisek obrazku
+;
+; Priklad  \jpgfig{0.5}{obrazek.jpg}{Toto je popisek.}
+\def\jpgfig#1#2#3{%
+  \begin{figure}[htbp]%
+  \centerline{%
+  \scalebox{#1}{%
+   \pdfimage{#2}%
+   }%
+   }%
+   \caption{#3}\label{#2}%
+  \end{figure}%
+}
+; VLOŽENÍ OBRÁZKU
+; Obrazek v JPEG, PDF, PGN
+;   Odkaz na obrazek je podle jmena souboru
+;   Parametry: 1. meritko (<1 -- zmensení, >1 zvetseni)
+;              2. jmeno souboru s obrazkem
+;              3. popisek obrazku
+; Priklad  \jpgfig{0.5}{obrazek.jpg}{Toto je popisek.}
+[obr2 | Vloží obrázek jpg, pdf, pgn]
+\jpgfig{%edit1%}{%edit2%}{%edit3%}
+|
+; VLOŽENÍ OBRÁZKU FORMÁTU EPS, PS
+; \begin{figure}
+;   \includegraphics[width, height, angle]{obrázek}[umístění]
+;   \caption{} \label{}
+; \end{figure}
+;   parametry:
+;     width - šířka
+;     height - výška
+;     angle - rotace ve směru hodinových ručiček
+;   umístění
+;     h - here - umístění zde v tomto místě
+;     t - top - umístění v horní části stránky
+;     b - bottom - umístění v dolní části stránky
+;     p - page - umístění na zvláštní stránce na níž budou pouze plovoucí objekty
+;     ! - umístění, když by normálně nešlo
+[obr1 |b Vloží obrázek eps, ps]
+\begin{figure}[!ht]
+  \includegraphics[width=%edit10%, height=%edit9%]{%obr1%}
+  \caption{%edit11%} \label{|}
+\end{figure}
+; NASTAVENÍ OKRAJŮ - RELATIVNĚ K NASTAVENÍ
+; textwidth  - šířka textu
+; textheight - výška textu
+[okraje |r Nastavení relativních okrajů ]
+\addtolength{\hoffset}{-§|cm}
+\addtolength{\textwidth}{cm}
+\addtolength{\topmargin}{-cm}
+\addtolength{\textheight}{cm}
+; PŘIPOMÍNÁČEK
+[docPrip  | Šablona pro Připomínáčka]
+\documentclass[a5paper]{article}
+\usepackage{czech}
+\usepackage[cp1250]{inputenc}
+\usepackage{graphicx}
+\addtolength{\hoffset}{-0.5cm}
+\addtolength{\textwidth}{1cm}
+\addtolength{\topmargin}{-3.5cm}
+\addtolength{\textheight}{5.5cm}
+\def\jpgfig#1#2{%
+  \begin{figure}[htbp]%
+  \centerline{%
+  \scalebox{#1}{%
+   \pdfimage{#2}%
+   }%
+   }%
+   \label{#2}%
+  \end{figure}%
+}
+\begin{document}
+\jpgfig{0.3}{p.png}
+\paragraph{Kalendář}
+§|
+\end{document}
+; NOVÝ PŘÍKAZ
+; \newcommand{jméno}[číslo]{definice}
+;   číslo - 1..9, počet parametrů nového příkazu
+;   v definici je pak odkaz na první parametr: \emph{#1}
+[newcmd |b Nový příkaz ]
+\newcommand{\%edit5%}{§|}
+; NOVÉ PROSTŘEDÍ
+; \newenvironment{jméno}[číslo]{před}{po}
+;   Příkazy, které se objeví v části "před" se provedou před tím, než
+;   se začne zpracovávat text v prostředí uzavřený.
+;   Příkazy obsažené v části "po" se začnou vykonávat v okamžiku, kdy
+;   je zpracováván příkaz \end{jméno nového prostředí}
+[newenv |b Nové prostředí ]
+\newenvironment{%edit5%}[]
+{§|}
+; NASTAVENÍ ŘÁDKOVÁNÍ
+; \linespread{hodnota}
+;   1.3 pro řádkování 1.5
+;   1.6 pro dvojnásobné řádkování
+[řádkování |r Nastavení řádkování]
+\linespread{%edit8%}
+|
+; ODSAZENÍ ODSTAVCE
+; \indent
+[odsANO |b Odsazení odstavce ]
+\indent
+; ZRUŠENÍ ODSAZENÍ ODSTAVCE
+; \noindent
+[odsNE |b Zakázání odsazení odstavce ]
+\noindent
+; HORIZONÁTLNÍ MEZERA
+; \hspace{délka}
+[mezH |b Horizontální mezera]
+\hspace{%edit8%}
+|
+; VERTIKÁLNÍ MEZERA
+; \vspace{délka}
+[mezV1 |b Vertikální mezera mezi odstavci]
+\vspace{%edit8%}
+|
+; VERTIKÁLNÍ MEZERA V ODSTAVCI
+; \\[délka]
+[mezV2 |b Vertikální mezera v odstavci]
+\\[%edit8%]
+|
+; SEZNAM POUŽITÉ LITERATURY
+; \begin{thebibliography}{99}
+;   \bibitem{značka1}
+;   \bibitem{značka2}
+; \end{thebibliography}
+[lit1 |b Seznam literatury]
+\begin{thebibliography}{99}
+\bibitem{§|}
+\bibitem{}
+\end{thebibliography}
+; ODKAZ NA POLOŽKU SEZNAMU LITERATURY
+; \cite{značka}
+[lit2 |b Odkaz na položku z literatury]
+\cite{§|}
+; DEFINICE DĚDENÍ SLOV
+; \hyphenation{seznam}
+;   seznam - slova oddělená mezerami s pomlčkami
+;            pomlčky definují místa, kde je možno slovo rozdělit
+;            slovo, které se napíše bez pomlček, nelze dělit
+;            nerozlišují se malá a velká písmena
+[hyph |r Definice dělení slov]
+\hyphenation{|}
+; OKAMŽITÉ UMÍSTĚNÍ PLOVOUCÍCH OBJEKTŮ NA STRÁNKU
+; \clearpage
+;   Okamžité umístění plovoucích objektů z front obrázků a tabulek
+;   a další sázení je na novou stránku.
+[clearpage |b Vysázení plovoucích objektů]
+\clearpage
+; NASTAVENÍ NĚJAKÉHO PARAMETRU
+; \setlength{\parametr}{nová hodnota}
+[par1 |b Nastavení parametru]
+\setlength{\|}{}
+; PŘIDÁNÍ HODNOTY K HODNOTĚ NĚJAKÉHO PARAMETRU
+; \addtolength{\parametr}{offset}
+[par2 |b Přidání hodnoty k parametru]
+\addtolength{\|}{}
+; TVORBA REJSTŘÍKU
+; \makeindex
+;   Spustí tvorbu souborů pro rejstřík
+;   Musí být použit package "makeidx"
+[mkindex |r Make Index]
+\makeindex
+; POLOŽKA REJSTŘÍKU
+; \index{položka}
+;   umísťuje se do textu, kde "položka" je slovo, které bude v rejstříku
+[index |b Index]
+\index{§|}
+; VYSÁZENÍ REJSTŘÍKU
+; \printindex
+[printindex |b Print Index]
+\printindex

@@ -1,0 +1,801 @@
+﻿;; PSPad code template for ActionScript
+;; Author: Karel Pavelka
+;; E-mail: webjob@seznam.cz
+;; Update: 28.4.2004
+;;
+;;   (black)
+;; B (blue)      HTML 1.0
+;; D (dark gray) Non-standard ActionScript
+;; F (fuchsia)
+;; G (green)
+;; M (maroon)
+;; N (navy)      Kusy kodu
+;; P (purple)
+;; R (red)
+;;
+;; Odsazeni: 2
+;;
+;; Sablona vznika postupne podle potreb, kritika a poznamky vitany!
+;
+[Macro definition]
+%align3%=@C align=,align=,,center;left;right,'
+%boolean%=@C boolean,,,true;false,"
+%color%=@E color=,color=,,,'
+%command%=@C command,,,allowscale;fullscreen;exep;quit;showmenu;trapallkeys,"
+%condition%=@E podmínka,,,,
+%event%=@C událost,,,load;unload;enterFrame;mouseDown;mouseMove;mouseUp;keyDown;keyUP;data,
+%face%=@F face=,face=,,,'
+%frame%=@E snímek,,,,
+%href%=@O href=,href=,http://,html file (*.html;*.htm;*.php;*.php3;*.asp)|*.html;*.htm;*.php;*.php3;*.asp,'
+%include%=@O include,include,,ActionScript(*.as)|*.as,
+%keycode%=@E číselný kód klávesy,,,,
+%level%=@C úroveň,,,0;1;2;3;4;5;6;7;8;9,
+%loadi%=@P obrázek,,,,,"
+%init%=@E inicializace,,,,
+%next%=@E next,,,,
+%loadt%=@O textový soubor,,,document (*.txt)|*.txt,"
+%loadxml%=@O soubor,,,file (*.xml;*.php;*.php3;*.asp)|*.xml;*.php;*.php3;*.asp,"
+%loops%=@E počet opakování,,,,,
+%method%=@C metoda,,,get;post,"
+%n%=@E číslo,,,,,
+%on%=@C on,,,press;release;releaseOutside;rollOver;rollOut;dragOver;dragOut;keyPress'<BACKSPACE>';keyPress'<CAPSLOCK>';keyPress'<CONTROL>';keyPress'<DELETEKEY>';keyPress'<DOWN>';keyPress'<END>';keyPress'<ENTER>';keyPress'<ESCAPE>';keyPress'<HOME>';keyPress'<INSERT>';keyPress'<LEFT>';keyPress'<PGDN>';keyPress'<PGUP>';keyPress'<RIGHT>';keyPress'<SHIFT>';keyPress'<SPACE>';keyPress'<TAB>';keyPress'<UP>',
+%scene%=@E scene,,,,,"
+%size%=@E size=,size=,,,'
+%target%=@C target=,target=,,_blank;_parent;_self;_top,'
+%url%=@O soubor,,,file (*.swf)|*.swf,"
+%variable%=@E proměnná,,,,
+%window%=@C window,,,_blank;_parent;_self;_top,
+%x%=@E osa x,,,,,
+%value%=@E hodnota,,,,,
+%XML%=@E XML proměnná,,,,
+%y%=@E osa y,,,,,
+;
+;---------------------------------------------------------------------
+;  tagy HTML version 1.0, kterou Flash podporuje v dynamických textových polích
+;---------------------------------------------------------------------
+;
+[a |B odkaz bez podtržení]
+<a %href% %target%>§|</a>
+;
+[a |B odkaz s podtržením]
+<u><a %href%>§|</a></u>
+;
+[b |B tučné písmo <b></b>]*CTRL+B
+<b>§|</b>
+;
+[body |B tělo dokumentu]
+<body>
+  §|
+</body>
+;
+[br |B zalomení řádku]*CTRL+ENTER
+<br>
+;
+[font |B nastavení písma]
+<font %size% %face% %color%>§|</font>
+;
+[html |B vymezení dokumentu <html></html>]
+<html>
+  §|
+</html>
+;
+[HTMLs |B jednoduchá šablona HTML stránky]
+%variable%=<html>
+ <body>
+  §|
+ </body>
+</html>
+;
+[i |B kurzíva]
+<i>§|</i>
+;
+[p |B odstavec]*SHIFT+CTRL+P
+<p %align3%>
+  §|
+</p>
+;
+[u |B podtržený text]
+<u>§|</u>
+;
+;
+;---------------------------------------------------------------------
+;  ActionScript
+;---------------------------------------------------------------------
+;
+;
+[/*...*/ | příkaz comment pro víceřádkový komentář]
+/*
+  §|
+*/
+;
+[break | příkaz k přerušení cyklu]
+break;
+;
+[continue  | ukončí krok cyklu a začne od nového kroku nebo od návěstí]
+continue;
+;
+[call  |D provede skript připojený k určitému návěští snímku]
+call(%frame%);
+;
+[delete  | odstraní proměnnou]
+delete %variable%;
+;
+[do_while | smyčka provádí příkazy do splnění určené podmínky]
+do {
+  |
+} while (%condition%)
+;
+[else | určuje příkazy, které se provedou pokud není splněna podmínka if]
+elese {
+	|
+}
+;
+[exIMAGE  |N načtení externího obrázku do prezentace]
+createEmptyMovieClip(%variable%, %n%);
+%variable%.loadMovie(%loadi%);
+%variable%._visible = true;
+%variable%._x=%x%;
+%variable%._y=%y%;
+;
+[for | vytvoří cyklus, který provádí příkazy do splnění podmínky]
+for (%init%; %condition%; %next%){
+	|
+}
+;
+[fscommand | FS příkaz]
+fscommand(%command%, %boolean%);
+;
+[fscommandA | zabránění změny velikosti prezentace]
+fscommand("allowscale","false");
+;
+[fscommandF | puštění prezentace na celou obrazovku]
+fscommand("fullscreen","true");
+;
+[fscommandN | otevření dokumentu *.txt v Notepadu z Flash prezentace]
+fscommand("exep","notepad"+chr(9)+%loadt%);
+;
+[fscommandQ | ukončení prezentace]
+fscommand("quit");
+;
+[fscommandS | zneviditelnění kontextového menu]
+fscommand("showmenu","false");
+;
+[fscommandT | zakázaní klávesových zkratek]
+fscommand("trapallkeys","true");
+;
+[getURL | načte soubour na určeném URL]
+getURL(%url%);
+;
+[gotoAndPlay | přejít a spustit]
+gotoAndPlay(|);
+;
+[gotoAndStop | přejít a zastavit]
+gotoAndStop(|);
+;
+[if | definování příkazů, které se provedou, pokud je splněná podmínka]
+if (%condition%) {
+	 |
+}
+;
+[ifFrameLoaded |D ]
+ifFrameLoaded()
+;
+[include | vloží ActionScriptu z externího textového dokumentu]
+#include "%include%"
+;
+[initclip | inicializace]
+#initclip |
+;
+[loadMovie | načíst movie]
+loadMovie(%url%, %method%);
+;
+[loadMovieNum | načíst movie s určením úrovně]
+loadMovie(%url%, %level%);
+;
+[loadVariables | načte do movie clipu externí proměnou z textového souboru]
+loadVariables(%loadt%, %method%);
+;
+[Mouse.hide | skryje kurzor v animaci]
+Mouse.hide();
+;
+[Mouse.show | zobrazí kurzor v animaci]
+Mouse.show();
+;
+[nextScene | další scéna]
+nextScene();
+;
+[nextFrame | následující snímek]
+nextFrame();
+;
+[on | přiřazení akce tlačítku]
+on (%on%) {
+}
+;
+[on1 |N přechod na jinou scénu po stisknutí tlačítka]
+on(release) {
+  tellTarget (_root) {
+    gotoAndPlay (%scene%, %frame%)
+  }
+}
+;
+[onJS |N odkaz na JavaScript]
+on (release) {
+  getURL("Javascript:|");
+}
+;
+[onClipEvent | při události klipu]
+onClipEvent(%event%) {
+}
+;
+[play | začne přehrávat časovou osu movie clipu z aktuální pozice]
+play();
+;
+[prevScene | předcházející scéna]
+prevScene();
+;
+[useCodepage | povolení používání znakové sady Unicode k zajištění správného zobrazování písmen s diakritikou]
+System.useCodepage=true;
+;
+[setDate | nastaví den v měsíci]
+setDate(|);
+;
+[setFullYear | nastaví měsíc, rok a datum]
+setFullYear(|);
+;
+[stop | zastavit přehrávání]
+stop();
+;
+[stopAllSounds | zastaví přehrávání všech zvuků]
+stopAllSounds();
+;
+[stopDrag | ukončí následování kurzoru myši movie clipem]
+stopDrag();
+;
+[targetPath | ]
+targetPath();
+;
+[toggleHighQuality |D ]
+toggleHighQuality()
+;
+[trace | v testovacím módu zobrazí výraz v okně Output]
+trace("§|");
+;
+[undefined | nedefinováno]
+undefined
+;
+[unloadMovie | odstranit načtenou movie]
+unloadMovie(%url%|);
+;
+[unloadMovieNum | odstranit načtenou movie z úrovně]
+unloadMovieNum(%level%);
+;
+[var | definuje lokální proměnné obsažené uvnitř funkce]
+var %variable% = %value%;
+;
+[XML | vytvoření instance XML objektu]
+%XML% = new XML();
+;
+[XMLattributes | reprezentuje atribut v objektu XMLNode]
+%XML%.attributes;
+;
+[XMLload | ]
+%XML%.load(%loadxml%);
+;
+[XMLloaded | ověření dokončení procesu vkládání XML dokumentu]
+%XML%.loaded;
+;
+[XMLignoreWhite| ignorace bílých znaků]
+%XML%.ignoreWhite = true;
+;
+[XMLonData | ]
+%XML%.onData(%xmlsrc%);
+;
+[XMLonLoad | ]
+%XML%.onLoad(success);
+;
+[XMLNode.parentNode | vrací rodičovský nód referenčního nódu]
+.parentNode;
+;
+[XMLsend | odeslání XML objektu]
+%XML%.send(%url%, %window%);
+;
+[XMLxmlDec1 | vrací XML deklaraci XML]
+%XML%.xmlDec1|
+;
+[Keywords]
+abs
+Accessibility
+acos
+add
+addItem
+addItemAt
+addListener
+addProperty
+align
+alpha
+and
+appendChild
+apply
+applyChanges
+arguments
+Array
+arrow
+asin
+atan
+atan2
+attachMovie
+attachSound
+attributes
+autoSize
+background
+backgroundColor
+backgroundDisabled
+BACKSPACE
+beginFill
+beginGradientFill
+bold
+Boolean
+border
+borderColor
+bottomScroll
+bullet
+call
+callee
+caller
+capabilities
+CAPSLOCK
+ceil
+clear
+clearInterval
+cloneNode
+close
+color
+Color
+concat
+connect
+contentType
+CONTROL
+cos
+createElement
+createEmptyMovieClip
+createTextField
+createTextNode
+currentframe
+curveTo
+CustomActions
+darkshadow
+data
+Date
+DELETEKEY
+do
+docTypeDecl
+DOWN
+dragOut
+dragOver
+droptarget
+duplicateMovieClip
+duration
+embedFonts
+enabled
+END
+endFill
+endinitclip
+ENTER
+enterFrame
+escape
+ESCAPE
+eval
+exp
+face
+false
+firstChild
+floor
+focusEnabled
+focusrect
+focusRectInner
+focusRectOuter
+font
+foregroundDisabled
+framesloaded
+fromCharCode
+fscommand
+FStyleFormat
+get
+getAscii
+getBeginIndex
+getBounds
+getBytesLoaded
+getBytesTotal
+getCaretIndex
+getCode
+getData
+getDate
+getDay
+getDepth
+getEnabled
+getEndIndex
+getFocus
+getFontList
+getFullYear
+getGroupName
+getHours
+getItemAt
+getLabel
+getLength
+getMilliseconds
+getMinutes
+getMonth
+getNewTextFormat
+getPan
+getPaneHeight
+getPaneWidth
+getProperty
+getRGB
+getRowCount
+getScrollContent
+getScrollPosition
+getSeconds
+getSelectedIndex
+getSelectedIndices
+getSelectedItem
+getSelectedItems
+getSelectMultiple
+getState
+getTextExtent
+getTextFormat
+getTime
+getTimer
+getTimezoneOffset
+getTransform
+getURL
+getUTCDate
+getUTCDay
+getUTCFullYear
+getUTCMilliseconds
+getUTCMinutes
+getUTCMonth
+getUTCSeconds
+getUTCHours
+getValue
+getVersion
+getVolume
+getYear
+global
+globalStyleFormat
+globalToLocal
+gotoAndPlay
+gotoAndStop
+hasAccessibility
+hasAudio
+hasAudioEncoder
+hasChildNodes
+hasVideoEncoder
+height
+hide
+highlight
+highlight3D
+highquality
+hitArea
+HOME
+hscroll
+html
+htmlText
+charAt
+charCodeAt
+check
+childNodes
+ifFrameLoaded
+ignoreWhite
+include
+indent
+indexOf
+initclip
+INSERT
+insertBefore
+install
+int
+isActive
+isDown
+isFinite
+isNaN
+isToggled
+italic
+join
+Key
+keyDown
+keyPress
+keyUp
+lastChild
+lastIndexOf
+leading
+LEFT
+leftMargin
+length
+lineStyle
+lineTo
+list
+LN10
+LN2
+load
+loaded
+loadMovie
+loadMovieNum
+loadScrollContent
+loadSound
+loadVariables
+loadVariablesNum
+LoadVars
+localToGlobal
+log
+LOG10E
+LOG2E
+Math
+MAX_VALUE
+maxhscroll
+maxChars
+maxscroll
+mbchr
+mblength
+mbord
+mbsubstring
+min
+MIN_VALUE
+Mouse
+mouseDown
+mouseMove
+mouseUp
+moveTo
+multiline
+name
+NaN
+NEGATIVE_INFINITY
+newline
+nextFrame
+nextScene
+nextSibling
+nodeName
+nodeType
+nodeValue
+not
+null
+Number
+Object
+onClipEvent
+onClose
+onConnect
+onData
+onDragOut
+onDragOver
+onEnterFrame
+onChanged
+onKeyDown
+onKeyUp
+onKillFocus
+onLoad
+onMouseDown
+onMouseMove
+onMouseUp
+onPress
+onRelease
+onReleaseOutside
+onResize
+onRollOut
+onRollOver
+onScroller
+onSetFocus
+onSoundComplete
+onUnload
+onXML
+ord
+parent
+parentNode
+parseFloat
+parseInt
+parseXML
+password
+PGDN
+PGUP
+PI
+pixelAspectRatio
+play
+pop
+position
+POSITIVE_INFINITY
+pow
+press
+prevFrame
+previousSibling
+prevScene
+print
+printAsBitmap
+printAsBitmapNum
+printNum
+proto__
+prototype
+push
+quality
+radioDot
+random
+refreshPane
+registerClass
+registerSkinElement
+release
+releaseOutside
+removeAll
+removeItemAt
+removeListener
+removeMovieClip
+removeNode
+removeTextField
+replaceItemAt
+replaceSel
+restrict
+reverse
+RIGHT
+rightMargin
+rollOut
+rollOver
+root
+rotation
+round
+scaleMode
+screenColor
+screenDPI
+screenResolutionX
+screenResolutionY
+scroll
+scrollTrack
+selectable
+selection
+Selection
+selectionDisabled
+selectionUnfocused
+send
+sendAndLoad
+set
+setAutoHideScrollBar
+setClickHandler
+setData
+setDragContent
+setEditable
+setEnabled
+setFocus
+setFullYear
+setGroupName
+setHorizontal
+setHours
+setHScroll
+setChangeHandler
+setInterval
+setItemSymbol
+setLabel
+setLabelPlacement
+setLargeScroll
+setMask
+setMilliseconds
+setMinutes
+setMonth
+setNewTextFormat
+setPan
+setProperty
+setRGB
+setRowCount
+setScrollContent
+setScrollPosition
+setScrollProperties
+setScrollTarget
+setSeconds
+setSelectedIndex
+setSelectedIndices
+setSelection
+setSelectMultiple
+setSize
+setSmallScroll
+setState
+setStyleProperty
+setTextFormat
+setTime
+setTransform
+setUTCDate
+setUTCFullYear
+setUTCMilliseconds
+setUTCMinutes
+setUTCMonth
+setUTCSeconds
+setUTCHours
+setValue
+setVolume
+shadow
+shift
+SHIFT
+show
+showMenu
+sin
+size
+slice
+sort
+sortItemsBy
+sortOn
+Sound
+soundbuftime
+SPACE
+splice
+split
+sqrt
+SQRT1_2
+SQRT2
+Stage
+Stagealign
+start
+startDrag
+status
+stop
+stopAllSounds
+stopDrag
+String
+substr
+substring
+super
+swapDepths
+System
+TAB
+tabEnabled
+tabChildren
+tabIndex
+tabStops
+tan
+target
+targetPath
+tellTarget
+text
+textAlign
+textBold
+textColor
+textDisabled
+textFont
+TextFormat
+textHeight
+textIndent
+textItalic
+textLeftMargin
+textRightMargin
+textSelected
+textSize
+textUnderline
+textWidth
+toggleHighQuality
+toLowerCase
+toString
+totalframes
+toUpperCase
+trace
+trackAsMenu
+true
+type
+undefined
+underline
+unescape
+uninstall
+unload
+unloadMovie
+unloadMovieNum
+unshift
+unwatch
+UP
+updateAfterEvent
+url
+useHandCursor
+UTC
+valueOf
+variable
+visible
+watch
+width
+wordWrap
+XML
+xmlDecl
+XMLSocket
+xmouse
+xscale
+ymouse
+yscale

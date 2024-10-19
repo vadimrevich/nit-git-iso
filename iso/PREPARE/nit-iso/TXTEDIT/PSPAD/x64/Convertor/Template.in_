@@ -1,0 +1,39 @@
+﻿;User conversion definition file for PSPad editor
+[Settings]
+
+;name for Left to Right conversion. If you don't fill name or delete it, 
+;it won't allow conversion. E.g. if you want to offer one direction conversion only
+;For regular expressions style forward direction is allowed only
+ForwardName=This name will describe conversion from left to right
+BackwardName=This name will describe conversion from right to left
+;Optional Delimiter char for strings and regular expressions. Default is pipe
+;DelimiterChars=|
+
+;ignore char case - it tells convertor to ignore char case in specific direction
+ForwardIgnoreCase=0
+BackWardIgnoreCase=0
+
+;ConversionStyle=strings - convertor will use string replacement from [Strings] section
+;ConversionStyle=chars  - convertor will use conversion table from [Chars] section
+;ConversionStyle=regexpressions - convertor will use regular expression [RegExpressions] section - not yet implemented
+;                  regular expression style is one directional only!
+ConversionStyle=strings
+
+;expression from|expression to
+[Strings]
+dear|hippopotamus
+
+;list of unicode values of chars to remove before conversion
+[Remove chars]
+10
+
+;conversion table in unicode char values. 
+[Chars]
+100=100
+101=101
+102=102
+103=103
+
+;regular expression|substitutions. Delimiter is the last pipe |
+[RegExpressions]
+^(\d+)\s+(.*)|$2

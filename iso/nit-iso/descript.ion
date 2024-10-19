@@ -1,0 +1,9 @@
+README.txt -- Execution Information\nÂ
+index.hta -- Executable Shell Application\nÂ
+Autorun.inf -- Autorun File for CD\nÂ
+descript.ion -- Directory Description (this file)\nÂ
+docs -- Documentation about Products. Contact Information.\nÂ
+scripts -- Adjusting Scripts\nÂ
+distrib -- Other Distributives for Adjusting\nÂ
+FILE_ID.diz -- Information about Release\nÂ
+NIT_ISO.nfo -- Information about Tool Scripts\nÂ

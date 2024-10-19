@@ -1,0 +1,214 @@
+﻿; PSPad code template for DocBook
+; Created by PSPad   22.02.2003  23:13
+; Author:  Fiala
+;
+[article | [status, parentbook, class] článek, základní element]
+<article>§|</article>
+[articleinfo | informace o článku]
+<articleinfo>§|</articleinfo>
+[section | [label, status] oddíl dokumentu]
+<section>§|</section>
+[sectioninfo | metainformace o oddílu dokumentu]
+<sectioninfo>§|</sectioninfo>
+[title | [pagenum] titulek sekce, článku...]
+<title>§|</title>
+[subtitle | podtitulek v dokumentu]
+<subtitle>§|</subtitle>
+[abstract | souhrn dokumentu]
+<abstract>§|</abstract>
+[appendix | [label, status] dodatky pro <article>]
+<appendix>§|</appendix>
+[para | odstavec textu]
+<para>§|</para>
+[attribution | popis zdroje v <blockquote> či <epigraph>]
+<attribution>§|</attribution>
+[abbrev | zkratka (většinou následovaná tečkou)]
+<abbrev>§|</abbrev>
+[acronym | akronym, zkratkové slovo]
+<acronym>§|</acronym>
+[blockquote | větší citace v bloku]
+<blockquote>§|</blockquote>
+[citetitle | [pubwork] titul citované práce]
+<citetitle>§|</citetitle>
+[epigraph | citace či motto na začátku oddílu]
+<epigraph>§|</epigraph>
+[example | [width, label] formální příklad s titulkem]
+<example>§|</example>
+[figure | [label, pgwide, float] obrázek s titulkem]
+<figure>§|</figure>
+[emphasis | zdůrazněný text]
+<emphasis>§|</emphasis>
+[footnote | [label] poznámka pod čarou]
+<footnote>§|</footnote>
+[keyword | klíčové slovo]
+<keyword>§|</keyword>
+[keywordset | skupina klíčových slov]
+<keywordset>§|</keywordset>
+[lineannotation | řádková anotace k citacím]
+<lineannotation>§|</lineannotation>
+[note | poznámka mimo hlavní text]
+<note>§|</note>
+[phrase | označená část textu (nespec.)]
+<phrase>§|</phrase>
+[quote | citace (v řádku)]
+<quote>§|</quote>
+[replaceable | [class] část textu, kterou si uživatel upraví]
+<replaceable>§|</replaceable>
+[sidebar | část textu mimo hlavní tok]
+<sidebar>§|</sidebar>
+[subject | [weight] <subjectterm> popis tématu dokumentu]
+<subject>§|</subject>
+[subjectterm | položka v <subject>]
+<subjectterm>§|</subjectterm>
+[subjectset | kontejner pro <subject>]
+<subjectset>§|</subjectset>
+[systemitem | [class, moreinfo] položka vztahující se k systému]
+<systemitem>§|</systemitem>
+[trademark | [class] obchodní značka]
+<trademark>§|</trademark>
+[volumenum | číslo (od)dílu (volume)]
+<volumenum>§|</volumenum>
+[table | tabulka]
+<table>§|</table>
+[informaltable | tabulka bez titulku]
+<informaltable>§|</informaltable>
+[colspec | specifikace sloupce v tabulce]
+<colspec>§|</colspec>
+[thead | [valign] <colspec, row> záhlaví tabulky]
+<thead>§|</thead>
+[tgroup | logická část tabulky]
+<tgroup>§|</tgroup>
+[tbody | [valign] <row> tělo tabulky]
+<tbody>§|</tbody>
+[row | [rowsep, valign] <entry, entrytbl> řádek tabulky]
+<row>§|</row>
+[entry | políčko v tabulce]
+<entry>§|</entry>
+[itemizedlist | [spacing, mark] nečíslovaný seznam]
+<itemizedlist>§|</itemizedlist>
+[orderedlist |<listitem> číslovaný seznam]
+<orderedlist>§|</orderedlist>
+[listitem | [override] kontejner položky v seznamu]
+<listitem>§|</listitem>
+[term | slovo či věta popsaná v <variablelist>]
+<term>§|</term>
+[variablelist |<varlistentry> seznam s různě dlouhými položkami]
+<variablelist>§|</variablelist>
+[varlistentry | položka seznamu <variablelist>]
+<varlistentry>§|</varlistentry>
+[command | [moreinfo] jméno programu či příkazu v programu]
+<command>§|</command>
+[computeroutput | [moreinfo] text či výstup z počítače]
+<computeroutput>§|</computeroutput>
+[email | emailová adresa]
+<email>§|</email>
+[filename | [class, path,moreinfo] název souboru]
+<filename>§|</filename>
+[literal | data z počítače]
+<literal>§|</literal>
+[literallayout | [class, format, width] data z počítače v bloku]
+<literallayout>§|</literallayout>
+[option | volba v programovém příkazu]
+<option>§|</option>
+[programlisting | [width, format] výpis programu]
+<programlisting>§|</programlisting>
+[ulink | [type, url] odkaz na URL]
+<ulink>§|</ulink>
+[userinput | [moreinfo] data vkládaná uživatelem]
+<userinput>§|</userinput>
+[link | [type, linkend, endterm] odkaz v dokumentu]
+<link>§|</link>
+[xref | [linkend, endterm] křížový odkaz k jiné části dokumentu]
+<xref>§|</xref>
+[firstname | křestní jméno osoby]
+<firstname>§|</firstname>
+[surname | příjmení]
+<surname>§|</surname>
+[honorific | titul osoby]
+<honorific>§|</honorific>
+[lineage | část jména osoby, "Jr.", "Sr."]
+<lineage>§|</lineage>
+[othername | další jméno osoby (mimo křestní a příjmení)]
+<othername>§|</othername>
+[author | informace o autorovi]
+<author>§|</author>
+[authorgroup | pokud má dokument má více autorů je nadřazen <author>]
+<authorgroup>§|</authorgroup>
+[authorinitials | iniciály autora]
+<authorinitials>§|</authorinitials>
+[authorblurb | bližší popis autora]
+<authorblurb>§|</authorblurb>
+[corpauthor | instituce jako autor]
+<corpauthor>§|</corpauthor>
+[affiliation | příslušnost osoby k instituci]
+<affiliation>§|</affiliation>
+[jobtitle | titul osoby v instituci]
+<jobtitle>§|</jobtitle>
+[orgname | jméno organizace]
+<orgname>§|</orgname>
+[inlinemediaobject | mediální objekt formátovaný do řádku]
+<inlinemediaobject>§|</inlinemediaobject>
+[mediaobject | kontejner na multimediální objekty]
+<mediaobject>§|</mediaobject>
+[caption | popis <mediaobject>]
+<caption>§|</caption>
+[objectinfo | metainformace o objektu]
+<objectinfo>§|</objectinfo>
+[textobject | kontejner pro text k objektu]
+<textobject>§|</textobject>
+[audiodata | odkaz na zvuková data]
+<audiodata>§|</audiodata>
+[audioobject | element obsahující informace o zvukových objektech]
+<audioobject>§|</audioobject>
+[videodata | odkaz na videodata]
+<videodata>§|</videodata>
+[videoobject | element obsahující informace o videoobjektech]
+<videoobject>§|</videoobject>
+[imagedata | odkaz na externí data obrázek]
+<imagedata>§|</imagedata>
+[imageobject | element obsahující informace o obrázku]
+<imageobject>§|</imageobject>
+[bibliodiv | bibliografické údaje]
+<bibliodiv>§|</bibliodiv>
+[bibliography | kontejner na bibliografické údaje]
+<bibliography>§|</bibliography>
+[bibliomisc | jiné bibliografické informace]
+<bibliomisc>§|</bibliomisc>
+[bibliomixed | položka v <bibliography>]
+<bibliomixed>§|</bibliomixed>
+[bibliomset | [relation] kontejner pro bibliografické informace]
+<bibliomset>§|</bibliomset>
+[copyright | copyrightové informace o dokumentu]
+<copyright>§|</copyright>
+[date | datum publikace či revize dokumentu]
+<date>§|</date>
+[edition | název či číslo vydání]
+<edition>§|</edition>
+[editor | název editora dokumentu]
+<editor>§|</editor>
+[holder | majitel práv v <copyright>]
+<holder>§|</holder>
+[issuenum | číslo vydání u periodika]
+<issuenum>§|</issuenum>
+[legalnotice | právní poznámky k dokumentu]
+<legalnotice>§|</legalnotice>
+[othercredit | další osoby či instituce, účastné přípravy dokumentu]
+<othercredit>§|</othercredit>
+[pubdate | datum publikace dokumentu]
+<pubdate>§|</pubdate>
+[publishername | jméno či název vydavatele dokumentu]
+<publishername>§|</publishername>
+[releaseinfo | informace o uvolnění dokumentu]
+<releaseinfo>§|</releaseinfo>
+[revdescription | popis revize dokumentu]
+<revdescription>§|</revdescription>
+[revhistory |<revision> historie revizí dokumentu]
+<revhistory>§|</revhistory>
+[revision | jednotlivé revize dokumentu]
+<revision>§|</revision>
+[revnumber | číslo revize dokumentu]
+<revnumber>§|</revnumber>
+[revremark | poznámka k revizi dokumentu]
+<revremark>§|</revremark>
+[year | rok vydání v <copyright>]
+<year>§|</year>

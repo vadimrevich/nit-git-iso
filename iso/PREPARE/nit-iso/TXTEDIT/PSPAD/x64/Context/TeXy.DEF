@@ -1,0 +1,66 @@
+﻿; PSPad clip definition file for TeXy
+; author:  Fiala
+; last revision 13. I 2006  12:59
+;
+[Macro definition]
+%ahref%=@O odkaz=,,,www file (*.html;*.htm;*.php;*.php3;*.php4;*.phtml;*.asp)|*.html;*.htm;*.php;*.php3;*.php4;*.phtml;*.asp,
+%align%=@C zarovnání=,,*,*;<;>,
+%image%=@P src=,src=,,,"
+%descr%=@E popiska=, *** ,,,
+%color%=@C barva=,,,blue;red;green,
+;
+[link | URL odkaz]
+"§":[%ahref%]|
+;
+[obr | obrázek]
+ [* %image% %align%]%descr%|
+;
+[tucne | tučné písmo]*Ctrl+B
+**§|**
+;
+[sikme | šikmé písmo]*Ctrl+I
+*§|*
+;
+[strong+it | tučné + šikmé písmo]
+***§|***
+;
+[horindex | horní index]
+^^§|^^
+;
+[dolindex | dolní index]
+__§|__
+;      
+[citace | citace]
+>>§|<<:%ahref%
+;
+[zdroj | citovaný zdroj]
+~~§|~~
+;
+[seznam1 | nečíslovaný seznam]
+-   §|
+-   
+-   
+;
+[seznam2 | číslovaný seznam 1,2,3]
+1)   §|
+2)   
+3)   
+;
+[seznam3 | číslovaný seznam a,b,c]
+a)   §|
+b)   
+c)   
+;
+[seznam4 | číslovaný seznam A,B,C]
+A)   §|
+B)   
+C)   
+;
+[seznam5 | číslovaný seznam I,II,III]
+I)   §|
+II)   
+III)   
+;
+[barva | barva textu]
+.{color:%color%}
+;

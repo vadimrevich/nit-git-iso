@@ -1,0 +1,15 @@
+# Install
+
+Simple run INSTALL.ps1 as Powershell Script.
+
+Programs will be Installed at User's Download 
+Directory. Elevated Privileges is not Needed.
+
+### Russian
+
+Просто запустите файл INSTALL.ps1 как скрипт
+Powershell.
+
+Программа установится в папку «Загрузки»
+текущего пользователя. Повышенные
+привилегии скрипту не требуются.

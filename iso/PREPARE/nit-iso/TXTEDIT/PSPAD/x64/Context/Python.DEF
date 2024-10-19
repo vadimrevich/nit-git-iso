@@ -1,0 +1,881 @@
+﻿;;Definiční soubor PSPad Python.DEF, sestavený na verzi 
+;;python 2.5 (r25:51908, Sep 19 2006, 09:52:17) [MSC v.1310 32 bit (Intel)]
+;;Vygenerováno víceméně automaticky.
+;;Podnětné připomínky jsou vítány všemi deseti.
+;;Autor: geon at post dot cz
+;;Datum: říjen 2006
+
+[and |B klíčová slova ]
+and |
+;
+[as |B klíčová slova ]
+as |
+;
+[assert |B klíčová slova ]
+assert |
+;
+[break |B klíčová slova ]
+break |
+;
+[class |B klíčová slova ]
+class |
+;
+[continue |B klíčová slova ]
+continue |
+;
+[def |B klíčová slova ]
+def |
+;
+[del |B klíčová slova ]
+del |
+;
+[elif |B klíčová slova ]
+elif |
+;
+[else |B klíčová slova ]
+else |
+;
+[except |B klíčová slova ]
+except |
+;
+[exec |B klíčová slova ]
+exec |
+;
+[finally |B klíčová slova ]
+finally |
+;
+[for |B klíčová slova ]
+for |
+;
+[from |B klíčová slova ]
+from |
+;
+[global |B klíčová slova ]
+global |
+;
+[if |B klíčová slova ]
+if |
+;
+[import |B klíčová slova ]
+import |
+;
+[in |B klíčová slova ]
+in |
+;
+[is |B klíčová slova ]
+is |
+;
+[lambda |B klíčová slova ]
+lambda |
+;
+[not |B klíčová slova ]
+not |
+;
+[or |B klíčová slova ]
+or |
+;
+[pass |B klíčová slova ]
+pass |
+;
+[print |B klíčová slova ]
+print |
+;
+[raise |B klíčová slova ]
+raise |
+;
+[return |B klíčová slova ]
+return |
+;
+[try |B klíčová slova ]
+try |
+;
+[while |B klíčová slova ]
+while |
+;
+[with |B klíčová slova ]
+with |
+;
+[yield |B klíčová slova ]
+yield |
+;
+[abs |G vnitřní funkce ]
+abs(|)
+;
+[all |G vnitřní funkce ]
+all(|)
+;
+[any |G vnitřní funkce ]
+any(|)
+;
+[apply |G vnitřní funkce ]
+apply(|)
+;
+[basestring |G vnitřní funkce ]
+basestring(|)
+;
+[bool |G vnitřní funkce ]
+bool(|)
+;
+[buffer |G vnitřní funkce ]
+buffer(|)
+;
+[callable |G vnitřní funkce ]
+callable(|)
+;
+[chr |G vnitřní funkce ]
+chr(|)
+;
+[classmethod |G vnitřní funkce ]
+classmethod(|)
+;
+[cmp |G vnitřní funkce ]
+cmp(|)
+;
+[coerce |G vnitřní funkce ]
+coerce(|)
+;
+[compile |G vnitřní funkce ]
+compile(|)
+;
+[complex |G vnitřní funkce ]
+complex(|)
+;
+[copyright |G vnitřní funkce ]
+copyright(|)
+;
+[credits |G vnitřní funkce ]
+credits(|)
+;
+[delattr |G vnitřní funkce ]
+delattr(|)
+;
+[dict |G vnitřní funkce ]
+dict(|)
+;
+[dir |G vnitřní funkce ]
+dir(|)
+;
+[divmod |G vnitřní funkce ]
+divmod(|)
+;
+[enumerate |G vnitřní funkce ]
+enumerate(|)
+;
+[eval |G vnitřní funkce ]
+eval(|)
+;
+[execfile |G vnitřní funkce ]
+execfile(|)
+;
+[exit |G vnitřní funkce ]
+exit(|)
+;
+[file |G vnitřní funkce ]
+file(|)
+;
+[filter |G vnitřní funkce ]
+filter(|)
+;
+[float |G vnitřní funkce ]
+float(|)
+;
+[frozenset |G vnitřní funkce ]
+frozenset(|)
+;
+[getattr |G vnitřní funkce ]
+getattr(|)
+;
+[globals |G vnitřní funkce ]
+globals(|)
+;
+[hasattr |G vnitřní funkce ]
+hasattr(|)
+;
+[hash |G vnitřní funkce ]
+hash(|)
+;
+[help |G vnitřní funkce ]
+help(|)
+;
+[hex |G vnitřní funkce ]
+hex(|)
+;
+[id |G vnitřní funkce ]
+id(|)
+;
+[input |G vnitřní funkce ]
+input(|)
+;
+[int |G vnitřní funkce ]
+int(|)
+;
+[intern |G vnitřní funkce ]
+intern(|)
+;
+[isinstance |G vnitřní funkce ]
+isinstance(|)
+;
+[issubclass |G vnitřní funkce ]
+issubclass(|)
+;
+[iter |G vnitřní funkce ]
+iter(|)
+;
+[len |G vnitřní funkce ]
+len(|)
+;
+[license |G vnitřní funkce ]
+license(|)
+;
+[list |G vnitřní funkce ]
+list(|)
+;
+[locals |G vnitřní funkce ]
+locals(|)
+;
+[long |G vnitřní funkce ]
+long(|)
+;
+[map |G vnitřní funkce ]
+map(|)
+;
+[max |G vnitřní funkce ]
+max(|)
+;
+[min |G vnitřní funkce ]
+min(|)
+;
+[object |G vnitřní funkce ]
+object(|)
+;
+[oct |G vnitřní funkce ]
+oct(|)
+;
+[open |G vnitřní funkce ]
+open(|)
+;
+[ord |G vnitřní funkce ]
+ord(|)
+;
+[pow |G vnitřní funkce ]
+pow(|)
+;
+[property |G vnitřní funkce ]
+property(|)
+;
+[quit |G vnitřní funkce ]
+quit(|)
+;
+[range |G vnitřní funkce ]
+range(|)
+;
+[raw_input |G vnitřní funkce ]
+raw_input(|)
+;
+[reduce |G vnitřní funkce ]
+reduce(|)
+;
+[reload |G vnitřní funkce ]
+reload(|)
+;
+[repr |G vnitřní funkce ]
+repr(|)
+;
+[reversed |G vnitřní funkce ]
+reversed(|)
+;
+[round |G vnitřní funkce ]
+round(|)
+;
+[set |G vnitřní funkce ]
+set(|)
+;
+[setattr |G vnitřní funkce ]
+setattr(|)
+;
+[slice |G vnitřní funkce ]
+slice(|)
+;
+[sorted |G vnitřní funkce ]
+sorted(|)
+;
+[staticmethod |G vnitřní funkce ]
+staticmethod(|)
+;
+[str |G vnitřní funkce ]
+str(|)
+;
+[sum |G vnitřní funkce ]
+sum(|)
+;
+[super |G vnitřní funkce ]
+super(|)
+;
+[tuple |G vnitřní funkce ]
+tuple(|)
+;
+[type |G vnitřní funkce ]
+type(|)
+;
+[unichr |G vnitřní funkce ]
+unichr(|)
+;
+[unicode |G vnitřní funkce ]
+unicode(|)
+;
+[vars |G vnitřní funkce ]
+vars(|)
+;
+[xrange |G vnitřní funkce ]
+xrange(|)
+;
+[zip |G vnitřní funkce ]
+zip(|)
+;
+[append |F metody seznamů ]
+append(|)
+;
+[count |F metody seznamů ]
+count(|)
+;
+[extend |F metody seznamů ]
+extend(|)
+;
+[index |F metody seznamů ]
+index(|)
+;
+[insert |F metody seznamů ]
+insert(|)
+;
+[pop |F metody seznamů ]
+pop(|)
+;
+[remove |F metody seznamů ]
+remove(|)
+;
+[reverse |F metody seznamů ]
+reverse(|)
+;
+[sort |F metody seznamů ]
+sort(|)
+;
+[capitalize |M metody řetězců ]
+capitalize(|)
+;
+[center |M metody řetězců ]
+center(|)
+;
+[count |M metody řetězců ]
+count(|)
+;
+[decode |M metody řetězců ]
+decode(|)
+;
+[encode |M metody řetězců ]
+encode(|)
+;
+[endswith |M metody řetězců ]
+endswith(|)
+;
+[expandtabs |M metody řetězců ]
+expandtabs(|)
+;
+[find |M metody řetězců ]
+find(|)
+;
+[index |M metody řetězců ]
+index(|)
+;
+[isalnum |M metody řetězců ]
+isalnum(|)
+;
+[isalpha |M metody řetězců ]
+isalpha(|)
+;
+[isdigit |M metody řetězců ]
+isdigit(|)
+;
+[islower |M metody řetězců ]
+islower(|)
+;
+[isspace |M metody řetězců ]
+isspace(|)
+;
+[istitle |M metody řetězců ]
+istitle(|)
+;
+[isupper |M metody řetězců ]
+isupper(|)
+;
+[join |M metody řetězců ]
+join(|)
+;
+[ljust |M metody řetězců ]
+ljust(|)
+;
+[lower |M metody řetězců ]
+lower(|)
+;
+[lstrip |M metody řetězců ]
+lstrip(|)
+;
+[partition |M metody řetězců ]
+partition(|)
+;
+[replace |M metody řetězců ]
+replace(|)
+;
+[rfind |M metody řetězců ]
+rfind(|)
+;
+[rindex |M metody řetězců ]
+rindex(|)
+;
+[rjust |M metody řetězců ]
+rjust(|)
+;
+[rpartition |M metody řetězců ]
+rpartition(|)
+;
+[rsplit |M metody řetězců ]
+rsplit(|)
+;
+[rstrip |M metody řetězců ]
+rstrip(|)
+;
+[split |M metody řetězců ]
+split(|)
+;
+[splitlines |M metody řetězců ]
+splitlines(|)
+;
+[startswith |M metody řetězců ]
+startswith(|)
+;
+[strip |M metody řetězců ]
+strip(|)
+;
+[swapcase |M metody řetězců ]
+swapcase(|)
+;
+[title |M metody řetězců ]
+title(|)
+;
+[translate |M metody řetězců ]
+translate(|)
+;
+[upper |M metody řetězců ]
+upper(|)
+;
+[zfill |M metody řetězců ]
+zfill(|)
+;
+[clear |N metody slovníků ]
+clear(|)
+;
+[copy |N metody slovníků ]
+copy(|)
+;
+[fromkeys |N metody slovníků ]
+fromkeys(|)
+;
+[get |N metody slovníků ]
+get(|)
+;
+[has_key |N metody slovníků ]
+has_key(|)
+;
+[items |N metody slovníků ]
+items(|)
+;
+[iteritems |N metody slovníků ]
+iteritems(|)
+;
+[iterkeys |N metody slovníků ]
+iterkeys(|)
+;
+[itervalues |N metody slovníků ]
+itervalues(|)
+;
+[keys |N metody slovníků ]
+keys(|)
+;
+[pop |N metody slovníků ]
+pop(|)
+;
+[popitem |N metody slovníků ]
+popitem(|)
+;
+[setdefault |N metody slovníků ]
+setdefault(|)
+;
+[update |N metody slovníků ]
+update(|)
+;
+[values |N metody slovníků ]
+values(|)
+;
+[close |D metody souborů ]
+close(|)
+;
+[closed |D metody souborů ]
+closed(|)
+;
+[encoding |D metody souborů ]
+encoding(|)
+;
+[fileno |D metody souborů ]
+fileno(|)
+;
+[flush |D metody souborů ]
+flush(|)
+;
+[isatty |D metody souborů ]
+isatty(|)
+;
+[mode |D metody souborů ]
+mode(|)
+;
+[name |D metody souborů ]
+name(|)
+;
+[newlines |D metody souborů ]
+newlines(|)
+;
+[next |D metody souborů ]
+next(|)
+;
+[read |D metody souborů ]
+read(|)
+;
+[readinto |D metody souborů ]
+readinto(|)
+;
+[readline |D metody souborů ]
+readline(|)
+;
+[readlines |D metody souborů ]
+readlines(|)
+;
+[seek |D metody souborů ]
+seek(|)
+;
+[softspace |D metody souborů ]
+softspace(|)
+;
+[tell |D metody souborů ]
+tell(|)
+;
+[truncate |D metody souborů ]
+truncate(|)
+;
+[write |D metody souborů ]
+write(|)
+;
+[writelines |D metody souborů ]
+writelines(|)
+;
+[xreadlines |D metody souborů ]
+xreadlines(|)
+;
+[func_closure |X metody funkcí ]
+func_closure(|)
+;
+[func_code |X metody funkcí ]
+func_code(|)
+;
+[func_defaults |X metody funkcí ]
+func_defaults(|)
+;
+[func_dict |X metody funkcí ]
+func_dict(|)
+;
+[func_doc |X metody funkcí ]
+func_doc(|)
+;
+[func_globals |X metody funkcí ]
+func_globals(|)
+;
+[func_name |X metody funkcí ]
+func_name(|)
+;
+[__abs__ |P speciální metody/atributy ]
+__abs__(|)
+;
+[__add__ |P speciální metody/atributy ]
+__add__(|)
+;
+[__and__ |P speciální metody/atributy ]
+__and__(|)
+;
+[__bases__ |P speciální metody/atributy ]
+__bases__(|)
+;
+[__call__ |P speciální metody/atributy ]
+__call__(|)
+;
+[__class__ |P speciální metody/atributy ]
+__class__(|)
+;
+[__cmp__ |P speciální metody/atributy ]
+__cmp__(|)
+;
+[__coerce__ |P speciální metody/atributy ]
+__coerce__(|)
+;
+[__contains__ |P speciální metody/atributy ]
+__contains__(|)
+;
+[__debug__ |P speciální metody/atributy ]
+__debug__(|)
+;
+[__delattr__ |P speciální metody/atributy ]
+__delattr__(|)
+;
+[__delitem__ |P speciální metody/atributy ]
+__delitem__(|)
+;
+[__delslice__ |P speciální metody/atributy ]
+__delslice__(|)
+;
+[__dict__ |P speciální metody/atributy ]
+__dict__(|)
+;
+[__div__ |P speciální metody/atributy ]
+__div__(|)
+;
+[__divmod__ |P speciální metody/atributy ]
+__divmod__(|)
+;
+[__doc__ |P speciální metody/atributy ]
+__doc__(|)
+;
+[__enter__ |P speciální metody/atributy ]
+__enter__(|)
+;
+[__eq__ |P speciální metody/atributy ]
+__eq__(|)
+;
+[__exit__ |P speciální metody/atributy ]
+__exit__(|)
+;
+[__float__ |P speciální metody/atributy ]
+__float__(|)
+;
+[__floordiv__ |P speciální metody/atributy ]
+__floordiv__(|)
+;
+[__ge__ |P speciální metody/atributy ]
+__ge__(|)
+;
+[__get__ |P speciální metody/atributy ]
+__get__(|)
+;
+[__getattr__ |P speciální metody/atributy ]
+__getattr__(|)
+;
+[__getattribute__ |P speciální metody/atributy ]
+__getattribute__(|)
+;
+[__getitem__ |P speciální metody/atributy ]
+__getitem__(|)
+;
+[__getnewargs__ |P speciální metody/atributy ]
+__getnewargs__(|)
+;
+[__getslice__ |P speciální metody/atributy ]
+__getslice__(|)
+;
+[__gt__ |P speciální metody/atributy ]
+__gt__(|)
+;
+[__hash__ |P speciální metody/atributy ]
+__hash__(|)
+;
+[__hex__ |P speciální metody/atributy ]
+__hex__(|)
+;
+[__iadd__ |P speciální metody/atributy ]
+__iadd__(|)
+;
+[__import__ |P speciální metody/atributy ]
+__import__(|)
+;
+[__imul__ |P speciální metody/atributy ]
+__imul__(|)
+;
+[__index__ |P speciální metody/atributy ]
+__index__(|)
+;
+[__init__ |P speciální metody/atributy ]
+__init__(|)
+;
+[__int__ |P speciální metody/atributy ]
+__int__(|)
+;
+[__invert__ |P speciální metody/atributy ]
+__invert__(|)
+;
+[__iter__ |P speciální metody/atributy ]
+__iter__(|)
+;
+[__le__ |P speciální metody/atributy ]
+__le__(|)
+;
+[__len__ |P speciální metody/atributy ]
+__len__(|)
+;
+[__long__ |P speciální metody/atributy ]
+__long__(|)
+;
+[__lshift__ |P speciální metody/atributy ]
+__lshift__(|)
+;
+[__lt__ |P speciální metody/atributy ]
+__lt__(|)
+;
+[__mod__ |P speciální metody/atributy ]
+__mod__(|)
+;
+[__module__ |P speciální metody/atributy ]
+__module__(|)
+;
+[__mul__ |P speciální metody/atributy ]
+__mul__(|)
+;
+[__name__ |P speciální metody/atributy ]
+__name__(|)
+;
+[__ne__ |P speciální metody/atributy ]
+__ne__(|)
+;
+[__neg__ |P speciální metody/atributy ]
+__neg__(|)
+;
+[__new__ |P speciální metody/atributy ]
+__new__(|)
+;
+[__nonzero__ |P speciální metody/atributy ]
+__nonzero__(|)
+;
+[__oct__ |P speciální metody/atributy ]
+__oct__(|)
+;
+[__or__ |P speciální metody/atributy ]
+__or__(|)
+;
+[__pos__ |P speciální metody/atributy ]
+__pos__(|)
+;
+[__pow__ |P speciální metody/atributy ]
+__pow__(|)
+;
+[__radd__ |P speciální metody/atributy ]
+__radd__(|)
+;
+[__rand__ |P speciální metody/atributy ]
+__rand__(|)
+;
+[__rdiv__ |P speciální metody/atributy ]
+__rdiv__(|)
+;
+[__rdivmod__ |P speciální metody/atributy ]
+__rdivmod__(|)
+;
+[__reduce__ |P speciální metody/atributy ]
+__reduce__(|)
+;
+[__reduce_ex__ |P speciální metody/atributy ]
+__reduce_ex__(|)
+;
+[__repr__ |P speciální metody/atributy ]
+__repr__(|)
+;
+[__reversed__ |P speciální metody/atributy ]
+__reversed__(|)
+;
+[__rfloordiv__ |P speciální metody/atributy ]
+__rfloordiv__(|)
+;
+[__rlshift__ |P speciální metody/atributy ]
+__rlshift__(|)
+;
+[__rmod__ |P speciální metody/atributy ]
+__rmod__(|)
+;
+[__rmul__ |P speciální metody/atributy ]
+__rmul__(|)
+;
+[__ror__ |P speciální metody/atributy ]
+__ror__(|)
+;
+[__rpow__ |P speciální metody/atributy ]
+__rpow__(|)
+;
+[__rrshift__ |P speciální metody/atributy ]
+__rrshift__(|)
+;
+[__rshift__ |P speciální metody/atributy ]
+__rshift__(|)
+;
+[__rsub__ |P speciální metody/atributy ]
+__rsub__(|)
+;
+[__rtruediv__ |P speciální metody/atributy ]
+__rtruediv__(|)
+;
+[__rxor__ |P speciální metody/atributy ]
+__rxor__(|)
+;
+[__setattr__ |P speciální metody/atributy ]
+__setattr__(|)
+;
+[__setitem__ |P speciální metody/atributy ]
+__setitem__(|)
+;
+[__setslice__ |P speciální metody/atributy ]
+__setslice__(|)
+;
+[__str__ |P speciální metody/atributy ]
+__str__(|)
+;
+[__sub__ |P speciální metody/atributy ]
+__sub__(|)
+;
+[__truediv__ |P speciální metody/atributy ]
+__truediv__(|)
+;
+[__xor__ |P speciální metody/atributy ]
+__xor__(|)
+;
+
+[# -*- coding: cp1250 -*- |Q fráze ]
+# -*- coding: cp1250 -*- |
+;
+[# -*- coding: utf-8 -*- |Q fráze ]
+# -*- coding: utf-8 -*- |
+;
+[sys |Q moduly ]
+sys|
+;
+[time |Q moduly ]
+time|
+;
+[random |Q moduly ]
+random|
+;
+[math |Q moduly ]
+math|
+;
+[os |Q moduly ]
+os|
+;
+[os.path |Q moduly ]
+os.path|
+;
+[shutil |Q moduly ]
+shutil|
+;
+[re |Q moduly ]
+re|
+;

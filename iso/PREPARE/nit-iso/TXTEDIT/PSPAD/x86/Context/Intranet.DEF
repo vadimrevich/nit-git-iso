@@ -1,0 +1,24 @@
+﻿; PSPad code template for General
+; Created by PSPad   14.10.2002  18:39
+; Author:  HOME
+;
+[Macro definition]
+%zakaznik%=@E Zákazník,,
+%server%=@E Server,,
+%IP%=@E IP Adresa,,
+%databaze%=@C Typ databáze,,SQL,Nativní;SQL,
+%memo%=@E Poznámky,,
+;
+[Config | Konfigurace zakaznickeho prostredi]
+ <table border="0" bgcolor="gray" cellspacing="1" cellpadding="2" width="100%">
+  <tr bgcolor="#BDD6EF">
+    <td>&nbsp; <b>Konfigurace připojení</b> </td>
+  </tr>
+ <tr bgcolor="white" valign="top">
+ <td>&nbsp; <b>Zákazník:</b> %zakaznik%  </td>
+ </tr>
+ <tr bgcolor="white" valign="top">
+ <td>&nbsp; <b>Server:</b> %server% <b>IP:</b> %IP% <b>Databáze:</b> %databaze% </td>
+ </tr>
+ </table>
+ |

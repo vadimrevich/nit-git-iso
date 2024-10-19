@@ -1,0 +1,418 @@
+﻿;; PSPad code template for WML (Wireless Markup Language)
+;; Author: Karel Pavelka
+;; E-mail: webjob@seznam.cz
+;; Update: 28.4.2004
+;;
+;;   (black)     WML 1.2
+;; B (blue)
+;; D (dark gray)
+;; F (fuchsia)
+;; G (green)     Entity, zavorky, komentare
+;; M (maroon)
+;; N (navy)      Kusy kodu
+;; P (purple)    PHP
+;; R (red)       WTAI (Wireless Telephony Application Interface) funkce
+;;
+;; Odsazeni: 2
+;
+;
+[Macro definition]
+;
+%phonenumber%=@C Phone Number:,,,"
+;
+%acceptcharset%=@C accept-charset=,accept-charset=,,windows-1250;iso-8859-2;utf-8,"
+%accesskey%=@C accesskey=,accesskey=,,0;1;2;3;4;5;6;7;8;9,"
+%align3%=@C align=,align=,,center;left;right,"
+%aligni%=@C align=,align=,,bottom;middle;top,"
+%alt%=@E alt=,alt=,,,"
+%columns%=@E columns=,columns=,,,"
+%content%=@C content=,content=,,no-cache;must-revalidate;max-age=,"
+%domain%=@E domain=,domain=,,,"
+%emptyok%=@C emptyok=,emptyok=,,true;false,"
+%encoding%=@C encoding=,encoding=,,windows-1250;iso-8859-2;utf-8,"
+%format%=@C format=,format=,,A;a;N;X;x;M;m,"
+%forua%=@C forua=,forua=,,true;false,"
+%height%=@E height=,height=,,,"
+%href%=@O WML href=,href=,,wml file (*.wml;*.php;*.php3)|*.wml;*.php;*.php3,"
+%hspace%=@E hspace=,hspace=,,,"
+%id%=@E id=,id=,,,"
+%iname%=@E iname=,iname=,,,"
+%ivalue%=@E ivalue=,ivalue=,,,"
+%label%=@E label=,label=,,,"
+%lang%=@C xml:lang=,xml:lang=,,cs;sk;de;en;hu,"
+%maxlength%=@E maxlength=,maxlength=,,,"
+%method%=@C method=,method=,,get;post,"
+%mode%=@C mode=,mode=,,wrap;nowrap,"
+%multiple%=@C multiple=,multiple=,,true;false,"
+%name%=@E name=,name=,,,"
+%namem%=@C name=,name=,,vnd.up.markable;vnd.up.bookmark,"
+%newcontext%=@C newcontext=,newcontext=,,true;false,"
+%onenterbackward%=@E onenterbackward=,onenterbackward=,,,"
+%onenterforward%=@E onenterforward=,onenterforward=,,,"
+%onexit%=@E onexit=,onexit=,,,"
+%onpick%=@E onpick=,onpick=,,,"
+%onthrow%=@E onthrow=,onthrow=,,,"
+%ontimer%=@E ontimer=,ontimer=,,,"
+%optional%=@C optional=,optional=,,true;false,"
+%ordered%=@C ordered=,ordered=,,true;false,"
+%path%=@C path=,path=,,/,"
+%sendreferer%=@C sendreferer=,sendreferer=,,true;false,"
+%scheme%=@E scheme=,scheme=,,,"
+%size%=@E size=,size=,,,"
+%srcw%=@O src=,src=,,Image file (*.wbmp)|*.wbmp,"
+%tabindex%=@E tabindex=,tabindex=,,,"
+%title%=@E title=,title=,,,"
+%typeo%=@C type=,type=,,onpick;onenterforward;onenterbakward;ontimer,"
+%typedo%=@C type=,type=,,accept;delete;help;options;prev;reset;unknown;vnd.co-type;x-*,"
+%type%=@C type=,type=,,password;text,"
+%version%=@C version=,version=,,"1.0","
+%volume%=@E volume=,volume=,,,"
+%vspace%=@E vspace=,vspace=,,,"
+%width%=@E width=,width=,,,"
+;
+[&nbsp; |G nedělitelná mezera]*Shift+Ctrl+Space
+&#160;
+[&apos; |G apostrof]
+&#39;
+[&gt; |G znak ">"]
+&#62;
+[&lt; |G znak "<"]
+&#60;
+[&amp; |G ampersand]
+&#38;
+[<...> |G začátek/konec tagu z označeného textu]*Ctrl+,
+<§>|</§>
+[<> |G začátek tagu <>]*Alt+,
+<|>
+[</> |G konec tagu </|>]*Alt+.
+</|>
+;
+[!-- |G řádkový komentář <!-- text -->]
+<!-- §| -->
+[!--- |G komentář bloku <!-- text -->]
+<!--
+  §|
+-->
+;
+;
+[a | odkaz]
+<a %href% %title% %lang% %accesskey%>§|</a>
+;
+[access | specifikuje informace o kontrole přístupu na WML desku]
+<access %domain% %path%/>
+|
+;
+[anchor | ukotvuje úlohu na řetězec formátovaného textu]
+<anchor %accesskey% %title% %lang%>§|</anchor>
+;
+[b | tučný text]*CTRL+B
+<b>§|</b>
+;
+[big | zvětšení písma]
+<big>§|</big>
+;
+[br | zalomení řádku]*CTRL+ENTER
+<br/>
+;
+[card | spcifikuje jednoduchou interakci mezi uživatlem a zařízením]
+<card %id% %title% %ontimer% %onenterforward% %onenterbackward% %ordered% %newcontext%>
+  §|
+</card>
+;
+[catch | specifikuje zachytávač výjimek, který může provádět vyjímku vzniklou při provádění úlohy]
+<catch %onthrow% %name%>
+  §|
+</catch>
+;
+[do | asociuje úlohu s elementem uvnitř uživatelského rozhraní]
+<do %typedo% %label% %lang% %name% %optional%>§|</do>
+;
+[em | zvýraznění ]
+<em>§|</em>
+;
+[exit | deklaruje úlohu při odchodu, indikuje že aktuální obsah musí být ukončen]
+<exit>
+  §|
+</exit>
+;
+[fieldset | dovoluje seskupit mnohonásobný text nebo vstupní položky uvnitř karty]
+<fieldset %title% %lang%>
+  §|
+</fieldset>
+;
+[go | událostní element, který instruuje zařízení k otevření specifikované URL adresy]
+<go %href%  %sendreferer% %method% %acceptcharset%>
+  §|
+</go>
+;
+[head | specifikuje úplné informace o desce zahrnující metadata a informace pro kontrolu přístupu]
+<head>
+  §|
+</head>
+;
+[i | kurzíva]*CTRL+I
+<i>§|</i>
+;
+[img | img]
+<img %alt% %lang% %srcw% %src% %aligni% %height% %width% %vspace% %hspace%/>
+|
+;
+[input | dovoluje uživateli zadat vstupní text, kterému zařízení přiděluje proměnnou]
+<input %lang% %name% %title% %type% %value% %accesskey% %format% %emptyok% %size% %maxlength% %tabindex%/>
+|
+;
+[link | specifikuje vztah mezi obsahem desky a dalšího dokumentu. Tento dokument musí existovat uvnitř elementu <head>]
+<link %href% %rel% %sendreferer%/>
+|
+;
+[meta | poskytuje meta informace o WML desce ]
+<meta http-equiv="cache-control" %content% %forua% %namem% %scheme%/>
+|
+;
+[noop | událostí element, který instruuje zařízení k nečinnost, tj. "žádná akce"]
+<noop/>
+;
+[optgroup | dovoluje seskupovat mnohonásobný výskyt elementu <option> (nebo vnořený element <optgroup>) uvnitř elementu <card>]
+<optgroup %title% %lang%>
+  §|
+</optgroup>
+;
+[onevent | asociuje přechodný stav nebo skutečnou událost s úlohou. Když skutečná událost nastane, zařízení provede asosiovanou úlohu]
+<onevent %typeo%>
+  §|
+</onevent>
+;
+[option | specifikuje konkrétní volbu uvnitř elementu <select>]
+<option %title% %value% %onpick% %lang%>
+  §|
+</option>
+;
+[p | odstavec]*SHIFT+CTRL+P
+<p %align3% %mode% %lang%>
+  §|
+</p>
+;
+[postfield | definuje název/hodnotové páry, které odpovídají HTTP serveru, jež přijímá požadavek elementu <go>]
+<postfield %name% %value%/>
+;
+[prev | událostní element, který instruuje zařízení pro vymazání aktuální adresa URL ze zásobníku historie a otevře předchozí URL adresu.]
+<prev>|§</prev>
+;
+[receive | pro příjem dat posílaných z kontextu potomka]
+<receive %name%/>
+|
+;
+[refresh | událostní element, který instruuje zařízení pro znovunačtení specifikovaných proměnných karty]
+<refresh>
+  §|
+</refresh>
+;
+[reset | vymaže všechny proměnné v aktuálním kontextu ]
+<reset/>
+|
+;
+[select | specifikuje seznam voleb, ze kterých si může uživatel vybrat]
+<select %title% %name% %lang% %value% %tabindex% %multiple% %iname% %ivalue%>
+  §|
+</select>
+;
+[send | specifikuje jednoduchou hodnotu zahrnovanou do bloku parametrů ]
+<send %value%/>
+|
+;
+[setvar | nastavuje proměnné na specifické hodnoty, když zařízení spustí některou z úloh <g>,<prev>,<spawn> nebo <refresh> ]
+<setvar %name% %value%/>
+|
+;
+[small | zmenšená velikost textu]
+<small>§|</small>
+;
+[spawn | deklaruje úlohu tření, která indikuje vytvoření potomka kontextu a z něj volanou adresu]
+<spawn %href% %onexit% %sendreferer% %method% %acceptcharset%>
+  §|
+</spawn>
+;
+[strong | silně zvýrazněný text]
+<strong>§|</strong>
+;
+[table | tabulka]
+<table %lang% %align3% %title% %columns%>
+  §|
+</table>
+;
+[TABLEj | jednoduchá tabulka]
+<table %columns%>
+<tr><td>§|</td></tr>
+</table>
+;
+[td | buňka tabulky]
+<td>§|</td>
+;
+[template | definuje úroveň vazby desky k událostem]
+<template %ontimer% %onenterforward% %onenterbackward%>
+  §|
+</template>
+;
+[throw | deklaruje úlohu throw (hozenou) indikující, že vyjímka může růst]
+<throw %name%>
+  §|
+</throw>
+;
+[timer | poskytuje metodu pro automatické volání úlohy po nějaké časové periodě uživatelské nečinnosti]
+<timer %name% %value%/>
+|
+;
+[tr | řádek tabulky]
+<tr>§|</tr>
+;
+[wml | vymezení desky WML dokumentu]
+<wml %lang%>
+  §|
+</wml>
+;
+[WMLs |N jednoduchá WML 1.2 stránka ]
+<?xml version="1.0" %encoding%?>
+
+<!DOCTYPE wml PUBLIC "-//WAPFORUM//DTD WML 1.2//EN" "http://www.wapforum.org/DTD/wml12.dtd">
+
+<wml %lang%>
+  §|
+</wml>
+;
+[xml |N hlavička dokumentu WML 1.1]
+<?xml version="1.0" %encoding%?>
+
+<!DOCTYPE wml PUBLIC "-//WAPFORUM//DTD WML 1.1//EN" "http://www.wapforum.org/DTD/wml_1.1.xml">
+;
+[xml |N hlavička dokumentu WML 1.2]
+<?xml version="1.0" %encoding%?>
+
+<!DOCTYPE wml PUBLIC "-//WAPFORUM//DTD WML 1.2//EN" "http://www.wapforum.org/DTD/wml12.dtd">
+;
+[PHPindex |P WWW i WAP verze stránek na jedné adrese]
+<?php
+  $typ=strtoupper($HTTP_ACCEPT);
+  if (ereg("WML",$typ)) {
+    include("indexwap.php");
+	}
+  else {
+    include("indexhtml.php");
+  }
+?>
+;
+[PHPh |P hlavička v PHP]
+<?php
+  header("Content-type: text/vnd.wap.wml");
+  echo("<?xml version=\"1.0\"?>\n");
+  echo("<!DOCTYPE wml PUBLIC \"-//WAPFORUM//DTD WML 1.1//EN\" \"http://www.wapforum.org/DTD/wml_1.1.xml\">\n\n");
+?>
+[PHPdetekce |P detekce v PHP]
+<wml>
+  <card id="detekt" title="Detekce">
+    <p>
+      <?php
+      // část prvni - standardní HTTP hlavička
+      $headers = getallheaders();
+      while (list($header, $value) = each($headers)) {
+        echo strtoupper($header).": ". $value."<br/>\n";
+      }
+      // druhá část
+      echo("REMOTE_ADDR: ".$REMOTE_ADDR."<br/>\n");               // IP addresa klientské strany
+      echo("REMOTE_PORT: ".$REMOTE_PORT."<br/>\n");               // Port použity z klientské strany
+      echo("REMOTE_USER: ".$REMOTE_USER."<br/>\n");               // Jmeno autentifikovaného uživatele, pokud byla autentifikace provedena
+      echo("GATEWAY_INTERFACE: ".$GATEWAY_INTERFACE."<br/>\n");   // typ interface brany
+      echo("SERVER_PROTOCOL: ".$SERVER_PROTOCOL."<br/>\n");       // Protokol použitý serverem
+      echo("REQUEST_METHOD: ".$REQUEST_METHOD."<br/>\n");         // Request metoda
+      echo("HTTP_CONNECTION: ".$HTTP_CONNECTION."<br/>\n");       // Connection type
+      echo("HTTP_VIA: ".$HTTP_VIA."<br/>\n");                     // Jak je host napojen (proxy)
+      ?>
+    </p>
+  </card>
+</wml>
+[A_wtai: |R ]
+<a href="wtai://wp/mc;%phonenumber%">§|</a>
+;
+[Keywords]
+accept
+accept-charset=
+access
+accesskey=
+align=
+alt=
+anchor
+br/>
+card
+catch
+columns=
+content=
+DOCTYPE wml PUBLIC "-//WAPFORUM//DTD WML 1.1//EN" "http://www.wapforum.org/DTD/wml_1.1.xml">
+domain=
+emptyok=
+encoding=
+exit
+fieldset
+format=
+forua=
+go
+head
+height=
+href=
+hspace=
+iname=
+ivalue=
+label=
+maxlength=
+method=
+mode=
+multiple=
+must-revalidate
+newcontext=
+no-cache
+noop/>
+nowrap
+onenterbackward=
+onenterbakward
+onenterforward
+onenterforward=
+onevent
+onexit=
+onthrow=
+ontimer
+ontimer=
+optgroup
+option
+optional=
+ordered=
+password
+path=
+postfield
+receive
+reset/>
+select
+send
+sendreferer=
+setvar
+scheme=
+size=
+small>
+spawn
+strong>
+tabindex=
+table
+td>
+template
+throw
+timer
+title=
+tr>
+type=
+unknown
+version=
+vnd.wap.wml
+volume=
+vspace=
+wbmp
+width=
+wml
+xml version="1.0"
+xml:lang=

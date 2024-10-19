@@ -1,0 +1,16 @@
+Copyright (C) 2002-2020 Jan Fiala
+
+Questo software è fornito "così com'è", senza alcuna garanzia espressa o implicita.
+
+In nessun caso gli autori saranno ritenuti responsabili per eventuali danni derivanti dall'utilizzo di questo software.
+
+È permesso a chiunque di utilizzare questo software per qualsiasi scopo, incluse le applicazioni commerciali, e di modificarlo e ridistribuirlo liberamente, fatte salve le seguenti restrizioni:
+
+L'origine di questo software non deve essere travisata; non si deve affermare che lei ha scritto il software originale.
+
+Se si utilizza questo software in un prodotto, un riconoscimento nella documentazione del prodotto sarebbe apprezzato, ma non è  obbligatorio.
+
+Le versioni dei pacchetti con contenuti modificate devono essere chiaramente contrassegnati come tali, e non devono essere indicate come software originale.
+
+Questo avviso non può essere rimosso o modificato da qualsiasi distribuzione.
+
